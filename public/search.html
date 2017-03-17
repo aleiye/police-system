@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>琼海市警务系统</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+
+<body>
+<div class="row">
+    <div class="col-lg-12 header">
+        <div class="pull-left fontSize"><a href="javascript:void(0);" onclick="window.location.href='/'">琼海市警务系统</a></div>
+        <div class="pull-right Color">
+            <div>
+                <span class='time-w'>当前时间: <span id='time'></span></span>
+                <span class='xin messageCount'>消息(2)</span>
+                <div class="bg_news" style="display:none;">
+                    <p>有<b class="tip1"></b>条<span class='red'>在逃人员比重结果</span></p>
+                    <p>有<b class="tip2"></b>条<span class='green'>前科人员比重结果</span></p>
+                    <p><a href="javascript:void(0);" class="message_query">点击查看</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 search">
+        <div class="form-group col-lg-7" style="padding-left:0!important">
+            <form>
+                <input type="text" class="form-control search_input" id="search_input" placeholder="请输入关键词">
+                <button type="button" class="btn btn-default search_btn" id="ft_search">全文检索</button>
+                <a href="javascript:void(0);" type="button" class="btn btn-primary gaoji mar-top" id="g_search">高级检索</a>
+            </form>
+        </div>
+
+    </div>
+    <div class="col-lg-12 col-md-12 col-xs-12 pdlf_im">
+        <div class="col-lg-2 col-md-2 col-xs-2" style="padding-right:0!important">
+            <div class="menu" id="type_menu">
+                <h3 id="SIS情报分析系统">SIS情报分析系统<span>[5]</span></h3>
+                <ul class="ulmenu1">
+                    <li><a href="javascript:void(0);" class="subType">机主通讯录信息</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">机主短信表</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">机主表（SIM卡）</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">话单机主信息表</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">通话清单</a><span>[100]</span></li>
+                </ul>
+                <h3 id="本地社会资源数据">本地社会资源数据<span>[4]</span></h3>
+                <ul class="ulmenu2">
+                    <li><a href="javascript:void(0);" class="subType">车辆信息登记表</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">物流信息登记表</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">行业工作人员</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">小区住宅业主信息</a><span>[100]</span></li>
+                </ul>
+                <h3 id="卡口视频监控系统">卡口视频监控系统<span>[6]</span></h3>
+                <ul class="ulmenu3">
+                    <li><a href="javascript:void(0);" class="subType">路口信息表</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">运维车道过车数据统计</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">布控信息表</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">所有过车信息表</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">违章过车表</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">所有区间过车信息表</a><span>[100]</span></li>
+                </ul>
+                <h3 id="人脸识别">人脸识别<span>[1]</span></h3>
+                <ul class="ulmenu4">
+                    <li><a href="javascript:void(0);" class="subType">人脸比中结果信息</a><span>[100]</span></li>
+                </ul>
+                <h3 id="省厅资源服务平台">省厅资源服务平台<span>[35]</span></h3>
+                <ul class="ulmenu5">
+                    <li><a href="javascript:void(0);" class="subType">全国重点人员</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">中小学校在校学生信息</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">研究生信息</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">低保人员信息</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">参保人员信息</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">参保人员变更信息</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">普通专本科信息</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">燃气用户信息</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">会计人员信息</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">财政供养人员信息</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">在校生花名册市县信息</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">计生委流动人口信息</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">常住境外人员学生信息</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">国税登记纳税人信息表</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">成教在校生信息</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">在校生花名册省属信息</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">婚姻登记信息</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">道路运输从业人员信息</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">工商登记信息表</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">工商年检信息表</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">工商变更信息表</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">工商吊销信息表</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">工商注销信息表</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">国税非正常户信息表</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">国税验换证信息表</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">国税注销登记信息表</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">地税非正常户信息表</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">地税验换证信息表</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">地税注销信息表</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">地税纳税登记信息</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">有线电视开户</a><span>[100]</span></li>
+                    <li title="有线电视停机缴费未开通数据"><a href="javascript:void(0);" class="subType">有线电视停机缴费未开通数据</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">有线电视数字数据</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">有线电视模拟数据</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">海口电动车信息</a><span>[100]</span></li>
+                </ul>
+                <h3 id="网警总队网综系统">网警总队网综系统<span>[5]</span></h3>
+                <ul class="ulmenu6">
+                    <li><a href="javascript:void(0);" class="subType">终端上下线信息</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">上网日志</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">终端特征信息</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">热点信息采集</a><span>[100]</span></li>
+                    <li><a href="javascript:void(0);" class="subType">终端特征移动采集设备轨迹</a><span>[100]</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-10  col-md-10 col-xs-10 pdlf_im">
+            <div class="content">
+                <div class="menu1 menu_tab">
+                    <div id="tab1" class="tab active">
+
+                    </div>
+                </div>
+                <!-- 分页外围 -->
+                <ul class="pagination" id="pages"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src='js/jquery-1.8.3.min.js'></script>
+<script type="text/javascript" src='js/purl.js'></script>
+<script type="text/javascript" src='js/bootstrap.min.js'></script>
+<script type="text/javascript" src='js/query/tips.js'></script>
+<script type="text/javascript" src='js/script.js'></script>
+<script type="text/javascript" src='js/query/search_info.js'></script>
+<script type="text/javascript" src='js/time.js'></script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>琼海市警务系统</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<style type="text/css">
+		body{
+			background:url(img/index1.png) no-repeat center;
+			background-size: cover;
+		}
+	</style>
+</head>
+<body>
+	<div class="row">
+	<div class="col-lg-12 header">
+		<div class="pull-left fontSize"><a href="javascript:void(0);" onclick="window.location.href='/';">琼海市警务系统</a></div>
+		<div class="pull-right Color">
+			<div>
+			<span class='time-w'>当前时间: <span id='time'></span></span>
+			<span class='xin messageCount'>消息(2)</span>
+			<div class="bg_news" style="display:none;">
+				<p>有 <b class="tip1"></b> 条<span class='red'>在逃人员比重结果</span></p>
+				<p>有 <b class="tip2"></b> 条<span class='green'>前科人员比重结果</span></p>
+				<p><a href="javascript:void(0);" class="message_query">点击查看</a></p>
+			</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-12">
+		<div class="col-lg-2 col-lg-offset-10 quantity">
+			<p>
+				<span id="totalDataSize"></span><br/>当前平台总数据量
+			</p>
+			<p>
+				<span id="newDataSize"></span><br/>今日平台新增数据量
+			</p>
+		</div>
+		
+		<!--<div class="col-lg-offset-4 col-lg-8 date" style="position:fixed;top:55%;">
+    	<span>起止：<input  style="width:150px;" type="text" class="date_picker date_h">
+			</span>
+    	<span>截止：<input  style="width:150px;" type="text" class="date_picker1 date_h"></span>
+		</div>-->
+	</div>
+	<div class="allsearch">
+		<div class="">
+			<form>
+			  <div class="form-group">
+			    <input type="text" class="form-control index_search" id="index_search_input">
+			    <a href="javascript:void(0);" class="btn btn-default index_btn" id="index_ft_search">全文检索</a>
+			  	<a href="javascript:void(0);" class="btn btn-primary senior_btn gaoji" id="index_g_search">高级检索</a>
+			  </div>
+			</form>
+		</div>
+	</div>
+	</div>
+	<script type="text/javascript" src='js/jquery-1.8.3.min.js'></script>
+	<script type="text/javascript" src='js/bootstrap.min.js'></script>
+	<script type="text/javascript" src='js/query/tips.js'></script>
+	<script type="text/javascript" src='js/query/index_search.js'></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src='js/time.js'></script>
+</body>
+</html>

@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>琼海市警务系统</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+
+<body>
+    <div class="row">
+    <div class="col-lg-12 header">
+        <div class="pull-left fontSize"><a href="javascript:void(0);" onclick="window.location.href='/'">琼海市警务系统</a></div>
+        <div class="pull-right Color">
+            <div>
+                <span class='time-w'>当前时间: <span id='time'></span></span>
+                <span class='xin messageCount'>消息</span>
+                <div class="bg_news" style="display:none;">
+                    <p>有<b class="tip1"></b>条<span class='red'>在逃人员比重结果</span></p>
+                    <p>有<b class="tip2"></b>条<span class='green'>前科人员比重结果</span></p>
+                    <p><a href="javascript:void(0);" class="message_query">点击查看</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 search">
+        <form>
+            <div class="form-group col-lg-7" style="padding-left:0!important">
+                <input type="text" class="form-control search_input" id="search_input" placeholder="请输入关键词">
+                <button type="button" class="btn btn-default search_btn" id="senior_ft_search">全文检索</button>
+                <a href="javascript:void(0);" class="btn btn-primary mar-top" id="back_search">返回检索页</a>
+            </div>
+        </form>
+        <!--<div class="form-group col-lg-6 date" style="height:46px;line-height:46px;">     
+		<span>起止：<input  style="width:150px;" type="text" class="date_picker date_h">
+		</span>
+        <span>截止：<input  style="width:150px;" type="text" class="date_picker1 date_h"></span>
+        </div>-->
+    </div>
+    <div class="col-lg-12 content" id="tname">
+        <div class="all">
+            <label class="checkbox-inline">
+                <input type="checkbox" id="operAll" class="a"/>全选/取消全选
+            </label>
+            <span>共<b id="tt">71</b>张表</span>
+            <span class='yellow'>[<b id="totalCount">621,131,704</b>条数据]</span>
+        </div>
+        <div class="information col-lg-12">
+            <div class="small_all all">
+                <label class="checkbox-inline">
+                    <input type="checkbox" name="alls" id="smallAll" onclick="smallAll()" class="b"/>SIS情报分析系统
+                </label>
+                <span>共<b id="t1">5</b>张表</span>
+                <span class='yellow'>[<b id="count1">231,704</b>条数据]</span>
+            </div>
+            <div class="detailed col-lg-12">
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="alls c"/>机主通讯录信息[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="alls c"/>机主短信表[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="alls c"/>机主表（SIM卡）[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="alls c"/>话单机主信息表[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="alls c"/>通话清单[<span>256</span>]
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="information col-lg-12">
+            <div class="small_all all">
+                <label class="checkbox-inline">
+                    <input type="checkbox" name="alls" onclick="one();" id="one" class="b"/>本地社会资源数据
+                </label>
+                <span>共<b id="t2">4</b>张表</span>
+                <span class='yellow'>[<b id="count2">431,704</b>条数据]</span>
+            </div>
+            <div class="detailed">
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="one c"/>车辆信息登记表[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="one c"/>物流信息登记表[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="one c"/>行业工作人员[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="one c"/>小区住宅业主信息[<span>256</span>]
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="information col-lg-12">
+            <div class="small_all all">
+                <label class="checkbox-inline">
+                    <input type="checkbox" name="alls" onclick="goodsAll()" id="goodsAll" class="b">卡口视频监控系统
+                </label>
+                <span>共<b id="t3">19</b>张表</span>
+                <span class='yellow'>[<b id="count3">531,704</b>条数据]</span>
+            </div>
+            <div class="detailed">
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="goods c"/>卡口服务器级联配置表[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="goods c"/>路口信息表[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="goods c"/>车道信息表[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="goods c"/>道口主机设备信息表[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="goods c"/>路口抓拍机信息表[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="goods c"/>卡口服务器信息表[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="goods c"/>图片存储服务器信息表[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="goods c"/>平台字典信息表[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="goods c"/>运维表[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="goods c"/>布控信息表[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="goods c"/>服务器多网域信息表[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="goods c"/>平台信息设置[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="goods c"/>撤控信息表[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="goods c"/>第三方图片服务器多网域映射表[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="goods c"/>所有过车信息表[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="goods c"/>违章过车表[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="goods c"/>所有区间过车信息表[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="goods c"/>卡口区间[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="goods c"/>车辆布控缓存表[<span>256</span>]
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="information col-lg-12">
+            <div class="small_all all">
+                <label class="checkbox-inline">
+                    <input type="checkbox" name="alls" onclick="two();" id="two" class="b"/>人脸识别
+                </label>
+                <span>共<b id="t4">1</b>张表</span>
+                <span class='yellow'>[<b id="count4">1,704</b>条数据]</span>
+            </div>
+            <div class="detailed">
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="two c"/>人脸比中结果信息[<span>256</span>]
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="information col-lg-12">
+            <div class="small_all all">
+                <label class="checkbox-inline">
+                    <input type="checkbox" name="alls" onclick="three()" id="three" class="b"/>省厅资源服务平台
+                </label>
+                <span>共<b id="t5">35</b>张表</span>
+                <span class='yellow'>[<b id="count5">1,131,704</b>条数据]</span>
+            </div>
+            <div class="detailed">
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>全国重点人员[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>中小学校在校学生信息[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>研究生信息[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>低保人员信息[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>参保人员信息[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>参保人员变更信息[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c" />普通专本科信息[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>燃气用户信息[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c">会计人员信息[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>财政供养人员信息[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>在校生花名册市县信息[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>计生委流动人口信息[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>常住境外人员学生信息[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>国税登记纳税人信息表[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>成教在校生信息[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>在校生花名册省属信息[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>婚姻登记信息[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>道路运输从业人员信息[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>工商登记信息表[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>工商年检信息表[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>工商变更信息表[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>工商吊销信息表[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>工商注销信息表[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>国税非正常户信息表[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>国税验换证信息表[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>国税注销登记信息表[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>地税非正常户信息表[<span>789</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>地税验换证信息表[<span>56</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>地税注销信息表[<span>789</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>地税纳税登记信息[<span>78</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>有线电视开户[<span>645</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>有线电视停机缴费未开通数据[<span>45</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>有线电视数字数据[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>有线电视模拟数据[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="three c"/>海口电动车信息[<span>256</span>]
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="information col-lg-12">
+            <div class="small_all all">
+                <label class="checkbox-inline">
+                    <input type="checkbox" name="alls" onclick="four()" id="four" class="b"/>网警总队网综系统
+                </label>
+                <span>共<b id="t6">7</b>张表</span>
+                <span class='yellow'>[<b id="count6">31,704</b>条数据]</span>
+            </div>
+            <div class="detailed">
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="four c"/>虚拟身份下机[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="four c"/>终端上线事件数据[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="four c"/>终端下线事件数据[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="four c"/>上网日志[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="four c"/>终端特征信息[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="four c"/>热点信息采集[<span>256</span>]
+                    </label>
+                </div>
+                <div class="col-lg-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="alls" class="four c"/>终端特征移动采集设备轨迹[<span>256</span>]
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script type="text/javascript" src='js/jquery-1.8.3.min.js'></script>
+    <script type="text/javascript" src='js/purl.js'></script>
+    <script type="text/javascript" src='js/bootstrap.min.js'></script>
+    <script type="text/javascript" src='js/query/tablename.js'></script>
+    <script type="text/javascript" src='js/query/tips.js'></script>
+    <script type="text/javascript" src='js/script.js'></script>
+    <script type="text/javascript" src='js/query/tips.js'></script>
+    <script type="text/javascript" src='js/time.js'></script>
+    <script>
+        // function five() {
+        //     var tit = document.getElementById("five");
+        //     var inputs = document.getElementsByName("alls");
+        //     for (var i = 0; i < inputs.length; i++) {
+        //         if (inputs[i].type == "checkbox") {
+        //             if (tit.checked == true) {
+        //                 inputs[i].checked = true;
+        //             } else {
+        //                 inputs[i].checked = false;
+        //             }
+        //         }
+        //     }
+        // }
+        $("input[type='checkbox']").attr('checked','checked');
+        $("#operAll").click(function(){
+            if($(this).attr("checked")){
+                $("input[name='alls']").attr("checked","true");
+
+            }else{
+                $("input[name='alls']").removeAttr("checked");
+            }
+            // $("input[name='alls']").each(function(){
+            //     if($(this).attr("checked"))
+            //     {
+                   
+            //         $(this).removeAttr("checked");
+                    
+            //     }else
+            //     {
+            //         $(this).attr("checked","true");
+            //     }
+            // })
+        });
+        $("input[name='alls']").click(function(){
+            if($(this).attr("checked")){
+              
+                
+            }else{
+                $("#operAll").removeAttr("checked");
+                $(this).parents('.detailed ').prev('div').find('input').removeAttr("checked");
+            }
+                                       
+        });
+
+        function smallAll() {
+            var tit = document.getElementById("smallAll");
+            var inputs = document.getElementsByClassName("alls");
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].type == "checkbox") {
+                    if (tit.checked == true) {
+                        inputs[i].checked = true;
+                    } else {
+                        inputs[i].checked = false;
+                    }
+                }
+            }
+        }
+
+        function goodsAll() {
+            var tit = document.getElementById("goodsAll");
+            var inputs = document.getElementsByClassName("goods");
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].type == "checkbox") {
+                    if (tit.checked == true) {
+                        inputs[i].checked = true;
+                    } else {
+                        inputs[i].checked = false;
+                    }
+                }
+            }
+        }
+
+        function one() {
+            var tit = document.getElementById("one");
+            var inputs = document.getElementsByClassName("one");
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].type == "checkbox") {
+                    if (tit.checked == true) {
+                        inputs[i].checked = true;
+                    } else {
+                        inputs[i].checked = false;
+                    }
+                }
+            }
+        }
+        function two() {
+            var tit = document.getElementById("two");
+            var inputs = document.getElementsByClassName("two");
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].type == "checkbox") {
+                    if (tit.checked == true) {
+                        inputs[i].checked = true;
+                    } else {
+                        inputs[i].checked = false;
+                    }
+                }
+            }
+        }
+        function three() {
+            var tit = document.getElementById("three");
+            var inputs = document.getElementsByClassName("three");
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].type == "checkbox") {
+                    if (tit.checked == true) {
+                        inputs[i].checked = true;
+                    } else {
+                        inputs[i].checked = false;
+                    }
+                }
+            }
+        }
+        function four() {
+            var tit = document.getElementById("four");
+            var inputs = document.getElementsByClassName("four");
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].type == "checkbox") {
+                    if (tit.checked == true) {
+                        inputs[i].checked = true;
+                    } else {
+                        inputs[i].checked = false;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

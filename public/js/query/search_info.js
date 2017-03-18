@@ -1604,7 +1604,7 @@ function queryInfo17(offset) {
 
                 //每行的数据信息
                 typeList.push('<td>', fields.zdrXY_T_ZZRK_QGZDRYXX_XM, '</td>');
-                typeList.push('<td>', fields.zdrXY_T_ZZRK_QGZDRYXX_SRC_HANDSET_NUM, '</td>');
+                typeList.push('<td>', fields.zdrXY_T_ZZRK_QGZDRYXX_BJZDRYBH, '</td>');
                 typeList.push('<td>', fields.zdrXY_T_ZZRK_QGZDRYXX_ZDRYLBBJ, '</td>');
                 typeList.push('<td>', fields.zdrXY_T_ZZRK_QGZDRYXX_SFZH, '</td>');
                 typeList.push('<td>', fields.zdrXY_T_ZZRK_QGZDRYXX_JG, '</td>');
@@ -1677,13 +1677,22 @@ function queryInfo18(offset) {
                 typeList.push('<td>', formatDate2((fields.QHQB_T_QHQB_ZXXZXSXX_CSRQ)), '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_ZXXZXSXX_MZ, '</td>');
                 var content = fields.QHQB_T_QHQB_ZXXZXSXX_JG || '';
-                typeList.push('<td title="'+ content +'"><div style="width:300px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">',content , '</div></td>');
+				if(content.length > 20){
+					content = content.slice(0,20)+'……';
+				}
+                typeList.push('<td title="'+ content +'">',content , '</td>');
 
                 var content2 = fields.QHQB_T_QHQB_ZXXZXSXX_HKSZD || '';
-                typeList.push('<td title="'+ content2 +'"><div style="width:300px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">',content2 , '</div></td>');
+				if(content2.length > 20){
+					content2 = content2.slice(0,20)+'……';
+				}
+                typeList.push('<td title="'+ content2 +'">',content2 , '</td>');
 
                 var content3 = fields.QHQB_T_QHQB_ZXXZXSXX_XZZ || '';
-                typeList.push('<td title="'+ content3 +'"><div style="width:300px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">',content3 , '</div></td>');
+				if(content3.length > 20){
+					content3 = content3.slice(0,20)+'……';
+				}
+                typeList.push('<td title="'+ content3 +'">',content3 , '</td>');
 
                 typeList.push('<td>', fields.QHQB_T_QHQB_ZXXZXSXX_LXDH, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_ZXXZXSXX_LJ, '</td>');
@@ -1809,12 +1818,12 @@ function queryInfo20(offset) {
                 typeList.push('<tr>');
 
                 //每行的数据信息
-                typeList.push('<td>', fields.QHQB_T_QHQB_DBRYXX_cac002, '</td>');
-                typeList.push('<td>', fields.QHQB_T_QHQB_DBRYXX_cac004, '</td>');
-                typeList.push('<td>', fields.QHQB_T_QHQB_DBRYXX_cac015, '</td>');
-                typeList.push('<td>', fields.QHQB_T_QHQB_DBRYXX_cac008, '</td>');
-                typeList.push('<td>', fields.QHQB_T_QHQB_DBRYXX_cbe077, '</td>');
-                typeList.push('<td>', fields.QHQB_T_QHQB_DBRYXX_cbe071, '</td>');
+                typeList.push('<td>', fields.QHQB_T_QHQB_DBRYXX_CAC002, '</td>');
+                typeList.push('<td>', fields.QHQB_T_QHQB_DBRYXX_CAC004, '</td>');
+                typeList.push('<td>', fields.QHQB_T_QHQB_DBRYXX_CAC015, '</td>');
+                typeList.push('<td>', fields.QHQB_T_QHQB_DBRYXX_CAC008, '</td>');
+                typeList.push('<td>', fields.QHQB_T_QHQB_DBRYXX_CBE077, '</td>');
+                typeList.push('<td>', formateDate3(fields.QHQB_T_QHQB_DBRYXX_CBE071), '</td>');
 
                 typeList.push('</tr>');
 
@@ -2029,7 +2038,6 @@ function queryInfo24(offset) {
 
             //表头信息
             typeList.push(['<th>', '姓名', '</th>'].join(''));
-            typeList.push(['<th>', '联系电话', '</th>'].join(''));
             typeList.push(['<th>', '联系号码', '</th>'].join(''));
             typeList.push(['<th>', '身份证', '</th>'].join(''));
             typeList.push(['<th>', '状态', '</th>'].join(''));
@@ -2046,13 +2054,15 @@ function queryInfo24(offset) {
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_RQYHSJ_XM, '</td>');
-                typeList.push('<td>', fields.QHQB_T_QHQB_RQYHSJ_LXDH, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_RQYHSJ_LXHM, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_RQYHSJ_SFZ, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_RQYHSJ_ZT, '</td>');
 
                 var detail = fields.QHQB_T_QHQB_RQYHSJ_DZ || '';
-                typeList.push('<td title="'+ detail +'"><div style="width:300px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">',detail , '</div></td>');
+                if(detail.length > 20){
+                    detail=detail.slice(0,20)+'......';
+                } 
+                typeList.push('<td title="'+ detail +'">',detail , '</td>');
 
                 typeList.push('<td>', formatDate2((fields.QHQB_T_QHQB_RQYHSJ_KTSJ)), '</td>');
                 typeList.push('<td>', formatDate2((fields.QHQB_T_QHQB_RQYHSJ_TZSYSJ)), '</td>');
@@ -2152,8 +2162,6 @@ function queryInfo26(offset) {
             typeList.push(['<th>', '人员身份', '</th>'].join(''));
             typeList.push(['<th>', '职务（职称）', '</th>'].join(''));
             typeList.push(['<th>', '学历', '</th>'].join(''));
-            typeList.push(['<th>', '隶属处（科）室', '</th>'].join(''));
-            typeList.push(['<th>', '基本工资（元/月）', '</th>'].join(''));
 
             typeList.push('</tr> </thead> <tbody>');
 
@@ -2170,8 +2178,6 @@ function queryInfo26(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_GYRYXX_RYSF, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_GYRYXX_ZW, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_GYRYXX_XL, '</td>');
-                typeList.push('<td>', fields.QHQB_T_QHQB_GYRYXX_LSCS, '</td>');
-                typeList.push('<td>', fields.QHQB_T_QHQB_GYRYXX_JBGZ, '</td>');
 
                 typeList.push('</tr>');
 
@@ -2672,7 +2678,6 @@ function queryInfo34(offset) {
             typeList.push(['<th>', '分公司', '</th>'].join(''));
             typeList.push(['<th>', '联系电话', '</th>'].join(''));
             typeList.push(['<th>', '用户状态', '</th>'].join(''));
-            typeList.push(['<th>', '入网时间', '</th>'].join(''));
 
             typeList.push('</tr> </thead> <tbody>');
 
@@ -2691,7 +2696,6 @@ function queryInfo34(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_YXDSMNSJ_FGS, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_YXDSMNSJ_LXDH, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_YXDSMNSJ_YHZT, '</td>');
-                typeList.push('<td>', formatDate2((fields.QHQB_T_QHQB_YXDSMNSJ_RWSJ)), '</td>');
 
                 typeList.push('</tr>');
 
@@ -2736,7 +2740,6 @@ function queryInfo35(offset) {
             typeList.push(['<th>', '分公司', '</th>'].join(''));
             typeList.push(['<th>', '联系电话', '</th>'].join(''));
             typeList.push(['<th>', '用户状态', '</th>'].join(''));
-            typeList.push(['<th>', '入网时间', '</th>'].join(''));
 
             typeList.push('</tr> </thead> <tbody>');
 
@@ -2754,7 +2757,6 @@ function queryInfo35(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_YXDSSZSJ_FGS, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_YXDSSZSJ_LXDH, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_YXDSSZSJ_YHZT, '</td>');
-                typeList.push('<td>', formatDate2((fields.QHQB_T_QHQB_YXDSSZSJ_RWSJ)), '</td>');
 
                 typeList.push('</tr>');
 
@@ -2981,8 +2983,6 @@ function queryInfo39(offset) {
             //表头信息
             typeList.push(['<th>', '纳税人名称', '</th>'].join(''));
             typeList.push(['<th>', '纳税人识别号', '</th>'].join(''));
-            typeList.push(['<th>', '企业注册号', '</th>'].join(''));
-            typeList.push(['<th>', '组织机构代码', '</th>'].join(''));
             typeList.push(['<th>', '注销机构', '</th>'].join(''));
             typeList.push(['<th>', '注销原因', '</th>'].join(''));
             typeList.push(['<th>', '注销日期', '</th>'].join(''));
@@ -2998,13 +2998,12 @@ function queryInfo39(offset) {
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_DSZX_NSRMC, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_DSZX_NSRSBH, '</td>');
-                typeList.push('<td>', fields.QHQB_T_QHQB_DSZX_QYZCH, '</td>');
-                typeList.push('<td>', fields.QHQB_T_QHQB_DSZX_ZZJGDM, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_DSZX_ZXJG, '</td>');
-                typeList.push('<td>', fields.QHQB_T_QHQB_DSZX_ZXYY, '</td>');
                 var detail = fields.QHQB_T_QHQB_DSZX_ZXYY || '';
-                typeList.push('<td title="'+ detail +'"><div style="width:300px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">',detail , '</div></td>');
-
+                if(detail.length > 20){
+					detail = detail.slice(0,20)+'……';
+                }
+                typeList.push('<td title="'+ detail +'">,detail ,</td>');
                 typeList.push('<td>', formatDate2((fields.QHQB_T_QHQB_DSZX_ZXRQ)), '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_DSZX_QY_BZ, '</td>');
 
@@ -4128,4 +4127,12 @@ function formatDate2(shijianchuo) {
         var d = time.getDate();
         return y + '-' + add0(m) + '-' + add0(d);
     }
+}
+//年月
+function formateDate3(nianyue) {
+    if(!nianyue){return '--'}
+
+    var nian = nianyue.slice(0,4);
+    var yue = nianyue.slice(4,nianyue.length);
+    return nian + '年' + yue + '月';
 }

@@ -112,49 +112,62 @@ function searchCount(){
             var datas = data.datas;
             $(".c").each(function (index,value) {
                 //从返回数据中获取总数
-                var count = datas[index][1];
-                $(this).next("span").html('['+formatNumber(count)+']');
+                var nameTmp = $(this).attr('id');
+                for (var i in datas){
+                    if(datas[i][0] == nameTmp){
+                        var count = datas[i][1];
+                        if (count == null || count == 0) {
+                            // $(this).hide();
+                            // $(this).attr("name", "hide");
+                            $(this).next("span").html('');
+                        } else {
+                            // $(this).show();
+                            // $(this).attr("name", "show");
+                            $(this).next("span").html('[' + count + ']');
+                        }
+                    }
+                }
             });
 
             //分别计算6个总数
             var sum1 = 0;
             $('#count1').parents('div:eq(0)').next('div').find('span').each(function(){
-                sum1 += parseInt($(this).html());
+                sum1 += (parseNumber($(this).html()) || 0);
             });
             console.log(sum1);
             $("#count1").html('['+formatNumber(sum1)+'条数据]');
 
             var sum2 = 0;
             $('#count2').parents('div:eq(0)').next('div').find('span').each(function(){
-                sum2 += parseInt($(this).html());
+                sum2 += (parseNumber($(this).html()) || 0);
             });
             console.log(sum2);
             $("#count2").html('['+formatNumber(sum2)+'条数据]');
 
             var sum3 = 0;
             $('#count3').parents('div:eq(0)').next('div').find('span').each(function(){
-                sum3 += parseInt($(this).html());
+                sum3 += (parseNumber($(this).html()) || 0);
             });
             console.log(sum3);
             $("#count3").html('['+formatNumber(sum3)+'条数据]');
 
             var sum4 = 0;
             $('#count4').parents('div:eq(0)').next('div').find('span').each(function(){
-                sum4 += parseInt($(this).html());
+                sum4 += (parseNumber($(this).html()) || 0);
             });
             console.log(sum4);
             $("#count4").html('['+formatNumber(sum4)+'条数据]');
 
             var sum5 = 0;
             $('#count5').parents('div:eq(0)').next('div').find('span').each(function(){
-                sum5 += parseInt($(this).html());
+                sum5 += (parseNumber($(this).html()) || 0);
             });
             console.log(sum5);
             $("#count5").html('['+formatNumber(sum5)+'条数据]');
 
             var sum6 = 0;
             $('#count6').parents('div:eq(0)').next('div').find('span').each(function(){
-                sum6 += parseInt($(this).html());
+                sum6 += (parseNumber($(this).html()) || 0);
             });
             console.log(sum6);
             $("#count6").html('['+formatNumber(sum6)+'条数据]');
@@ -198,4 +211,18 @@ function formatNumber(num, precision, separator) {
         return parts.join('.');
     }
     return NaN;
+}
+function parseNumber(numberStr){
+    if(!numberStr || numberStr.length==0){return 0}
+
+    var number = numberStr.slice(1,numberStr.length-1);
+    if(number.length>0){
+        var parts;
+        if(number.indexOf(',')>0){
+            parts = number.split(',');
+            return parseInt(parts.join(''));
+        }
+        return parseInt(number);
+    }
+    return 0;
 }

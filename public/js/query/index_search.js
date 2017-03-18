@@ -12,7 +12,12 @@ $(document).ready(function() {
     indexData();
     indexData2();
 });
-
+$("#index_search_input").keydown(function(event){  
+    if(event.which == "13"){  
+        var keyWord = $("#index_search_input").val();
+        window.location.href="search?keyWord="+keyWord;
+    } 
+});  
 //当前平台总数据量
 function indexData(){
     $.get('datas/query',

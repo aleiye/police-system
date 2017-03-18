@@ -629,7 +629,7 @@ function searchCount() {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime()
         },
         function (data) {
@@ -667,13 +667,13 @@ function tableCount() {
 //机主通讯录信息
 function queryInfo1(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
 
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -721,12 +721,12 @@ function queryInfo1(offset) {
 //机主短信表
 function queryInfo2(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -781,12 +781,12 @@ function queryInfo2(offset) {
 //机主表（SIM卡）
 function queryInfo3(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -840,12 +840,12 @@ function queryInfo3(offset) {
 //话单机主信息表
 function queryInfo4(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -894,12 +894,12 @@ function queryInfo4(offset) {
 //通话清单
 function queryInfo5(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -952,12 +952,12 @@ function queryInfo5(offset) {
 //车辆信息登记表
 function queryInfo6(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1014,12 +1014,12 @@ function queryInfo6(offset) {
 //物流信息登记表
 function queryInfo7(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1074,12 +1074,12 @@ function queryInfo7(offset) {
 //行业工作人员
 function queryInfo8(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1144,12 +1144,12 @@ function queryInfo8(offset) {
 //小区住宅业主信息
 function queryInfo9(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1206,12 +1206,12 @@ function queryInfo9(offset) {
 //路口信息表
 function queryInfo10(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1268,12 +1268,12 @@ function queryInfo10(offset) {
 //运维车道过车数据统计
 function queryInfo11(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1324,12 +1324,12 @@ function queryInfo11(offset) {
 //布控信息表
 function queryInfo12(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1382,12 +1382,12 @@ function queryInfo12(offset) {
 //所有过车信息表
 function queryInfo13(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1442,12 +1442,12 @@ function queryInfo13(offset) {
 //违章过车表
 function queryInfo15(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1503,12 +1503,12 @@ function queryInfo15(offset) {
 //人脸比中结果信息
 function queryInfo16(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1563,12 +1563,12 @@ function queryInfo16(offset) {
 // 全国重点人员
 function queryInfo17(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1630,12 +1630,12 @@ function queryInfo17(offset) {
 //中小学校在校学生信息
 function queryInfo18(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1713,12 +1713,12 @@ function queryInfo18(offset) {
 //研究生信息
 function queryInfo19(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1781,12 +1781,12 @@ function queryInfo19(offset) {
 //低保人员信息
 function queryInfo20(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1839,12 +1839,12 @@ function queryInfo20(offset) {
 //参保人员信息
 function queryInfo21(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1897,12 +1897,12 @@ function queryInfo21(offset) {
 //参保人员变更信息
 function queryInfo22(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1953,12 +1953,12 @@ function queryInfo22(offset) {
 //普通专本科信息
 function queryInfo23(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2015,12 +2015,12 @@ function queryInfo23(offset) {
 //燃气用户信息
 function queryInfo24(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2081,12 +2081,12 @@ function queryInfo24(offset) {
 //会计人员信息
 function queryInfo25(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2133,12 +2133,12 @@ function queryInfo25(offset) {
 //财政供养人员信息
 function queryInfo26(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2193,12 +2193,12 @@ function queryInfo26(offset) {
 //在校生花名册市县信息
 function queryInfo27(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2257,12 +2257,12 @@ function queryInfo27(offset) {
 //计生委流动人口信息
 function queryInfo28(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2339,12 +2339,12 @@ function queryInfo28(offset) {
 //常住境外人员学生信息
 function queryInfo29(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2408,12 +2408,12 @@ function queryInfo29(offset) {
 //国税登记纳税人信息表
 function queryInfo30(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2470,12 +2470,12 @@ function queryInfo30(offset) {
 //成教在校生信息
 function queryInfo31(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2530,12 +2530,12 @@ function queryInfo31(offset) {
 //在校生花名册省属信息
 function queryInfo32(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2590,12 +2590,12 @@ function queryInfo32(offset) {
 //海口电动车信息
 function queryInfo33(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2660,12 +2660,12 @@ function queryInfo33(offset) {
 //有线电视模拟数据
 function queryInfo34(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2722,12 +2722,12 @@ function queryInfo34(offset) {
 //有线电视数字数据
 function queryInfo35(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2783,12 +2783,12 @@ function queryInfo35(offset) {
 //有线电视停机缴费未开通数据
 function queryInfo36(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2841,12 +2841,12 @@ function queryInfo36(offset) {
 //有线电视开户
 function queryInfo37(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2902,12 +2902,12 @@ function queryInfo37(offset) {
 //地税纳税登记信息
 function queryInfo38(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2970,12 +2970,12 @@ function queryInfo38(offset) {
 //地税注销信息表
 function queryInfo39(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3032,12 +3032,12 @@ function queryInfo39(offset) {
 /*地税验换证信息表*/
 function queryInfo40(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3090,12 +3090,12 @@ function queryInfo40(offset) {
 /*地税非正常户信息表*/
 function queryInfo41(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3150,12 +3150,12 @@ function queryInfo41(offset) {
 /*国税注销登记信息表*/
 function queryInfo42(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3208,12 +3208,12 @@ function queryInfo42(offset) {
 /*国税验换证信息表*/
 function queryInfo43(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3262,12 +3262,12 @@ function queryInfo43(offset) {
 /*国税非正常户信息表*/
 function queryInfo44(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3318,12 +3318,12 @@ function queryInfo44(offset) {
 /*工商注销信息表*/
 function queryInfo45(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3370,12 +3370,12 @@ function queryInfo45(offset) {
 /*工商吊销信息表*/
 function queryInfo46(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3424,12 +3424,12 @@ function queryInfo46(offset) {
 /*工商变更信息表*/
 function queryInfo47(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3482,12 +3482,12 @@ function queryInfo47(offset) {
 /*工商年检信息表*/
 function queryInfo48(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3536,12 +3536,12 @@ function queryInfo48(offset) {
 /*工商信息登记表没有表名*/
 function queryInfo49(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3592,12 +3592,12 @@ function queryInfo49(offset) {
 /*道路运输从业人员信息*/
 function queryInfo50(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3654,12 +3654,12 @@ function queryInfo50(offset) {
 /*婚姻登记信息表*/
 function queryInfo51(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3717,12 +3717,12 @@ function queryInfo51(offset) {
 //终端特征信息
 function queryInfo52(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3769,12 +3769,12 @@ function queryInfo52(offset) {
 // 热点信息采集
 function queryInfo53(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3825,12 +3825,12 @@ function queryInfo53(offset) {
 //终端上下线信息
 function queryInfo54(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3891,12 +3891,12 @@ function queryInfo54(offset) {
 //上网日志
 function queryInfo55(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3947,12 +3947,12 @@ function queryInfo55(offset) {
 //终端特征移动采集设备轨迹
 function queryInfo56(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -4002,12 +4002,12 @@ function queryInfo56(offset) {
 //海汽集团电子客票信息
 function queryInfo57(offset) {
     console.log(queryString);
-    var offset = offset || 0;
+    offset = offset || 0;
     var pageNum = offset / pageSize;
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2017-01-01 00:00:00').getTime(),
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -4045,8 +4045,8 @@ function queryInfo57(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_HQJT_DZKPSJB_MDZMC, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_HQJT_DZKPSJB_SJHM, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_HQJT_DZKPSJB_ZJHM, '</td>');
-                typeList.push('<td>', formatDate2((fields.QHQB_T_QHQB_HQJT_DZKPSJB_SPSJ)), '</td>');
-                typeList.push('<td>', formatDate2((fields.QHQB_T_QHQB_HQJT_DZKPSJB_FCSJ)), '</td>');
+                typeList.push('<td>', formatDate(parseInt(fields.QHQB_T_QHQB_HQJT_DZKPSJB_SPSJ)), '</td>');
+                typeList.push('<td>', formatDate(parseInt(fields.QHQB_T_QHQB_HQJT_DZKPSJB_FCSJ)), '</td>');
 
                 typeList.push('</tr>');
 

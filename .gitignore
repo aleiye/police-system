@@ -1,0 +1,14 @@
+.classpath
+.idea
+.metadata
+.settings
+.project
+target
+tmp
+*.iml
+*.swp
+*.log
+*.iws
+*.ipr
+.DS_Store
+node_modules

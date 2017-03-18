@@ -2309,7 +2309,7 @@ function queryInfo28(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_JSW_LDRKXX_SFZHM, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_JSW_LDRKXX_HYZK, '</td>');
                 var detail = fields.QHQB_T_QHQB_JSW_LDRKXX_XZXZ || '';
-                typeList.push('<td title="'+ detail +'"><div style="width:300px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">',detail , '</div></td>');
+                typeList.push('<td title="'+ detail +'">',detail , '</td>');
 
                 var detail2 = fields.QHQB_T_QHQB_JSW_LDRKXX_HJDDZ || '';
                 typeList.push('<td title="'+ detail2 +'"><div style="width:300px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">',detail2 , '</div></td>');

@@ -2308,7 +2308,7 @@ function queryInfo28(offset) {
 					detail3 = detail3.slice(0,20)+'……';
 				}
 				typeList.push('<td title="'+ detail3 +'">',detail3 , '</td>');
-				
+
                 typeList.push('<td>', fields.QHQB_T_QHQB_JSW_LDRKXX_CJXZ, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_JSW_LDRKXX_HKZK, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_JSW_LDRKXX_SFZHM, '</td>');

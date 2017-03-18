@@ -2303,16 +2303,27 @@ function queryInfo28(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_JSW_LDRKXX_XB, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_JSW_LDRKXX_MZ, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_JSW_LDRKXX_YFZGX, '</td>');
-                typeList.push('<td>', fields.QHQB_T_QHQB_JSW_LDRKXX_XJZD, '</td>');
+				var detail3 = fields.QHQB_T_QHQB_JSW_LDRKXX_XJZD || '';
+				if(detail3.length > 20){
+					detail3 = detail3.slice(0,20)+'……';
+				}
+				typeList.push('<td title="'+ detail3 +'">',detail3 , '</td>');
+				
                 typeList.push('<td>', fields.QHQB_T_QHQB_JSW_LDRKXX_CJXZ, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_JSW_LDRKXX_HKZK, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_JSW_LDRKXX_SFZHM, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_JSW_LDRKXX_HYZK, '</td>');
                 var detail = fields.QHQB_T_QHQB_JSW_LDRKXX_XZXZ || '';
-                typeList.push('<td title="'+ detail +'"><div style="width:300px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">',detail , '</div></td>');
+                if(detail.length > 20){
+					detail = detail.slice(0,20)+'……';
+				}
+                typeList.push('<td title="'+ detail +'">',detail , '</td>');
 
                 var detail2 = fields.QHQB_T_QHQB_JSW_LDRKXX_HJDDZ || '';
-                typeList.push('<td title="'+ detail2 +'"><div style="width:300px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">',detail2 , '</div></td>');
+				if(detail2.length > 20){
+					detail2 = detail2.slice(0,20)+'……';
+				}
+                typeList.push('<td title="'+ detail2 +'">',detail2 , '</td>');
 
                 typeList.push('</tr>');
 

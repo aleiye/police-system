@@ -603,6 +603,14 @@ function queryInfo() {
             queryInfo57();
             break;
         }
+        case '琼海检查站比对信息': {
+            queryString = 'Select * from  POLICE.VIEW_COMPARERECORD_TO_QHSJ';
+            if (keyWord != '') {
+                queryString = queryString + ' AND ' + keyWord;
+            }
+            queryInfo58();
+            break;
+        }
     }
 
 }
@@ -4056,6 +4064,69 @@ function queryInfo57(offset) {
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo57', total, pageNum + 1, pageSize);
+            }
+        })
+}
+
+//琼海检查站比对信息
+function queryInfo58(offset) {
+    console.log(queryString);
+    offset = offset || 0;
+    var pageNum = offset / pageSize;
+    $.get('datas/query',
+        {
+            queryString: queryString,
+            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_to: new Date().getTime(),
+            pageSize: pageSize,
+            pageNum: pageNum
+        },
+        function (data) {
+            if(!data || data.hits == null || data.count == 0){
+                $("#tab1").html('<h3 class="h3_null">暂无数据</h3>');
+                return false;
+            }
+            var total = data.count;
+            var jsonHits = data.hits;
+
+            var typeList = [];
+            typeList.push('<table class="table table-striped table-bordered click_none"><thead><tr>');
+
+            //表头信息
+            typeList.push(['<th>', '姓名', '</th>'].join(''));
+            typeList.push(['<th>', '身份证', '</th>'].join(''));
+            typeList.push(['<th>', '性别', '</th>'].join(''));
+            typeList.push(['<th>', '数据采集来源', '</th>'].join(''));
+            typeList.push(['<th>', '数据采集客户端地点名称', '</th>'].join(''));
+            typeList.push(['<th>', '护照号', '</th>'].join(''));
+            typeList.push(['<th>', '进出港类型', '</th>'].join(''));
+            typeList.push(['<th>', '扫描时间', '</th>'].join(''));
+
+            typeList.push('</tr> </thead> <tbody>');
+
+            jsonHits.map(function (bean) {
+                var fields = bean.fields;
+
+                typeList.push('<tr>');
+
+                //每行的数据信息
+                typeList.push('<td>', fields.NAME, '</td>');
+                typeList.push('<td>', fields.IDCARD, '</td>');
+                typeList.push('<td>', fields.GENDER, '</td>');
+                typeList.push('<td>', fields.SOURCE_NAME, '</td>');
+                typeList.push('<td>', fields.CLIENT_PLACE, '</td>');
+                typeList.push('<td>', fields.PASSPORT, '</td>');
+                typeList.push('<td>', fields.FLIGHT_TYPE, '</td>');
+                typeList.push('<td>', formatDate2(fields.SCAN_TIME), '</td>');
+
+                typeList.push('</tr>');
+
+            });
+            typeList.push('</tbody></table>');
+            $("#tab1").html(typeList.join(''));
+            if(total > pageSize){
+                $('#pages').show();
+                fenye('#pages', 'queryInfo58', total, pageNum + 1, pageSize);
             }
         })
 }

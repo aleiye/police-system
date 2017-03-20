@@ -104,7 +104,7 @@ function searchCount(){
     $.get('datas/query',
         {
             queryString:queryString,
-            a_from:new Date('2017-01-01 00:00:00').getTime(),
+            a_from:new Date('2005-01-01 00:00:00').getTime(),
             a_to:new Date().getTime()
         },
         function(data){

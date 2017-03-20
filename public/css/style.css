@@ -194,6 +194,14 @@ a,li{
 .content .menu6 .active{
     display: block;
 }
+/*第七个菜单下的文档内容*/
+.content .menu7 .tab {
+	display: none;
+}
+
+.content .menu7 .active{
+	display: block;
+}
 .list ul{
 	margin-bottom: 0;
 }

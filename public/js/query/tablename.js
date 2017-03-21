@@ -38,7 +38,7 @@ var tableDict = ['A_db_sis_V_BD_HANDSET_CONTACTOR_INFO',//机主通讯录信息-
     'A_db_hkvs_BMS_PLATE_ALARM',//布控信息表
     'A_db_hkvs_BMS_VEHICLE_PASS',//所有过车信息表
     'A_db_hkvs_BMS_VEHICLE_VIOLATION',//违章过车表
-    'A_db_sis_V_',//人脸比中结果信息--4.人脸识别
+    'A_db_sis_V_RL',//人脸比中结果信息--4.人脸识别
     'A_db_zdrXY_T_ZZRK_QGZDRYXX',//全国重点人员--5.省厅资源服务平台
     'A_db_QHQB_T_QHQB_ZXXZXSXX',//中小学校在校学生信息
     'A_db_QHQB_T_QHQB_YJSXX',//研究生信息
@@ -79,7 +79,8 @@ var tableDict = ['A_db_sis_V_BD_HANDSET_CONTACTOR_INFO',//机主通讯录信息-
     'A_db_sis_V_WA_SOURCE_FJ_0002',//上网日志
     'A_db_sis_V_WA_SOURCE_FJ_1001',//终端特征信息
     'A_db_sis_V_WA_SOURCE_FJ_1002',//热点信息采集
-    'A_db_sis_V_WA_BASIC_FJ_1001'//终端特征移动采集设备轨迹
+    'A_db_sis_V_WA_BASIC_FJ_1001',//终端特征移动采集设备轨迹
+    'A_db_QHSJ_VIEW_COMPARERECORD_TO_QHSJ'//琼海检查站比对信息
 ];
 
 function searchCount(){
@@ -129,7 +130,7 @@ function searchCount(){
                 }
             });
 
-            //分别计算6个总数
+            //分别计算7个总数
             var sum1 = 0;
             $('#count1').parents('div:eq(0)').next('div').find('span').each(function(){
                 sum1 += (parseNumber($(this).html()) || 0);
@@ -172,8 +173,15 @@ function searchCount(){
             console.log(sum6);
             $("#count6").html('['+formatNumber(sum6)+'条数据]');
 
+            var sum7 = 0;
+            $('#count7').parents('div:eq(0)').next('div').find('span').each(function(){
+                sum7 += (parseNumber($(this).html()) || 0);
+            });
+            console.log(sum7);
+            $("#count7").html('['+formatNumber(sum7)+'条数据]');
+
             //最后计算最终结果总数
-            var totalCount = sum1 + sum2 + sum3 + sum4 + sum5 + sum6;
+            var totalCount = sum1 + sum2 + sum3 + sum4 + sum5 + sum6 + sum7;
             $("#totalCount").html('[共'+formatNumber(totalCount)+'条数据]');
 
         })
@@ -198,7 +206,10 @@ function tableCount() {
     var t6 = $('#count6').parents('div:eq(0)').next('div').find('.c').length;
     $("#t6").html(formatNumber(t6));
 
-    var tt = t1 + t2 + t3 + t4 + t5 + t6;
+    var t7 = $('#count7').parents('div:eq(0)').next('div').find('.c').length;
+    $("#t7").html(formatNumber(t7));
+
+    var tt = t1 + t2 + t3 + t4 + t5 + t6 + t7;
     $("#tt").html(formatNumber(tt));
 }
 function formatNumber(num, precision, separator) {

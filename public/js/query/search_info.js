@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $("li").attr("name", "show");
+    $("h3,li").attr("name", "show");
 
     var keyWord = $.url(window.location.href).param().keyWord;
     $("#search_input").val(keyWord);
@@ -10,40 +10,42 @@ $(document).ready(function () {
         checkedTable = JSON.parse(checkedTable);
 
         //先隐藏所有的li
-        $("h3").next("ul").children("li").hide();
-        $("h3").next("ul").children("li").attr("name", "hide");
+        $("li").hide();
+        $("li").attr("name", "hide");
 
         for (var index in checkedTable) {
             tableDictTmp.push(tableDict[checkedTable[index]]);
             //显示指定的li
-            $("h3").next("ul").children("li:eq(" + checkedTable[index] + ")").show();
-            $("h3").next("ul").children("li:eq(" + checkedTable[index] + ")").attr("name", "show");
+            $("li:eq(" + checkedTable[index] + ")").show();
+            $("li:eq(" + checkedTable[index] + ")").attr("name", "show");
         }
+		tableCount();
     } else {
         tableDictTmp = tableDict;
     }
-    console.log(tableDictTmp);
-    $("li[name='show']:eq(0)").attr("class", "selected");
-
-    tableCount();
 
     //赋初值
-    infoType = $("h3:eq(0)").attr("id");
-    subInfoType = $("h3:eq(0)").next("ul").children("li[name='show']:eq(0)").children("a").html();
-    liArray = $("h3").next("ul").children("li[name='show']");
+    infoType = $("h3[name='show']:eq(0)").attr("id");
+    subInfoType = $("li[name='show']:eq(0)").children("a").html();
+    liArray = $("li[name='show']");
 
     searchCount();
+    tableCount();
+
+    $("li[name='show']:eq(0)").attr("class", "selected");
+
     queryInfo();
 
     $("#ft_search").click(function () {
         searchCount();
+        tableCount();
         queryInfo();
     });
 
     var tmp = 1;//0闭合，1展开
     var tmpIndex = 1;//h3的索引
-    $("h3").click(function () {
-        var index = $(this).index("h3") + 1;
+    $("h3[name='show']").click(function () {
+        var index = $(this).index("h3[name='show']") + 1;
         var divClass = "menu" + index + " menu_tab";
         $(".content").children("div:eq(0)").attr("class", divClass);
 
@@ -78,7 +80,6 @@ $(document).ready(function () {
     });
 });
 var tableDictTmp = [];
-//定义两个字典
 //所有的表
 var tableDict = ['A_db_sis_V_BD_HANDSET_CONTACTOR_INFO',//机主通讯录信息--1.SIS情报分析系统
     'A_db_sis_V_GJ_HANDSET_SMS_INFO',//机主短信表
@@ -135,7 +136,8 @@ var tableDict = ['A_db_sis_V_BD_HANDSET_CONTACTOR_INFO',//机主通讯录信息-
     'A_db_sis_V_WA_SOURCE_FJ_0002',//上网日志
     'A_db_sis_V_WA_SOURCE_FJ_1001',//终端特征信息
     'A_db_sis_V_WA_SOURCE_FJ_1002',//热点信息采集
-    'A_db_sis_V_WA_BASIC_FJ_1001'//终端特征移动采集设备轨迹
+    'A_db_sis_V_WA_BASIC_FJ_1001',//终端特征移动采集设备轨迹
+	'A_db_QHSJ_VIEW_COMPARERECORD_TO_QHSJ'//琼海检查站比对信息
 ];
 
 var infoType = '';
@@ -604,7 +606,7 @@ function queryInfo() {
             break;
         }
         case '琼海检查站比对信息': {
-            queryString = 'Select * from  POLICE.VIEW_COMPARERECORD_TO_QHSJ';
+            queryString = 'A_source:"A_db_QHSJ_VIEW_COMPARERECORD_TO_QHSJ"';
             if (keyWord != '') {
                 queryString = queryString + ' AND ' + keyWord;
             }
@@ -637,7 +639,7 @@ function searchCount() {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime()
         },
         function (data) {
@@ -649,9 +651,10 @@ function searchCount() {
             }
             liArray.each(function (index, value) {
                 var nameTmp = $(this).children('a').attr('id');
+				var count = null;
                 for (var i in datas){
                     if(datas[i][0] == nameTmp){
-                        var count = datas[i][1];
+                        count = datas[i][1];
                         if (count == 0) {
                             $(this).hide();
                             $(this).attr("name", "hide");
@@ -662,6 +665,10 @@ function searchCount() {
                         }
                     }
                 }
+				if(count == null){
+					$(this).hide();
+					$(this).attr("name", "hide");
+				}
             });
         })
 }
@@ -669,7 +676,14 @@ function searchCount() {
 function tableCount() {
     $("h3").each(function () {
         var count = $(this).next("ul").children("li[name='show']").length;
-        $(this).children("span").html("[" + count + "]");
+        if(count == 0){
+            $(this).hide();
+			$(this).attr('name','hide');
+        }else{
+			$(this).show();
+			$(this).attr('name','show');
+			$(this).children("span").html("[" + count + "]");
+        }
     });
 }
 //机主通讯录信息
@@ -681,7 +695,7 @@ function queryInfo1(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -734,7 +748,7 @@ function queryInfo2(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -770,8 +784,51 @@ function queryInfo2(offset) {
                 typeList.push('<td>', fields.sis_V_GJ_HANDSET_SMS_INFO_TO_NUM, '</td>');
                 var detail = fields.sis_V_GJ_HANDSET_SMS_INFO_MESSAGE_DETAIL || '';
                 typeList.push('<td title="'+ detail +'"><div style="width:300px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">',detail , '</div></td>');
-                typeList.push('<td>', fields.sis_V_GJ_HANDSET_SMS_INFO_MSG_TYPE, '</td>');
-                typeList.push('<td>', fields.sis_V_GJ_HANDSET_SMS_INFO_ACTIONTYPE, '</td>');
+                var type1 = parseInt(fields.sis_V_GJ_HANDSET_SMS_INFO_MSG_TYPE);
+                switch (type1){//，，，3，
+                    case '0':{
+                        type1='短信';
+                        break;
+                    }
+                    case '1':{
+                        type1='彩信';
+                        break;
+                    }
+                    default:{
+                        type1='其他';
+                        break;
+                    }
+                }
+                typeList.push('<td>', type1, '</td>');
+                var type2 = parseInt(fields.sis_V_GJ_HANDSET_SMS_INFO_ACTIONTYPE);
+                switch (type2){//，，，3，
+                    case '0':{
+                        type2='发件箱';
+                        break;
+                    }
+                    case '1':{
+                        type2='已发信息';
+                        break;
+                    }
+                    case '2':{
+                        type2='收件箱';
+                        break;
+                    }
+                    case '3':{
+                        type2='垃圾箱';
+                        break;
+                    }
+                    case '4':{
+                        type2='草稿箱';
+                        break;
+                    }
+                    default:{
+                        type2='其他';
+                        break;
+                    }
+                }
+
+                typeList.push('<td>',type2 , '</td>');
                 typeList.push('<td>', formatDate2((fields.sis_V_GJ_HANDSET_SMS_INFO_SEND_TIME)), '</td>');
 
                 typeList.push('</tr>');
@@ -794,7 +851,7 @@ function queryInfo3(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -853,7 +910,7 @@ function queryInfo4(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -907,7 +964,7 @@ function queryInfo5(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -939,11 +996,45 @@ function queryInfo5(offset) {
                 typeList.push('<tr>');
 
                 //每行的数据信息
-                typeList.push('<td>', fields.sis_V_PHONE_THQD_THLX, '</td>');
+                var type1 = parseInt(fields.sis_V_PHONE_THQD_THLX);
+                switch (type1){//
+                    case '20001':{
+                        type1='电话';
+                        break;
+                    }
+                    case '20002':{
+                        type1='短信';
+                        break;
+                    }
+                    case '20003':{
+                        type1='GPS';
+                        break;
+                    }
+                    case '20004':{
+                        type1='其他';
+                        break;
+                    }
+                }
+                typeList.push('<td>',type1 , '</td>');
                 typeList.push('<td>', fields.sis_V_PHONE_THQD_DFQH, '</td>');
                 typeList.push('<td>', fields.sis_V_PHONE_THQD_DFHM, '</td>');
                 typeList.push('<td>', fields.sis_V_PHONE_THQD_THDD, '</td>');
-                typeList.push('<td>', fields.sis_V_PHONE_THQD_ZBJLX, '</td>');
+                var type2 = parseInt(fields.sis_V_PHONE_THQD_ZBJLX);
+                switch (type2){//
+                    case '30001':{
+                        type2='主叫';
+                        break;
+                    }
+                    case '30002':{
+                        type2='被叫';
+                        break;
+                    }
+                    case '30003':{
+                        type2='未知';
+                        break;
+                    }
+                }
+                typeList.push('<td>',type2 , '</td>');
                 typeList.push('<td>', formatDate2((fields.sis_V_PHONE_THQD_CJSJ)), '</td>');
 
                 typeList.push('</tr>');
@@ -965,7 +1056,7 @@ function queryInfo6(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1027,7 +1118,7 @@ function queryInfo7(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1087,7 +1178,7 @@ function queryInfo8(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1157,7 +1248,7 @@ function queryInfo9(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1219,7 +1310,7 @@ function queryInfo10(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1253,14 +1344,26 @@ function queryInfo10(offset) {
                 typeList.push('<tr>');
 
                 //每行的数据信息
-                typeList.push('<td>', fields.hkvs_BMS_CROSSING_INFO_INTERNAL_CODE, '</td>');
+                typeList.push('<td>', parseInt(fields.hkvs_BMS_CROSSING_INFO_INTERNAL_CODE), '</td>');
                 typeList.push('<td>', fields.hkvs_BMS_CROSSING_INFO_CROSSING_NAME, '</td>');
-                typeList.push('<td>', fields.hkvs_BMS_CROSSING_INFO_INTERCITY, '</td>');
-                typeList.push('<td>', fields.hkvs_BMS_CROSSING_INFO_LANE_NUM, '</td>');
+                var type1 = parseInt(fields.hkvs_BMS_CROSSING_INFO_INTERCITY);
+				switch(type1){
+					case '1':{
+						type1 = '普通路口';
+						break;
+					}
+                    case '2':{
+                        type1 = '城际路口';
+                        break;
+                    }
+				}
+                typeList.push('<td>',type1 , '</td>');
+                typeList.push('<td>', parseInt(fields.hkvs_BMS_CROSSING_INFO_LANE_NUM), '</td>');
                 typeList.push('<td>', fields.hkvs_BMS_CROSSING_INFO_LATITUDE, '</td>');
                 typeList.push('<td>', fields.hkvs_BMS_CROSSING_INFO_LONGITUDE, '</td>');
                 typeList.push('<td>', fields.hkvs_BMS_CROSSING_INFO_ALTITUDE, '</td>');
-                typeList.push('<td>', fields.hkvs_BMS_CROSSING_INFO_CROSSING_TYPE, '</td>');
+                typeList.push('<td>', '路口厂商', '</td>');
+                // typeList.push('<td>', fields.hkvs_BMS_CROSSING_INFO_CROSSING_TYPE, '</td>');
 
                 typeList.push('</tr>');
 
@@ -1281,7 +1384,7 @@ function queryInfo11(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1312,11 +1415,11 @@ function queryInfo11(offset) {
                 typeList.push('<tr>');
 
                 //每行的数据信息
-                typeList.push('<td>', fields.hkvs_BMS_MAINTENANCE_LANEINFO_LANE_NUMBER, '</td>');
+                typeList.push('<td>', parseInt(fields.hkvs_BMS_MAINTENANCE_LANEINFO_LANE_NUMBER), '</td>');
                 typeList.push('<td>', fields.hkvs_BMS_MAINTENANCE_LANEINFO_CROSSING_NAME, '</td>');
-                typeList.push('<td>', fields.hkvs_BMS_MAINTENANCE_LANEINFO_YESTERDAY_VEHICLE_PASS, '</td>');
-                typeList.push('<td>', fields.hkvs_BMS_MAINTENANCE_LANEINFO_UNRECOGNIZED_VEHICLE_PASS, '</td>');
-                typeList.push('<td>', fields.hkvs_BMS_MAINTENANCE_LANEINFO_TODAY_VEHICLE_PASS, '</td>');
+                typeList.push('<td>', parseInt(fields.hkvs_BMS_MAINTENANCE_LANEINFO_YESTERDAY_VEHICLE_PASS), '</td>');
+                typeList.push('<td>', parseInt(fields.hkvs_BMS_MAINTENANCE_LANEINFO_UNRECOGNIZED_VEHICLE_PASS), '</td>');
+                typeList.push('<td>', parseInt(fields.hkvs_BMS_MAINTENANCE_LANEINFO_TODAY_VEHICLE_PASS), '</td>');
 
                 typeList.push('</tr>');
 
@@ -1337,7 +1440,7 @@ function queryInfo12(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1372,7 +1475,30 @@ function queryInfo12(offset) {
                 typeList.push('<td>', fields.hkvs_BMS_PLATE_ALARM_ALARM_START_PERIOD, '</td>');
                 typeList.push('<td>', fields.hkvs_BMS_PLATE_ALARM_PLATE_INFO, '</td>');
                 typeList.push('<td>', fields.hkvs_BMS_PLATE_ALARM_CONTECT_INFO, '</td>');
-                typeList.push('<td>', fields.hkvs_BMS_PLATE_ALARM_REASON, '</td>');
+                var reason = fields.hkvs_BMS_PLATE_ALARM_REASON;
+                switch(reason){
+					case '1':{
+						reason = '被盗车';
+						break;
+					}
+                    case '2':{
+                        reason = '被抢车';
+                        break;
+                    }
+					case '3':{
+                        reason = '嫌疑车';
+                        break;
+                    }
+					case '4':{
+                        reason = '交通违法车';
+                        break;
+                    }
+					case '5':{
+                        reason = '紧急查控车';
+                        break;
+                    }
+				}
+                typeList.push('<td>',reason , '</td>');
                 typeList.push('<td>', formatDate2((fields.hkvs_BMS_PLATE_ALARM_ALARM_START_TIME)), '</td>');
                 typeList.push('<td>', formatDate2((fields.hkvs_BMS_PLATE_ALARM_ALARM_STOP_TIME)), '</td>');
 
@@ -1395,7 +1521,7 @@ function queryInfo13(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1428,12 +1554,12 @@ function queryInfo13(offset) {
                 typeList.push('<tr>');
 
                 //每行的数据信息
-                typeList.push('<td>', fields.hkvs_BMS_VEHICLE_PASS_CROSSING_ID, '</td>');
+                typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_PASS_CROSSING_ID), '</td>');
                 typeList.push('<td>', fields.hkvs_BMS_VEHICLE_PASS_PLATE_INFO, '</td>');
-                typeList.push('<td>', fields.hkvs_BMS_VEHICLE_PASS_VEHICLE_COLOR, '</td>');
-                typeList.push('<td>', fields.hkvs_BMS_VEHICLE_PASS_VEHICLE_SPEED, '</td>');
-                typeList.push('<td>', fields.hkvs_BMS_VEHICLE_PASS_VEHICLE_TYPE, '</td>');
-                typeList.push('<td>', fields.hkvs_BMS_VEHICLE_PASS_VEHICLE_LOGO, '</td>');
+                typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_PASS_VEHICLE_COLOR), '</td>');
+                typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_PASS_VEHICLE_SPEED), '</td>');
+                typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_PASS_VEHICLE_TYPE), '</td>');
+                typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_PASS_VEHICLE_LOGO), '</td>');
                 typeList.push('<td>', formatDate2((fields.hkvs_BMS_VEHICLE_PASS_PASS_TIME)), '</td>');
 
                 typeList.push('</tr>');
@@ -1455,7 +1581,7 @@ function queryInfo15(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1488,12 +1614,12 @@ function queryInfo15(offset) {
                 typeList.push('<tr>');
 
                 //每行的数据信息
-                typeList.push('<td>', fields.hkvs_BMS_VEHICLE_VIOLATION_CROSSING_ID, '</td>');
-                typeList.push('<td>', fields.hkvs_BMS_VEHICLE_VIOLATION_LANE_ID, '</td>');
+                typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_VIOLATION_CROSSING_ID), '</td>');
+                typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_VIOLATION_LANE_ID), '</td>');
                 typeList.push('<td>', fields.hkvs_BMS_VEHICLE_VIOLATION_PLATE_INFO, '</td>');
-                typeList.push('<td>', fields.hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_SPEED, '</td>');
-                typeList.push('<td>', fields.hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_TYPE, '</td>');
-                typeList.push('<td>', fields.hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_LOGO, '</td>');
+                typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_SPEED), '</td>');
+                typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_TYPE), '</td>');
+                typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_LOGO), '</td>');
                 typeList.push('<td>', formatDate2((fields.hkvs_BMS_VEHICLE_VIOLATION_ALARM_TIME)), '</td>');
 
                 typeList.push('</tr>');
@@ -1516,7 +1642,7 @@ function queryInfo16(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1576,7 +1702,7 @@ function queryInfo17(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1643,7 +1769,7 @@ function queryInfo18(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1726,7 +1852,7 @@ function queryInfo19(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1794,7 +1920,7 @@ function queryInfo20(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1852,7 +1978,7 @@ function queryInfo21(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1910,7 +2036,7 @@ function queryInfo22(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -1966,7 +2092,7 @@ function queryInfo23(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2028,7 +2154,7 @@ function queryInfo24(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2094,7 +2220,7 @@ function queryInfo25(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2146,7 +2272,7 @@ function queryInfo26(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2206,7 +2332,7 @@ function queryInfo27(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2270,7 +2396,7 @@ function queryInfo28(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2352,7 +2478,7 @@ function queryInfo29(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2421,7 +2547,7 @@ function queryInfo30(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2483,7 +2609,7 @@ function queryInfo31(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2543,7 +2669,7 @@ function queryInfo32(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2603,7 +2729,7 @@ function queryInfo33(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2673,7 +2799,7 @@ function queryInfo34(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2735,7 +2861,7 @@ function queryInfo35(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2796,7 +2922,7 @@ function queryInfo36(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2854,7 +2980,7 @@ function queryInfo37(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2915,7 +3041,7 @@ function queryInfo38(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -2983,7 +3109,7 @@ function queryInfo39(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3045,7 +3171,7 @@ function queryInfo40(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3103,7 +3229,7 @@ function queryInfo41(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3163,7 +3289,7 @@ function queryInfo42(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3221,7 +3347,7 @@ function queryInfo43(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3275,7 +3401,7 @@ function queryInfo44(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3331,7 +3457,7 @@ function queryInfo45(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3383,7 +3509,7 @@ function queryInfo46(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3437,7 +3563,7 @@ function queryInfo47(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3495,7 +3621,7 @@ function queryInfo48(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3549,7 +3675,7 @@ function queryInfo49(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3605,7 +3731,7 @@ function queryInfo50(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3667,7 +3793,7 @@ function queryInfo51(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3730,7 +3856,7 @@ function queryInfo52(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3782,7 +3908,7 @@ function queryInfo53(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3838,7 +3964,7 @@ function queryInfo54(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3904,7 +4030,7 @@ function queryInfo55(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -3960,7 +4086,7 @@ function queryInfo56(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -4015,7 +4141,7 @@ function queryInfo57(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -4053,8 +4179,8 @@ function queryInfo57(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_HQJT_DZKPSJB_MDZMC, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_HQJT_DZKPSJB_SJHM, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_HQJT_DZKPSJB_ZJHM, '</td>');
-                typeList.push('<td>', formatDate(parseInt(fields.QHQB_T_QHQB_HQJT_DZKPSJB_SPSJ)), '</td>');
-                typeList.push('<td>', formatDate(parseInt(fields.QHQB_T_QHQB_HQJT_DZKPSJB_FCSJ)), '</td>');
+                typeList.push('<td>', formatDate((fields.QHQB_T_QHQB_HQJT_DZKPSJB_SPSJ)), '</td>');
+                typeList.push('<td>', formatDate((fields.QHQB_T_QHQB_HQJT_DZKPSJB_FCSJ)), '</td>');
 
                 typeList.push('</tr>');
 
@@ -4076,7 +4202,7 @@ function queryInfo58(offset) {
     $.get('datas/query',
         {
             queryString: queryString,
-            a_from: new Date('2015-01-01 00:00:00').getTime(),
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
             a_to: new Date().getTime(),
             pageSize: pageSize,
             pageNum: pageNum
@@ -4098,9 +4224,9 @@ function queryInfo58(offset) {
             typeList.push(['<th>', '性别', '</th>'].join(''));
             typeList.push(['<th>', '数据采集来源', '</th>'].join(''));
             typeList.push(['<th>', '数据采集客户端地点名称', '</th>'].join(''));
-            typeList.push(['<th>', '护照号', '</th>'].join(''));
-            typeList.push(['<th>', '进出港类型', '</th>'].join(''));
+            typeList.push(['<th>', '进出岛人员所属城市', '</th>'].join(''));
             typeList.push(['<th>', '扫描时间', '</th>'].join(''));
+            typeList.push(['<th>', '进出港类型', '</th>'].join(''));
 
             typeList.push('</tr> </thead> <tbody>');
 
@@ -4110,14 +4236,14 @@ function queryInfo58(offset) {
                 typeList.push('<tr>');
 
                 //每行的数据信息
-                typeList.push('<td>', fields.NAME, '</td>');
-                typeList.push('<td>', fields.IDCARD, '</td>');
-                typeList.push('<td>', fields.GENDER, '</td>');
-                typeList.push('<td>', fields.SOURCE_NAME, '</td>');
-                typeList.push('<td>', fields.CLIENT_PLACE, '</td>');
-                typeList.push('<td>', fields.PASSPORT, '</td>');
-                typeList.push('<td>', fields.FLIGHT_TYPE, '</td>');
-                typeList.push('<td>', formatDate2(fields.SCAN_TIME), '</td>');
+                typeList.push('<td>', fields.QHSJ_VIEW_COMPARERECORD_TO_QHSJ_NAME, '</td>');
+                typeList.push('<td>', fields.QHSJ_VIEW_COMPARERECORD_TO_QHSJ_IDCARD, '</td>');
+                typeList.push('<td>', fields.QHSJ_VIEW_COMPARERECORD_TO_QHSJ_GENDER, '</td>');
+                typeList.push('<td>', fields.QHSJ_VIEW_COMPARERECORD_TO_QHSJ_SOURCE_NAME, '</td>');
+                typeList.push('<td>', fields.QHSJ_VIEW_COMPARERECORD_TO_QHSJ_CLIENT_PLACE, '</td>');
+                typeList.push('<td>', fields.QHSJ_VIEW_COMPARERECORD_TO_QHSJ_CITY, '</td>');
+                typeList.push('<td>', formatDate(fields.QHSJ_VIEW_COMPARERECORD_TO_QHSJ_SCAN_TIME), '</td>');
+                typeList.push('<td>', fields.QHSJ_VIEW_COMPARERECORD_TO_QHSJ_FLIGHT_TYPE, '</td>');
 
                 typeList.push('</tr>');
 
@@ -4178,7 +4304,7 @@ function add0(m) {
 }
 function formatDate(shijianchuo) {
     //shijianchuo是整数，否则要parseInt转换
-    var time = new Date(shijianchuo);
+    var time = new Date(parseInt(shijianchuo));
     var y = time.getFullYear();
     var m = time.getMonth() + 1;
     var d = time.getDate();

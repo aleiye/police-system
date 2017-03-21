@@ -68,8 +68,8 @@ $(document).ready(function () {
         tmpIndex = index;
     });
 
-    $(".subType").click(function () {
-        subInfoType = $(this).html();
+    $("li").click(function () {
+        subInfoType = $(this).children('a').html();
         queryInfo();
     });
 

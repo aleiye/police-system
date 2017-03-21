@@ -1475,7 +1475,7 @@ function queryInfo12(offset) {
                 typeList.push('<td>', fields.hkvs_BMS_PLATE_ALARM_ALARM_START_PERIOD, '</td>');
                 typeList.push('<td>', fields.hkvs_BMS_PLATE_ALARM_PLATE_INFO, '</td>');
                 typeList.push('<td>', fields.hkvs_BMS_PLATE_ALARM_CONTECT_INFO, '</td>');
-                var reason = fields.hkvs_BMS_PLATE_ALARM_REASON;
+                var reason = parseInt(fields.hkvs_BMS_PLATE_ALARM_REASON);
                 switch(reason){
 					case '1':{
 						reason = '被盗车';
@@ -1556,9 +1556,119 @@ function queryInfo13(offset) {
                 //每行的数据信息
                 typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_PASS_CROSSING_ID), '</td>');
                 typeList.push('<td>', fields.hkvs_BMS_VEHICLE_PASS_PLATE_INFO, '</td>');
-                typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_PASS_VEHICLE_COLOR), '</td>');
+				var color = parseInt(fields.hkvs_BMS_VEHICLE_PASS_VEHICLE_COLOR);
+				switch(color){
+					case '0':{
+						color='其它颜色';
+						break;
+					}
+					case '1':{
+						color='白色';
+						break;
+					}
+					case '2':{
+						color='银色';
+						break;
+					}
+					case '3':{
+						color='灰色';
+						break;
+					}
+					case '4':{
+						color='黑色';
+						break;
+					}
+					case '5':{
+						color='红色';
+						break;
+					}
+					case '6 ':{
+						color='深蓝';
+						break;
+					}
+					case '7 ':{
+						color='蓝色';
+						break;
+					}
+					case '8 ':{
+						color='黄色';
+						break;
+					}
+					case '9 ':{
+						color='绿色';
+						break;
+					}
+					case '10 ':{
+						color='棕色';
+						break;
+					}
+					case '11 ':{
+						color='粉色';
+						break;
+					}
+					case '12 ':{
+						color='紫色';
+						break;
+					}
+					case '13 ':{
+						color='深灰';
+						break;
+					}
+					case '14 ':{
+						color='青色';
+						break;
+					}
+				}
+                typeList.push('<td>',color , '</td>');
                 typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_PASS_VEHICLE_SPEED), '</td>');
-                typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_PASS_VEHICLE_TYPE), '</td>');
+				var type1 = parseInt(fields.hkvs_BMS_VEHICLE_PASS_VEHICLE_TYPE);
+				switch(type1){
+					case '0':{
+						type1 = '其它车型';
+						break;
+					}
+					case '1':{
+						type1 = '客车';
+						break;
+					}
+					case '2':{
+						type1 = '货车';
+						break;
+					}
+					case '3':{
+						type1 = '轿车';
+						break;
+					}
+					case '4':{
+						type1 = '面包车';
+						break;
+					}
+					case '5':{
+						type1 = '小货车';
+						break;
+					}
+					case '6':{
+						type1 = '行人';
+						break;
+					}
+					case '7':{
+						type1 = '二轮车';
+						break;
+					}
+					case '8':{
+						type1 = '三轮车';
+						break;
+					}
+					case '9':{
+						type1 = 'SUV/MPV';
+						break;
+					}
+					case '10':{
+						type1 = '中型客车';
+						break;
+					}
+				}
+                typeList.push('<td>', type1, '</td>');
                 typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_PASS_VEHICLE_LOGO), '</td>');
                 typeList.push('<td>', formatDate2((fields.hkvs_BMS_VEHICLE_PASS_PASS_TIME)), '</td>');
 
@@ -1618,7 +1728,54 @@ function queryInfo15(offset) {
                 typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_VIOLATION_LANE_ID), '</td>');
                 typeList.push('<td>', fields.hkvs_BMS_VEHICLE_VIOLATION_PLATE_INFO, '</td>');
                 typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_SPEED), '</td>');
-                typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_TYPE), '</td>');
+				var type1 = parseInt(fields.hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_TYPE);
+				switch(type1){
+					case '0':{
+						type1 = '其它车型';
+						break;
+					}
+					case '1':{
+						type1 = '客车';
+						break;
+					}
+					case '2':{
+						type1 = '货车';
+						break;
+					}
+					case '3':{
+						type1 = '轿车';
+						break;
+					}
+					case '4':{
+						type1 = '面包车';
+						break;
+					}
+					case '5':{
+						type1 = '小货车';
+						break;
+					}
+					case '6':{
+						type1 = '行人';
+						break;
+					}
+					case '7':{
+						type1 = '二轮车';
+						break;
+					}
+					case '8':{
+						type1 = '三轮车';
+						break;
+					}
+					case '9':{
+						type1 = 'SUV/MPV';
+						break;
+					}
+					case '10':{
+						type1 = '中型客车';
+						break;
+					}
+				}
+                typeList.push('<td>',type1 , '</td>');
                 typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_LOGO), '</td>');
                 typeList.push('<td>', formatDate2((fields.hkvs_BMS_VEHICLE_VIOLATION_ALARM_TIME)), '</td>');
 

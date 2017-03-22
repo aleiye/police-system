@@ -620,14 +620,15 @@ function queryInfo() {
 function searchCount() {
     var tableArray = tableDictTmp;
     // queryString = 'A_source:"A_db_duo_SEC_USER_INFO" OR A_source:"A_db_duo_SEC_USER_SYNCINFO" | report count(A_source) over A_source';
-    var tmpStr = [];
-    $(tableArray).each(function (index, value) {
-        if (index == 0) {
-            tmpStr.push('A_source:"' + value + '"')
-        } else {
-            tmpStr.push(' OR A_source:"' + value + '"');
-        }
-    });
+    var tmpStr = ['A_source:A_db_*'];
+    // var tmpStr = [];
+    // $(tableArray).each(function (index, value) {
+    //     if (index == 0) {
+    //         tmpStr.push('A_source:"' + value + '"')
+    //     } else {
+    //         tmpStr.push(' OR A_source:"' + value + '"');
+    //     }
+    // });
     var keyWord = $("#search_input").val();
     if (keyWord != '') {
         tmpStr.push(' AND ' + keyWord);

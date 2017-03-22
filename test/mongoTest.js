@@ -6,10 +6,14 @@ var mongoClient = mongo.MongoClient;
 var ObjectID = mongo.ObjectID;
 var config = require('../config/config');
 function mongoConn(callBack) {
-    var url = config.mongo.url,
-        auth = config.mongo.auth,
-        username = config.mongo.username,
-        password = config.mongo.password;
+    var url = 'mongodb://10.0.1.81:27017/test',
+        auth = true,
+        username = 'aleiye',
+        password = 'cdewsxzaq321';
+    // var url = config.mongo.url,
+    //     auth = config.mongo.auth,
+    //     username = config.mongo.username,
+    //     password = config.mongo.password;
     if(auth){
         mongoClient.connect(url,function (err,db) {
             var adminDb = db.admin();
@@ -86,20 +90,20 @@ function mongoConn(callBack) {
 mongoConn(function (db) {
     var page = {skip: 0, limit: 10}
     var params = {
-        'date': {$gte : 1484755200000}
+        'resultModel.count': {$gt : 0}
     }
     mongoConn(function (db) {
-        var reportCollection = db.collection('msg');
-        // reportCollection.find({status:0}).toArray(function (err,result) {
-        //     if(err){
-        //         console.info('Error:' + err);
-        //         return ;
-        //     }
-        //     console.log(result);
-        //     db.close();
-        // });
-        reportCollection.count({status:0},function(err,count){
-            console.log(count);
+        var reportCollection = db.collection('qionghai');
+        reportCollection.find(params).toArray(function (err,result) {
+            if(err){
+                console.info('Error:' + err);
+                return ;
+            }
+            console.log(result);
+            db.close();
         });
+        // reportCollection.count({status:0},function(err,count){
+        //     console.log(count);
+        // });
     })
 });

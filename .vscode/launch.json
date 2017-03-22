@@ -16,6 +16,12 @@
             "name": "附加到进程",
             "address": "localhost",
             "port": 5858
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "mongo测试",
+            "program": "${workspaceRoot}/test/mongoTest.js"
         }
     ]
 }

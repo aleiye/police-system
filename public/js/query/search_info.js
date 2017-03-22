@@ -628,12 +628,12 @@ function searchCount() {
             tmpStr.push(' OR A_source:"' + value + '"');
         }
     });
-    tmpStr.push(' | report count(A_source) over A_source');
-    var queryString = tmpStr.join('');
     var keyWord = $("#search_input").val();
     if (keyWord != '') {
-        queryString = queryString + ' AND ' + keyWord;
+        tmpStr.push(' AND ' + keyWord);
     }
+    tmpStr.push(' | report count(A_source) over A_source');
+    var queryString = tmpStr.join('');
     console.log('queryString=' + queryString);
 
     $.get('datas/query',

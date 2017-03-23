@@ -137,7 +137,8 @@ var tableDict = ['A_db_sis_V_BD_HANDSET_CONTACTOR_INFO',//机主通讯录信息-
     'A_db_sis_V_WA_SOURCE_FJ_1001',//终端特征信息
     'A_db_sis_V_WA_SOURCE_FJ_1002',//热点信息采集
     'A_db_sis_V_WA_BASIC_FJ_1001',//终端特征移动采集设备轨迹
-	'A_db_QHSJ_VIEW_COMPARERECORD_TO_QHSJ'//琼海检查站比对信息
+	'A_db_QHSJ_VIEW_COMPARERECORD_TO_QHSJ',//琼海检查站比对信息
+	'A_db_QHQB_T_QHQB_TLDP'//铁路订票数据信息
 ];
 
 var infoType = '';
@@ -611,6 +612,14 @@ function queryInfo() {
                 queryString = queryString + ' AND ' + keyWord;
             }
             queryInfo58();
+            break;
+        }
+        case '铁路订票数据信息': {
+            queryString = 'A_source:"A_db_QHQB_T_QHQB_TLDP"';
+            if (keyWord != '') {
+                queryString = queryString + ' AND ' + keyWord;
+            }
+            queryInfo59();
             break;
         }
     }
@@ -4415,6 +4424,73 @@ function queryInfo58(offset) {
         })
 }
 
+//铁路订票数据信息
+function queryInfo59(offset) {
+    console.log(queryString);
+    offset = offset || 0;
+    var pageNum = offset / pageSize;
+    $.get('datas/query',
+        {
+            queryString: queryString,
+            a_from: new Date('2005-01-01 00:00:00').getTime(),
+            a_to: new Date().getTime(),
+            pageSize: pageSize,
+            pageNum: pageNum
+        },
+        function (data) {
+            if(!data || data.hits == null || data.count == 0){
+                $("#tab1").html('<h3 class="h3_null">暂无数据</h3>');
+                return false;
+            }
+            var total = data.count;
+            var jsonHits = data.hits;
+
+            var typeList = [];
+            typeList.push('<table class="table table-striped table-bordered click_none"><thead><tr>');
+
+            //表头信息
+            typeList.push(['<th>', '姓名', '</th>'].join(''));
+            typeList.push(['<th>', '证件种类', '</th>'].join(''));
+            typeList.push(['<th>', '身份证', '</th>'].join(''));
+            typeList.push(['<th>', '列车号', '</th>'].join(''));
+            typeList.push(['<th>', '车厢号', '</th>'].join(''));
+            typeList.push(['<th>', '座位号', '</th>'].join(''));
+            typeList.push(['<th>', '起始站', '</th>'].join(''));
+            typeList.push(['<th>', '终点站', '</th>'].join(''));
+            typeList.push(['<th>', '发车日期', '</th>'].join(''));
+            typeList.push(['<th>', '发车时间', '</th>'].join(''));
+
+            typeList.push('</tr> </thead> <tbody>');
+
+            jsonHits.map(function (bean) {
+                var fields = bean.fields;
+
+                typeList.push('<tr>');
+
+                //每行的数据信息
+                typeList.push('<td>', fields.QHQB_T_QHQB_TLDP_ID_NAME, '</td>');
+                typeList.push('<td>', fields.QHQB_T_QHQB_TLDP_ID_KIND, '</td>');
+                typeList.push('<td>', fields.QHQB_T_QHQB_TLDP_ID_NO, '</td>');
+                typeList.push('<td>', fields.QHQB_T_QHQB_TLDP_BOARD_TRAIN_CODE, '</td>');
+                typeList.push('<td>', fields.QHQB_T_QHQB_TLDP_COACH_NO, '</td>');
+                typeList.push('<td>', fields.QHQB_T_QHQB_TLDP_SEAT_NO, '</td>');
+                typeList.push('<td>', fields.QHQB_T_QHQB_TLDP_FROM_STATION_NAME, '</td>');
+                typeList.push('<td>', fields.QHQB_T_QHQB_TLDP_TO_STATION_NAME, '</td>');
+                typeList.push('<td>', formateDate4(fields.QHQB_T_QHQB_TLDP_TRAIN_DATE), '</td>');
+                typeList.push('<td>', formateDate5(fields.QHQB_T_QHQB_TLDP_START_TIME), '</td>');
+
+                typeList.push('</tr>');
+
+            });
+            typeList.push('</tbody></table>');
+            $("#tab1").html(typeList.join(''));
+            if(total > pageSize){
+                $('#pages').show();
+                fenye('#pages', 'queryInfo59', total, pageNum + 1, pageSize);
+            }
+        })
+}
+
 // 传入分页的节点,请求数据的方法,总页数 当前页
 function fenye(page, func, total, pageNum, pageSize) {
     var offset = pageNum * pageSize - pageSize;
@@ -4501,4 +4577,22 @@ function formateDate3(nianyue) {
     var nian = nianyue.slice(0,4);
     var yue = nianyue.slice(4,nianyue.length);
     return nian + '年' + yue + '月';
+}
+//年月日
+function formateDate4(nianyue) {
+    if(!nianyue){return '--'}
+
+    var nian = nianyue.slice(0,4);
+    var yue = nianyue.slice(4,6);
+    var ri = nianyue.slice(6,8);
+    return nian + '年' + yue + '月' + ri + '日';
+}
+//时分秒
+function formateDate5(nianyue) {
+    if(!nianyue){return '--'}
+
+    var shi = nianyue.slice(0,2);
+    var fen = nianyue.slice(2,4);
+    var miao = nianyue.slice(4,6);
+    return shi + ':' + fen + ':' + miao;
 }

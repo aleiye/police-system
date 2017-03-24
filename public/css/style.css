@@ -76,6 +76,20 @@ a,li{
 	height: 127px;
 	background-size: 100%;
 }
+.bg_news1{
+	padding-top: 14px!important;
+	position: absolute;
+	right: 18px;
+	top: 85px;
+	z-index: 99;
+	background:url(../img/FG1.png)no-repeat;
+	width: 237px;
+	height: 127px;
+	background-size: 100%;
+}
+p.tips{
+	padding: 15px 50px;
+}
 /*search.html样式*/
 .search{
 	margin:25px 0 10px 0;

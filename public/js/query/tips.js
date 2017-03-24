@@ -19,7 +19,7 @@ function tips_info(){
 }
 // 在逃人员比重结果
 function tips_info2(){
-    $.get('datas/sign_count',{param:{}},
+    $.get('datas/sign_count',{param:{'readStatus':0}},
         function(data){
             console.log(data);
             // $(".messageCount").html('消息('+0+')');

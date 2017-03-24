@@ -39,12 +39,12 @@ module.exports = {
             page.limit = parseInt(page.limit);
         }
         params = params || {};
-        if(params.date && params.date['$gte'])
-            params.date['$gte'] = parseInt(params.date['$gte']);
-        if(params.date && params.date['$lte'])
-            params.date['$lte'] = parseInt(params.date['$lte']);
+        if(params.inserttime && params.inserttime['$gte'])
+            params.inserttime['$gte'] = parseInt(params.inserttime['$gte']);
+        if(params.inserttime && params.inserttime['$lte'])
+            params.inserttime['$lte'] = parseInt(params.inserttime['$lte']);
         mongoConn(function (db) {
-            var reportCollection = db.collection('msg');
+            var reportCollection = db.collection('matchalarm');
             reportCollection.find(params,page).toArray(function (err,result) {
                 if(err){
                     console.info('Error:' + err);
@@ -57,7 +57,7 @@ module.exports = {
     },
     getCount: function(params,callBack){
         mongoConn(function (db) {
-            var reportCollection = db.collection('msg');
+            var reportCollection = db.collection('matchalarm');
             if(params.status) params.status = parseInt(params.status);
             reportCollection.count(params,function (err,result) {
                 if(err){
@@ -71,11 +71,11 @@ module.exports = {
     },
     doSign: function (ids,callBack) {
         mongoConn(function (db) {
-            var reportCollection = db.collection('msg');
+            var reportCollection = db.collection('matchalarm');
             var cot = 0;
             for(var i in ids){
                 var param = {_id: ObjectID(ids[i])};
-                reportCollection.update(param,{$set:{status:1}},function(err,result) {
+                reportCollection.update(param,{$set:{readStatus:1}},function(err,result) {
                     if(err){
                         console.info('Error:' + err);
                         return ;

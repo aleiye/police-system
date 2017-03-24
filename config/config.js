@@ -1,6 +1,6 @@
 var config = {
     mongo: {
-        url: 'mongodb://10.0.1.81:27017/aleiye_zhuhai',
+        url: 'mongodb://10.0.1.81:27017/alarm',
         auth: true,
         username: 'aleiye',
         password: 'cdewsxzaq321'

@@ -7,30 +7,21 @@ $(function () {
 
     function showTab(param) {
         $.get('datas/sign',param,function (data) {
-            var msg = [];
-            $(data).each(function (i,item) {
-                var sign = item['status'] ? '已签收' : '未签收',
-                    signColor = item['status'] ? 'green' : 'yellow',
-                    level = item['level'] ? '正常' : '预警',
-                    date = new Date(item["date"]).format('yyyy-MM-dd hh:mm:ss'),
-                    _id = item['_id'];
-                var html = '<tr>';
-                html += '<td><input name="choose" type="checkbox" _id="'+ _id +'"></td>';
-                html += '<td>'+ item["mark"] +'</td>';
-                html += '<td>'+ item["name"] +'</td>';
-                html += '<td>'+ item["cardId"] +'</td>';
-                html += '<td>'+ level +'</td>';
-                html += '<td>'+ item["position"] +'</td>';
-                html += '<td>'+ item["police"] +'</td>';
-                html += '<td>'+ date +'</td>';
-                html += '<td>'+ item["scheme"] +'</td>';
-                html += '<td class="'+ signColor +'">'+ sign +'</td>';
-                html += '</tr>';
-                msg.push(html);
+            $('#message_table').find('tbody').html('');
+            $(data).each(function(i,item){
+                var tds = trFormat(item).map(function(d,i){
+                    if(i == 8)
+                        return d ? '<td class="green">已签收</td>' : '<td class="yellow">未签收</td>';
+                    return '<td>'+ d +'</td>';
+                });
+                var trHtml = '<tr>';
+                trHtml += '<td><input name="choose" type="checkbox" _id="'+ item['_id'] +'"></td>';
+                trHtml += tds.join('');
+                trHtml += '</tr>';
+                $('#message_table')
+                    .find('tbody')
+                    .append(trHtml);
             });
-            $('#message_table')
-                .find('tbody')
-                .html(msg.join(''));
         });
     }
 
@@ -52,12 +43,17 @@ $(function () {
         var firstTime = new Date($('#firstTime').val()).getTime(),
             lastTime = new Date($('#lastTime').val()).getTime();
         var params = {
-            date: {}
+            // data: {
+            //     'QHQB_T_QHQB_TLDP_ID_NAME': $('#name_input').val()
+            // },
+            inserttime: {}
         };
-        $('#name_input').val() && (params.name = $('#name_input').val());
-        $('#id_input').val() && (params.cardId = $('#id_input').val());
-        firstTime && (params.date['$gte'] = firstTime);
-        lastTime && (params.date['$lte'] = lastTime);
+        $('#name_input').val() && (params['data.QHQB_T_QHQB_TLDP_ID_NAME'] = $('#name_input').val());
+        $('#id_input').val() && (params['data.QHQB_T_QHQB_TLDP_ID_NO'] = $('#id_input').val());
+        // !$('#id_input').val() && (delete params.resultModel.hits[0].fields['zdrXY_T_ZZRK_QGZDRYXX_SFZH']);
+        // !$('#name_input').val() && !$('#id_input').val() && (delete params.resultModel);
+        firstTime && (params.inserttime['$gte'] = firstTime);
+        lastTime && (params.inserttime['$lte'] = lastTime);
         skip = 0;
         showTab({
             page: {

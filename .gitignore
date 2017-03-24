@@ -11,4 +11,5 @@ tmp
 *.iws
 *.ipr
 .DS_Store
+.vscode
 node_modules

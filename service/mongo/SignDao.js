@@ -38,6 +38,8 @@ module.exports = {
             page.skip = parseInt(page.skip);
             page.limit = parseInt(page.limit);
         }
+        // page.sort = 'inserttime';
+        page.sort = [['inserttime','desc']];
         params = params || {};
         if(params.inserttime && params.inserttime['$gte'])
             params.inserttime['$gte'] = parseInt(params.inserttime['$gte']);
@@ -56,6 +58,8 @@ module.exports = {
         })
     },
     getCount: function(params,callBack){
+        if(params && params.readStatus != undefined)
+            params.readStatus = parseInt(params.readStatus);
         mongoConn(function (db) {
             var reportCollection = db.collection('matchalarm');
             if(params.status) params.status = parseInt(params.status);

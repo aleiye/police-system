@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>琼海市警务系统</title>
+	<title>全文信息检索</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/common.css">
@@ -12,11 +12,16 @@
 <body>
 	<div class="row">
 	<div class="col-lg-12 header">
-		<div class="pull-left fontSize"><a href="javascript:void(0);" onclick="window.location.href='/'">琼海市警务系统</a></div>
+		<div class="pull-left fontSize"><a href="javascript:void(0);" onclick="window.location.href='/'">全文信息检索</a></div>
 		<div class="pull-right Color">
 			<div>
 			<span class='time-w'>当前时间: <span id='time'></span></span>
-			<span class='xin'>消息</span>
+			<span class='xin messageCount'>消息(0)</span>
+			<div class="bg_news" style="display:none;">
+				<p>有 <b class="tip1"></b> 条<span class='red'>比中结果</span></p>
+				<!--<p>有 <b class="tip2"></b> 条<span class='green'>前科人员比重结果</span></p>-->
+				<p><a href="javascript:void(0);" class="message_query">点击查看</a></p>
+			</div>
 			</div>
 		</div>
 	</div>

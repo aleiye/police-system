@@ -86,10 +86,10 @@ var tableDict = ['A_db_sis_V_BD_HANDSET_CONTACTOR_INFO',//机主通讯录信息-
     'A_db_sis_V_XYR_MAIN',//机主表（SIM卡）
     'A_db_sis_V_PHONE_LIST',//话单机主信息表
     'A_db_sis_V_PHONE_THQD',//通话清单
-    'A_db_sis_V_CARINFOTBl',//车辆信息登记表--2.本地社会资源数据
-    'A_db_sis_V_EMSINFOTBl',//物流信息登记表
-    'A_db_sis_V_WORKERBASEINFO',//行业工作人员
-    'A_db_sis_V_RST_HOUSING_INFORMATIO',//小区住宅业主信息
+    'A_db_QHSC_CARINFOTBL',//车辆信息登记表--2.本地社会资源数据
+    'A_db_QHSC_EMSINFOTBL',//物流信息登记表
+    'A_db_QHSC_WORKERBASEINFO',//行业工作人员
+    'A_db_QHSC_RST_HOUSING_INFORMATIO',//小区住宅业主信息
     'A_db_hkvs_BMS_CROSSING_INFO',//路口信息表--3.卡口视频监控系统
     'A_db_hkvs_BMS_MAINTENANCE_LANEINFO',//运维车道过车数据统计
     'A_db_hkvs_BMS_PLATE_ALARM',//布控信息表
@@ -199,7 +199,7 @@ function queryInfo() {
             break;
         }
         case '车辆信息登记表': {
-            queryString = 'A_source:"A_db_sis_V_Carinfotbl"';
+            queryString = 'A_source:"A_db_QHSC_CARINFOTBL"';
             if (keyWord != '') {
                 queryString = queryString + ' AND ' + keyWord;
             }
@@ -207,7 +207,7 @@ function queryInfo() {
             break;
         }
         case '物流信息登记表': {
-            queryString = 'A_source:"A_db_sis_V_Emsinfotbl"';
+            queryString = 'A_source:"A_db_QHSC_EMSINFOTBL"';
             if (keyWord != '') {
                 queryString = queryString + ' AND ' + keyWord;
             }
@@ -215,7 +215,7 @@ function queryInfo() {
             break;
         }
         case '行业工作人员': {
-            queryString = 'A_source:"A_db_sis_V_WORKERBASEINFO"';
+            queryString = 'A_source:"A_db_QHSC_WORKERBASEINFO"';
             if (keyWord != '') {
                 queryString = queryString + ' AND ' + keyWord;
             }
@@ -223,7 +223,7 @@ function queryInfo() {
             break;
         }
         case '小区住宅业主信息': {
-            queryString = 'A_source:"A_db_sis_V_RST_HOUSING_INFORMATIO"';
+            queryString = 'A_source:"A_db_QHSC_RST_HOUSING_INFORMATIO"';
             if (keyWord != '') {
                 queryString = queryString + ' AND ' + keyWord;
             }
@@ -1100,14 +1100,14 @@ function queryInfo6(offset) {
                 typeList.push('<tr>');
 
                 //每行的数据信息
-                typeList.push('<td>', fields.sis_V_Carinfotbl_CHNNAME, '</td>');
-                typeList.push('<td>', fields.sis_V_Carinfotbl_CARNUMBER, '</td>');
-                typeList.push('<td>', fields.sis_V_Carinfotbl_CARBRAND, '</td>');
-                typeList.push('<td>', fields.sis_V_Carinfotbl_CARTYPE, '</td>');
-                typeList.push('<td>', fields.sis_V_Carinfotbl_CARCOLOR, '</td>');
-                typeList.push('<td>', fields.sis_V_Carinfotbl_PASSNO, '</td>');
-                typeList.push('<td>', fields.sis_V_Carinfotbl_TELEPHONE, '</td>');
-                typeList.push('<td>', fields.sis_V_Carinfotbl_CARHOUSE, '</td>');
+                typeList.push('<td>', fields.QHSC_CARINFOTBL_CHNNAME, '</td>');
+                typeList.push('<td>', fields.QHSC_CARINFOTBL_CARNUMBER, '</td>');
+                typeList.push('<td>', fields.QHSC_CARINFOTBL_CARBRAND, '</td>');
+                typeList.push('<td>', fields.QHSC_CARINFOTBL_CARTYPE, '</td>');
+                typeList.push('<td>', fields.QHSC_CARINFOTBL_CARCOLOR, '</td>');
+                typeList.push('<td>', fields.QHSC_CARINFOTBL_PASSNO, '</td>');
+                typeList.push('<td>', fields.QHSC_CARINFOTBL_TELEPHONE, '</td>');
+                typeList.push('<td>', fields.QHSC_CARINFOTBL_CARHOUSE, '</td>');
 
                 typeList.push('</tr>');
 
@@ -1160,13 +1160,13 @@ function queryInfo7(offset) {
                 typeList.push('<tr>');
 
                 //每行的数据信息
-                typeList.push('<td>', fields.sis_V_Emsinfotbl_SNAME, '</td>');
-                typeList.push('<td>', fields.sis_V_Emsinfotbl_EMSNUMBER, '</td>');
-                typeList.push('<td>', fields.sis_V_Emsinfotbl_STELEPHONE, '</td>');
-                var address = fields.sis_V_Emsinfotbl_SADDRESS || '';
+                typeList.push('<td>', fields.QHSC_EMSINFOTBL_SNAME, '</td>');
+                typeList.push('<td>', fields.QHSC_EMSINFOTBL_EMSNUMBER, '</td>');
+                typeList.push('<td>', fields.QHSC_EMSINFOTBL_STELEPHONE, '</td>');
+                var address = fields.QHSC_EMSINFOTBL_SADDRESS || '';
                 typeList.push('<td title="'+ address +'"><div style="width:300px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">',address , '</div></td>');
-                typeList.push('<td>', formatDate2((fields.sis_V_Emsinfotbl_JJDATE)), '</td>');
-                typeList.push('<td>', formatDate2((fields.sis_V_Emsinfotbl_APPLDATE)), '</td>');
+                typeList.push('<td>', formatDate2((fields.QHSC_EMSINFOTBL_JJDATE)), '</td>');
+                typeList.push('<td>', formatDate2((fields.QHSC_EMSINFOTBL_APPLDATE)), '</td>');
 
                 typeList.push('</tr>');
 
@@ -1223,21 +1223,21 @@ function queryInfo8(offset) {
                 typeList.push('<tr>');
 
                 //每行的数据信息
-                typeList.push('<td>', fields.sis_V_WORKERBASEINFO_NAME, '</td>');
-                typeList.push('<td>', fields.sis_V_WORKERBASEINFO_IDCARD, '</td>');
-                var content = fields.sis_V_WORKERBASEINFO_NATIVEPLACE || '';
+                typeList.push('<td>', fields.QHSC_WORKERBASEINFO_NAME, '</td>');
+                typeList.push('<td>', fields.QHSC_WORKERBASEINFO_IDCARD, '</td>');
+                var content = fields.QHSC_WORKERBASEINFO_NATIVEPLACE || '';
                 typeList.push('<td title="'+ content +'"><div style="width:300px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">',content , '</div></td>');
 
-                var content2 = fields.sis_V_WORKERBASEINFO_NATIVEADDRESS || '';
+                var content2 = fields.QHSC_WORKERBASEINFO_NATIVEADDRESS || '';
                 typeList.push('<td title="'+ content2 +'"><div style="width:300px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">',content2 , '</div></td>');
 
-                var content3 = fields.sis_V_WORKERBASEINFO_ADDRESS || '';
+                var content3 = fields.QHSC_WORKERBASEINFO_ADDRESS || '';
                 typeList.push('<td title="'+ content3 +'"><div style="width:300px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">',content3 , '</div></td>');
 
-                typeList.push('<td>', fields.sis_V_WORKERBASEINFO_EDUCATIONDEGREE, '</td>');
-                typeList.push('<td>', fields.sis_V_WORKERBASEINFO_PHONE, '</td>');
-                typeList.push('<td>', fields.sis_V_WORKERBASEINFO_SERVICEPLACE, '</td>');
-                typeList.push('<td>', formatDate2((fields.sis_V_WORKERBASEINFO_CREATETIME)), '</td>');
+                typeList.push('<td>', fields.QHSC_WORKERBASEINFO_EDUCATIONDEGREE, '</td>');
+                typeList.push('<td>', fields.QHSC_WORKERBASEINFO_PHONE, '</td>');
+                typeList.push('<td>', fields.QHSC_WORKERBASEINFO_SERVICEPLACE, '</td>');
+                typeList.push('<td>', formatDate2((fields.QHSC_WORKERBASEINFO_CREATETIME)), '</td>');
 
                 typeList.push('</tr>');
 
@@ -1291,15 +1291,15 @@ function queryInfo9(offset) {
                 typeList.push('<tr>');
 
                 //每行的数据信息
-                typeList.push('<td>', fields.sis_V_RST_HOUSING_INFORMATIO_NAME, '</td>');
-                typeList.push('<td>', fields.sis_V_RST_HOUSING_INFORMATIO_ID_CARD, '</td>');
-                typeList.push('<td>', fields.sis_V_RST_HOUSING_INFORMATIO_TEL, '</td>');
-                var content = fields.sis_V_RST_HOUSING_INFORMATIO_NATIV_ADDRESS || '';
+                typeList.push('<td>', fields.QHSC_RST_HOUSING_INFORMATIO_NAME, '</td>');
+                typeList.push('<td>', fields.QHSC_RST_HOUSING_INFORMATIO_ID_CARD, '</td>');
+                typeList.push('<td>', fields.QHSC_RST_HOUSING_INFORMATIO_TEL, '</td>');
+                var content = fields.QHSC_RST_HOUSING_INFORMATIO_NATIV_ADDRESS || '';
                 typeList.push('<td title="'+ content +'"><div style="width:300px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">',content , '</div></td>');
 
-                typeList.push('<td>', fields.sis_V_RST_HOUSING_INFORMATIO_RESIDENTIAL_UN, '</td>');
-                typeList.push('<td>', fields.sis_V_RST_HOUSING_INFORMATIO_DEPTNAME, '</td>');
-                typeList.push('<td>', formatDate2((fields.sis_V_RST_HOUSING_INFORMATIO_CREATED)), '</td>');
+                typeList.push('<td>', fields.QHSC_RST_HOUSING_INFORMATIO_RESIDENTIAL_UN, '</td>');
+                typeList.push('<td>', fields.QHSC_RST_HOUSING_INFORMATIO_DEPTNAME, '</td>');
+                typeList.push('<td>', formatDate2((fields.QHSC_RST_HOUSING_INFORMATIO_CREATED)), '</td>');
 
                 typeList.push('</tr>');
 

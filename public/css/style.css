@@ -430,5 +430,9 @@ p.tips{
 .menu6{background-color:#03204b!important;}
 .no-border {  border: 1px solid transparent !important; }
 .table.no-border tr td,.table.no-border tr th{border:1px solid transparent !important;}
-.background{position:fixed;_position:absolute;z-index:999;top:0px;left:0px;width:100%;_width:expression(document.documentElement.clientWidth);height:100%;_height:expression(document.documentElement.clientHeight);background:rgb(50,50,50);background:rgba(0,0,0,0.5);
-}
+.background{position:fixed;_position:absolute;z-index:999;top:0px;left:0px;width:100%;_width:expression(document.documentElement.clientWidth);height:100%;_height:expression(document.documentElement.clientHeight);background:rgb(50,50,50);background:rgba(0,0,0,0.5);}
+/*.cl{clear:both;zoom:1;}
+.cl:after{clear:both; height:0; content:' '; display:block; visibility:hidden;zoom:1;}
+.fl{float:left!important;}
+.fr{float:right!important;}*/
+.color-fff{ color: #fff!important;}

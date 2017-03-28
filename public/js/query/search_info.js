@@ -794,7 +794,7 @@ function queryInfo2(offset) {
                 typeList.push('<td>', fields.sis_V_GJ_HANDSET_SMS_INFO_TO_NUM, '</td>');
                 var detail = fields.sis_V_GJ_HANDSET_SMS_INFO_MESSAGE_DETAIL || '';
                 typeList.push('<td title="'+ detail +'"><div style="width:300px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">',detail , '</div></td>');
-                var type1 = parseInt(fields.sis_V_GJ_HANDSET_SMS_INFO_MSG_TYPE);
+                var type1 = fields.sis_V_GJ_HANDSET_SMS_INFO_MSG_TYPE;
                 switch (type1){//，，，3，
                     case '0':{
                         type1='短信';
@@ -810,7 +810,7 @@ function queryInfo2(offset) {
                     }
                 }
                 typeList.push('<td>', type1, '</td>');
-                var type2 = parseInt(fields.sis_V_GJ_HANDSET_SMS_INFO_ACTIONTYPE);
+                var type2 = fields.sis_V_GJ_HANDSET_SMS_INFO_ACTIONTYPE;
                 switch (type2){//，，，3，
                     case '0':{
                         type2='发件箱';
@@ -1006,7 +1006,7 @@ function queryInfo5(offset) {
                 typeList.push('<tr>');
 
                 //每行的数据信息
-                var type1 = parseInt(fields.sis_V_PHONE_THQD_THLX);
+                var type1 = fields.sis_V_PHONE_THQD_THLX;
                 switch (type1){//
                     case '20001':{
                         type1='电话';
@@ -1029,7 +1029,7 @@ function queryInfo5(offset) {
                 typeList.push('<td>', fields.sis_V_PHONE_THQD_DFQH, '</td>');
                 typeList.push('<td>', fields.sis_V_PHONE_THQD_DFHM, '</td>');
                 typeList.push('<td>', fields.sis_V_PHONE_THQD_THDD, '</td>');
-                var type2 = parseInt(fields.sis_V_PHONE_THQD_ZBJLX);
+                var type2 = fields.sis_V_PHONE_THQD_ZBJLX;
                 switch (type2){//
                     case '30001':{
                         type2='主叫';
@@ -1356,7 +1356,7 @@ function queryInfo10(offset) {
                 //每行的数据信息
                 typeList.push('<td>', parseInt(fields.hkvs_BMS_CROSSING_INFO_INTERNAL_CODE), '</td>');
                 typeList.push('<td>', fields.hkvs_BMS_CROSSING_INFO_CROSSING_NAME, '</td>');
-                var type1 = parseInt(fields.hkvs_BMS_CROSSING_INFO_INTERCITY);
+                var type1 = fields.hkvs_BMS_CROSSING_INFO_INTERCITY;
 				switch(type1){
 					case '1':{
 						type1 = '普通路口';
@@ -1372,7 +1372,8 @@ function queryInfo10(offset) {
                 typeList.push('<td>', fields.hkvs_BMS_CROSSING_INFO_LATITUDE, '</td>');
                 typeList.push('<td>', fields.hkvs_BMS_CROSSING_INFO_LONGITUDE, '</td>');
                 typeList.push('<td>', fields.hkvs_BMS_CROSSING_INFO_ALTITUDE, '</td>');
-                typeList.push('<td>', '路口厂商', '</td>');
+                var type2 = {'80': '治安卡口','81': '交通卡口','82': '其它卡口'};
+                typeList.push('<td>', type2[fields.hkvs_BMS_CROSSING_INFO_USAGE_TYPE], '</td>');
                 // typeList.push('<td>', fields.hkvs_BMS_CROSSING_INFO_CROSSING_TYPE, '</td>');
 
                 typeList.push('</tr>');
@@ -1485,7 +1486,7 @@ function queryInfo12(offset) {
                 typeList.push('<td>', fields.hkvs_BMS_PLATE_ALARM_ALARM_START_PERIOD, '</td>');
                 typeList.push('<td>', fields.hkvs_BMS_PLATE_ALARM_PLATE_INFO, '</td>');
                 typeList.push('<td>', fields.hkvs_BMS_PLATE_ALARM_CONTECT_INFO, '</td>');
-                var reason = parseInt(fields.hkvs_BMS_PLATE_ALARM_REASON);
+                var reason = fields.hkvs_BMS_PLATE_ALARM_REASON;
                 switch(reason){
 					case '1':{
 						reason = '被盗车';
@@ -1566,7 +1567,7 @@ function queryInfo13(offset) {
                 //每行的数据信息
                 typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_PASS_CROSSING_ID), '</td>');
                 typeList.push('<td>', fields.hkvs_BMS_VEHICLE_PASS_PLATE_INFO, '</td>');
-				var color = parseInt(fields.hkvs_BMS_VEHICLE_PASS_VEHICLE_COLOR);
+				var color = fields.hkvs_BMS_VEHICLE_PASS_VEHICLE_COLOR;
 				switch(color){
 					case '0':{
 						color='其它颜色';
@@ -1631,7 +1632,7 @@ function queryInfo13(offset) {
 				}
                 typeList.push('<td>',color , '</td>');
                 typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_PASS_VEHICLE_SPEED), '</td>');
-				var type1 = parseInt(fields.hkvs_BMS_VEHICLE_PASS_VEHICLE_TYPE);
+				var type1 = fields.hkvs_BMS_VEHICLE_PASS_VEHICLE_TYPE;
 				switch(type1){
 					case '0':{
 						type1 = '其它车型';
@@ -1738,7 +1739,7 @@ function queryInfo15(offset) {
                 typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_VIOLATION_LANE_ID), '</td>');
                 typeList.push('<td>', fields.hkvs_BMS_VEHICLE_VIOLATION_PLATE_INFO, '</td>');
                 typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_SPEED), '</td>');
-				var type1 = parseInt(fields.hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_TYPE);
+				var type1 = fields.hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_TYPE;
 				switch(type1){
 					case '0':{
 						type1 = '其它车型';
@@ -1964,7 +1965,7 @@ function queryInfo18(offset) {
             typeList.push(['<th>', '年级', '</th>'].join(''));
             typeList.push(['<th>', '班级', '</th>'].join(''));
             typeList.push(['<th>', '学籍号', '</th>'].join(''));
-
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
@@ -1999,7 +2000,7 @@ function queryInfo18(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_ZXXZXSXX_LJ, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_ZXXZXSXX_BJ, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_ZXXZXSXX_XJH, '</td>');
-
+                // typeList.push('<td>', '<a class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -4596,3 +4597,19 @@ function formateDate5(nianyue) {
     var miao = nianyue.slice(4,6);
     return shi + ':' + fen + ':' + miao;
 }
+//查看详情按钮绑定事件
+$('.detail').live('click',function(){
+    var fields = JSON.parse($(this).attr('fields'));
+    $.webox({
+        width:600,
+        bgvisibel : false,
+        html : $("#box").html(),
+        open: function(){
+            var html = '';
+            for(var key in fields){
+                html += '<tr><td>' + key + '</td><td>' + fields[key] + '</td></tr>'; 
+            }
+            $('.webox').find('tbody').html(html);
+        }
+    });
+});

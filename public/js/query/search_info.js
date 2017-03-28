@@ -725,19 +725,19 @@ function queryInfo1(offset) {
             typeList.push(['<th>', '联系人名称', '</th>'].join(''));
             typeList.push(['<th>', '源手机号码', '</th>'].join(''));
             typeList.push(['<th>', '创建时间', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.sis_V_BD_HANDSET_CONTACTOR_INFO_CONTACTOR_NAME, '</td>');
                 typeList.push('<td>', fields.sis_V_BD_HANDSET_CONTACTOR_INFO_CONTACTOR_HANDSET_NUM, '</td>');
                 typeList.push('<td>', formatDate2((fields.sis_V_BD_HANDSET_CONTACTOR_INFO_CREATEDTIME)) || '--', '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -781,13 +781,13 @@ function queryInfo2(offset) {
             typeList.push(['<th>', '信息类型', '</th>'].join(''));
             typeList.push(['<th>', '信息来源', '</th>'].join(''));
             typeList.push(['<th>', '发送时间', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.sis_V_GJ_HANDSET_SMS_INFO_FROM_NUM, '</td>');
@@ -840,7 +840,7 @@ function queryInfo2(offset) {
 
                 typeList.push('<td>',type2 , '</td>');
                 typeList.push('<td>', formatDate2((fields.sis_V_GJ_HANDSET_SMS_INFO_SEND_TIME)), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -884,13 +884,13 @@ function queryInfo3(offset) {
             typeList.push(['<th>', '人员类别', '</th>'].join(''));
             typeList.push(['<th>', '手机串号', '</th>'].join(''));
             typeList.push(['<th>', '采集时间', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.sis_V_XYR_MAIN_XM, '</td>');
@@ -899,7 +899,7 @@ function queryInfo3(offset) {
                 typeList.push('<td>', fields.sis_V_XYR_MAIN_RYLB, '</td>');
                 typeList.push('<td>', fields.sis_V_XYR_MAIN_SJCH, '</td>');
                 typeList.push('<td>', formatDate2((fields.sis_V_XYR_MAIN_CREATEDTIME)), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -941,20 +941,20 @@ function queryInfo4(offset) {
             typeList.push(['<th>', '机主区号', '</th>'].join(''));
             typeList.push(['<th>', '机主电话', '</th>'].join(''));
             typeList.push(['<th>', '采集时间', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.sis_V_PHONE_LIST_JZXM, '</td>');
                 typeList.push('<td>', fields.sis_V_PHONE_LIST_JZQH, '</td>');
                 typeList.push('<td>', fields.sis_V_PHONE_LIST_JZHM, '</td>');
                 typeList.push('<td>', formatDate2((fields.sis_V_PHONE_LIST_CJSJ)), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -997,13 +997,13 @@ function queryInfo5(offset) {
             typeList.push(['<th>', '通话地点', '</th>'].join(''));
             typeList.push(['<th>', '主被叫类型', '</th>'].join(''));
             typeList.push(['<th>', '采集时间', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 var type1 = parseInt(fields.sis_V_PHONE_THQD_THLX);
@@ -1046,7 +1046,7 @@ function queryInfo5(offset) {
                 }
                 typeList.push('<td>',type2 , '</td>');
                 typeList.push('<td>', formatDate2((fields.sis_V_PHONE_THQD_CJSJ)), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -1091,13 +1091,13 @@ function queryInfo6(offset) {
             typeList.push(['<th>', '证件号码', '</th>'].join(''));
             typeList.push(['<th>', '电话号码', '</th>'].join(''));
             typeList.push(['<th>', '楼牌号(停车场所)', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHSC_CARINFOTBL_CHNNAME, '</td>');
@@ -1108,7 +1108,7 @@ function queryInfo6(offset) {
                 typeList.push('<td>', fields.QHSC_CARINFOTBL_PASSNO, '</td>');
                 typeList.push('<td>', fields.QHSC_CARINFOTBL_TELEPHONE, '</td>');
                 typeList.push('<td>', fields.QHSC_CARINFOTBL_CARHOUSE, '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -1151,13 +1151,13 @@ function queryInfo7(offset) {
             typeList.push(['<th>', '收件人详细地址', '</th>'].join(''));
             typeList.push(['<th>', '寄件时间', '</th>'].join(''));
             typeList.push(['<th>', '采集/入库日期', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHSC_EMSINFOTBL_SNAME, '</td>');
@@ -1167,7 +1167,7 @@ function queryInfo7(offset) {
                 typeList.push('<td title="'+ address +'"><div style="width:300px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">',address , '</div></td>');
                 typeList.push('<td>', formatDate2((fields.QHSC_EMSINFOTBL_JJDATE)), '</td>');
                 typeList.push('<td>', formatDate2((fields.QHSC_EMSINFOTBL_APPLDATE)), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -1214,13 +1214,13 @@ function queryInfo8(offset) {
             typeList.push(['<th>', '手机/电话号码', '</th>'].join(''));
             typeList.push(['<th>', '服务处所', '</th>'].join(''));
             typeList.push(['<th>', '创建时间', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHSC_WORKERBASEINFO_NAME, '</td>');
@@ -1238,7 +1238,7 @@ function queryInfo8(offset) {
                 typeList.push('<td>', fields.QHSC_WORKERBASEINFO_PHONE, '</td>');
                 typeList.push('<td>', fields.QHSC_WORKERBASEINFO_SERVICEPLACE, '</td>');
                 typeList.push('<td>', formatDate2((fields.QHSC_WORKERBASEINFO_CREATETIME)), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -1282,13 +1282,13 @@ function queryInfo9(offset) {
             typeList.push(['<th>', '居住单元', '</th>'].join(''));
             typeList.push(['<th>', '小区名称', '</th>'].join(''));
             typeList.push(['<th>', '创建时间', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHSC_RST_HOUSING_INFORMATIO_NAME, '</td>');
@@ -1300,7 +1300,7 @@ function queryInfo9(offset) {
                 typeList.push('<td>', fields.QHSC_RST_HOUSING_INFORMATIO_RESIDENTIAL_UN, '</td>');
                 typeList.push('<td>', fields.QHSC_RST_HOUSING_INFORMATIO_DEPTNAME, '</td>');
                 typeList.push('<td>', formatDate2((fields.QHSC_RST_HOUSING_INFORMATIO_CREATED)), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -1345,13 +1345,13 @@ function queryInfo10(offset) {
             typeList.push(['<th>', '经度', '</th>'].join(''));
             typeList.push(['<th>', '海拔', '</th>'].join(''));
             typeList.push(['<th>', '使用类型', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', parseInt(fields.hkvs_BMS_CROSSING_INFO_INTERNAL_CODE), '</td>');
@@ -1375,7 +1375,7 @@ function queryInfo10(offset) {
                 var type2 = {'80': '治安卡口','81': '交通卡口','82': '其它卡口'};
                 typeList.push('<td>', type2[fields.hkvs_BMS_CROSSING_INFO_USAGE_TYPE], '</td>');
                 // typeList.push('<td>', fields.hkvs_BMS_CROSSING_INFO_CROSSING_TYPE, '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -1417,13 +1417,13 @@ function queryInfo11(offset) {
             typeList.push(['<th>', '昨日过车数', '</th>'].join(''));
             typeList.push(['<th>', '未识别过车数（前一小时）', '</th>'].join(''));
             typeList.push(['<th>', '今日过车', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', parseInt(fields.hkvs_BMS_MAINTENANCE_LANEINFO_LANE_NUMBER), '</td>');
@@ -1431,7 +1431,7 @@ function queryInfo11(offset) {
                 typeList.push('<td>', parseInt(fields.hkvs_BMS_MAINTENANCE_LANEINFO_YESTERDAY_VEHICLE_PASS), '</td>');
                 typeList.push('<td>', parseInt(fields.hkvs_BMS_MAINTENANCE_LANEINFO_UNRECOGNIZED_VEHICLE_PASS), '</td>');
                 typeList.push('<td>', parseInt(fields.hkvs_BMS_MAINTENANCE_LANEINFO_TODAY_VEHICLE_PASS), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -1474,13 +1474,13 @@ function queryInfo12(offset) {
             typeList.push(['<th>', '布控原因', '</th>'].join(''));
             typeList.push(['<th>', '布控开始时间', '</th>'].join(''));
             typeList.push(['<th>', '布控结束时间', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.hkvs_BMS_PLATE_ALARM_ALARM_START_PERIOD, '</td>');
@@ -1512,7 +1512,7 @@ function queryInfo12(offset) {
                 typeList.push('<td>',reason , '</td>');
                 typeList.push('<td>', formatDate2((fields.hkvs_BMS_PLATE_ALARM_ALARM_START_TIME)), '</td>');
                 typeList.push('<td>', formatDate2((fields.hkvs_BMS_PLATE_ALARM_ALARM_STOP_TIME)), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -1556,13 +1556,13 @@ function queryInfo13(offset) {
             typeList.push(['<th>', '车辆类型', '</th>'].join(''));
             typeList.push(['<th>', '车标', '</th>'].join(''));
             typeList.push(['<th>', '过车时间', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_PASS_CROSSING_ID), '</td>');
@@ -1682,7 +1682,7 @@ function queryInfo13(offset) {
                 typeList.push('<td>', type1, '</td>');
                 typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_PASS_VEHICLE_LOGO), '</td>');
                 typeList.push('<td>', formatDate2((fields.hkvs_BMS_VEHICLE_PASS_PASS_TIME)), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -1726,13 +1726,13 @@ function queryInfo15(offset) {
             typeList.push(['<th>', '车辆类型', '</th>'].join(''));
             typeList.push(['<th>', '车标', '</th>'].join(''));
             typeList.push(['<th>', '违章时间', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_VIOLATION_CROSSING_ID), '</td>');
@@ -1789,7 +1789,7 @@ function queryInfo15(offset) {
                 typeList.push('<td>',type1 , '</td>');
                 typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_LOGO), '</td>');
                 typeList.push('<td>', formatDate2((fields.hkvs_BMS_VEHICLE_VIOLATION_ALARM_TIME)), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -1834,13 +1834,13 @@ function queryInfo16(offset) {
             typeList.push(['<th>', '拍摄地点', '</th>'].join(''));
             typeList.push(['<th>', '拍摄时间', '</th>'].join(''));
             typeList.push(['<th>', '对比得分', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.PLATE_INFO, '</td>');
@@ -1850,7 +1850,7 @@ function queryInfo16(offset) {
                 typeList.push('<td>', fields.CROSSING_ID, '</td>');
                 typeList.push('<td>', fields.LANE_ID, '</td>');
                 typeList.push('<td>', fields.ALARM_TIME, '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -1896,13 +1896,13 @@ function queryInfo17(offset) {
             typeList.push(['<th>', '户籍地详址', '</th>'].join(''));
             typeList.push(['<th>', '现住地详址', '</th>'].join(''));
             typeList.push(['<th>', '纳入部级重点人员库时间', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.zdrXY_T_ZZRK_QGZDRYXX_XM, '</td>');
@@ -1917,7 +1917,7 @@ function queryInfo17(offset) {
                 typeList.push('<td title="'+ content2 +'"><div style="width:300px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">',content2 , '</div></td>');
 
                 typeList.push('<td>', formatDate2(fields.zdrXY_T_ZZRK_QGZDRYXX_NRBJZDRYKSJ), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -1965,13 +1965,13 @@ function queryInfo18(offset) {
             typeList.push(['<th>', '年级', '</th>'].join(''));
             typeList.push(['<th>', '班级', '</th>'].join(''));
             typeList.push(['<th>', '学籍号', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_ZXXZXSXX_XM, '</td>');
@@ -2000,7 +2000,7 @@ function queryInfo18(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_ZXXZXSXX_LJ, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_ZXXZXSXX_BJ, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_ZXXZXSXX_XJH, '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -2048,13 +2048,13 @@ function queryInfo19(offset) {
             typeList.push(['<th>', '教育程度', '</th>'].join(''));
             typeList.push(['<th>', '学制', '</th>'].join(''));
             typeList.push(['<th>', '学习方式', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_YJSXX_XM, '</td>');
@@ -2068,7 +2068,7 @@ function queryInfo19(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_YJSXX_CC, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_YJSXX_XZ, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_YJSXX_XXXS, '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -2111,13 +2111,13 @@ function queryInfo20(offset) {
             typeList.push(['<th>', '就业状况', '</th>'].join(''));
             typeList.push(['<th>', '保障金额', '</th>'].join(''));
             typeList.push(['<th>', '起始年月', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_DBRYXX_CAC002, '</td>');
@@ -2126,7 +2126,7 @@ function queryInfo20(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_DBRYXX_CAC008, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_DBRYXX_CBE077, '</td>');
                 typeList.push('<td>', formateDate3(fields.QHQB_T_QHQB_DBRYXX_CBE071), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -2169,13 +2169,13 @@ function queryInfo21(offset) {
             typeList.push(['<th>', '险种', '</th>'].join(''));
             typeList.push(['<th>', '参保状态', '</th>'].join(''));
             typeList.push(['<th>', '参保年月', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_CBRYXX_GRBH, '</td>');
@@ -2184,7 +2184,7 @@ function queryInfo21(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_CBRYXX_XZ, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_CBRYXX_CBZT, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_CBRYXX_CBNY, '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -2226,13 +2226,13 @@ function queryInfo22(offset) {
             typeList.push(['<th>', '变更原因', '</th>'].join(''));
             typeList.push(['<th>', '处置时间', '</th>'].join(''));
             typeList.push(['<th>', '变更日期', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_CBRYBGXX_DWMC, '</td>');
@@ -2240,7 +2240,7 @@ function queryInfo22(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_CBRYBGXX_BGYY, '</td>');
                 typeList.push('<td>', formatDate2((fields.QHQB_T_QHQB_CBRYBGXX_CZSJ)), '</td>');
                 typeList.push('<td>', formatDate2((fields.QHQB_T_QHQB_CBRYBGXX_BGRQ)), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -2285,13 +2285,13 @@ function queryInfo23(offset) {
             typeList.push(['<th>', '专业名称', '</th>'].join(''));
             typeList.push(['<th>', '教育程度', '</th>'].join(''));
             typeList.push(['<th>', '学院', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_PTZBKSXX_XM, '</td>');
@@ -2302,7 +2302,7 @@ function queryInfo23(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_PTZBKSXX_ZYMC, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_PTZBKSXX_CC, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_PTZBKSXX_FY, '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -2346,13 +2346,13 @@ function queryInfo24(offset) {
             typeList.push(['<th>', '地址', '</th>'].join(''));
             typeList.push(['<th>', '开通时间', '</th>'].join(''));
             typeList.push(['<th>', '停止使用时间', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_RQYHSJ_XM, '</td>');
@@ -2368,7 +2368,7 @@ function queryInfo24(offset) {
 
                 typeList.push('<td>', formatDate2((fields.QHQB_T_QHQB_RQYHSJ_KTSJ)), '</td>');
                 typeList.push('<td>', formatDate2((fields.QHQB_T_QHQB_RQYHSJ_TZSYSJ)), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -2408,19 +2408,19 @@ function queryInfo25(offset) {
             typeList.push(['<th>', '会计人ID', '</th>'].join(''));
             typeList.push(['<th>', '会计人名称', '</th>'].join(''));
             typeList.push(['<th>', '会计编号', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_KJRXXK_CZ_KJRID, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_KJRXXK_CZ_KJRMC, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_KJRXXK_CZ_KJBH, '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -2464,13 +2464,13 @@ function queryInfo26(offset) {
             typeList.push(['<th>', '人员身份', '</th>'].join(''));
             typeList.push(['<th>', '职务（职称）', '</th>'].join(''));
             typeList.push(['<th>', '学历', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_GYRYXX_XM, '</td>');
@@ -2480,7 +2480,7 @@ function queryInfo26(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_GYRYXX_RYSF, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_GYRYXX_ZW, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_GYRYXX_XL, '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -2526,13 +2526,13 @@ function queryInfo27(offset) {
             typeList.push(['<th>', '学校名称', '</th>'].join(''));
             typeList.push(['<th>', '学习形式', '</th>'].join(''));
             typeList.push(['<th>', '入学年月', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_ZXSHMCSX_XM, '</td>');
@@ -2544,7 +2544,7 @@ function queryInfo27(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_ZXSHMCSX_XXMC, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_ZXSHMCSX_XXXS, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_ZXSHMCSX_RXLY, '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -2592,13 +2592,13 @@ function queryInfo28(offset) {
             typeList.push(['<th>', '婚姻状况', '</th>'].join(''));
             typeList.push(['<th>', '现住详址', '</th>'].join(''));
             typeList.push(['<th>', '户籍地地址', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_JSW_LDRKXX_XM, '</td>');
@@ -2626,7 +2626,7 @@ function queryInfo28(offset) {
 					detail2 = detail2.slice(0,20)+'……';
 				}
                 typeList.push('<td title="'+ detail2 +'">',detail2 , '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -2674,13 +2674,13 @@ function queryInfo29(offset) {
             typeList.push(['<th>', '登记单位', '</th>'].join(''));
             typeList.push(['<th>', '登记日期', '</th>'].join(''));
             typeList.push(['<th>', '户籍地地址', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_CRJ_XSXX_SERIAL, '</td>');
@@ -2695,7 +2695,7 @@ function queryInfo29(offset) {
                 typeList.push('<td>', formatDate2((fields.QHQB_T_QHQB_CRJ_XSXX_APPLDATE)), '</td>');
                 var detail = fields.QHQB_T_QHQB_CRJ_XSXX_HJDDZ || '';
                 typeList.push('<td title="'+ detail +'"><div style="width:300px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">',detail , '</div></td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -2739,13 +2739,13 @@ function queryInfo30(offset) {
             typeList.push(['<th>', '生产经营地址', '</th>'].join(''));
             typeList.push(['<th>', '税务机关名称', '</th>'].join(''));
             typeList.push(['<th>', '电话号码', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_GSDJNSRXX_FDDBRMC, '</td>');
@@ -2757,7 +2757,7 @@ function queryInfo30(offset) {
 
                 typeList.push('<td>', fields.QHQB_T_QHQB_GSDJNSRXX_SWJG_MC, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_GSDJNSRXX_DHHM, '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -2801,13 +2801,13 @@ function queryInfo31(offset) {
             typeList.push(['<th>', '学制', '</th>'].join(''));
             typeList.push(['<th>', '学习方式', '</th>'].join(''));
             typeList.push(['<th>', '入学日期', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_CJZXSXX_XM, '</td>');
@@ -2817,7 +2817,7 @@ function queryInfo31(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_CJZXSXX_XZ, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_CJZXSXX_XXXS, '</td>');
                 typeList.push('<td>', formatDate2((fields.QHQB_T_QHQB_CJZXSXX_RXRQ)), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -2861,13 +2861,13 @@ function queryInfo32(offset) {
             typeList.push(['<th>', '学校名称', '</th>'].join(''));
             typeList.push(['<th>', '学制', '</th>'].join(''));
             typeList.push(['<th>', '入学年月', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_ZXSHMCZX_XM, '</td>');
@@ -2877,7 +2877,7 @@ function queryInfo32(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_ZXSHMCZX_XXMC, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_ZXSHMCZX_XZ, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_ZXSHMCZX_RXLY, '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -2925,13 +2925,13 @@ function queryInfo33(offset) {
             typeList.push(['<th>', '经办人', '</th>'].join(''));
             typeList.push(['<th>', '品牌型号', '</th>'].join(''));
             typeList.push(['<th>', '状态', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_HKDDC_SYR, '</td>');
@@ -2947,7 +2947,7 @@ function queryInfo33(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_HKDDC_BZY, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_HKDDC_CPPXH, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_HKDDC_CLZT, '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -2991,13 +2991,13 @@ function queryInfo34(offset) {
             typeList.push(['<th>', '分公司', '</th>'].join(''));
             typeList.push(['<th>', '联系电话', '</th>'].join(''));
             typeList.push(['<th>', '用户状态', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_YXDSMNSJ_KHXM, '</td>');
@@ -3009,7 +3009,7 @@ function queryInfo34(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_YXDSMNSJ_FGS, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_YXDSMNSJ_LXDH, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_YXDSMNSJ_YHZT, '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -3053,13 +3053,13 @@ function queryInfo35(offset) {
             typeList.push(['<th>', '分公司', '</th>'].join(''));
             typeList.push(['<th>', '联系电话', '</th>'].join(''));
             typeList.push(['<th>', '用户状态', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_YXDSSZSJ_KHXM, '</td>');
@@ -3070,7 +3070,7 @@ function queryInfo35(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_YXDSSZSJ_FGS, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_YXDSSZSJ_LXDH, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_YXDSSZSJ_YHZT, '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -3113,13 +3113,13 @@ function queryInfo36(offset) {
             typeList.push(['<th>', '账户余额', '</th>'].join(''));
             typeList.push(['<th>', '最后一次停机时间', '</th>'].join(''));
             typeList.push(['<th>', '受理时间', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_YXDSTJJFWKT_FGS, '</td>');
@@ -3128,7 +3128,7 @@ function queryInfo36(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_YXDSTJJFWKT_ZHYE, '</td>');
                 typeList.push('<td>', formatDate2((fields.QHQB_T_QHQB_YXDSTJJFWKT_ZHYCTJSJ)), '</td>');
                 typeList.push('<td>', formatDate2((fields.QHQB_T_QHQB_YXDSTJJFWKT_SLSJ)), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -3172,13 +3172,13 @@ function queryInfo37(offset) {
             typeList.push(['<th>', '地区', '</th>'].join(''));
             typeList.push(['<th>', '地址', '</th>'].join(''));
             typeList.push(['<th>', '客户状态', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_YXDSKF_KFXM, '</td>');
@@ -3189,7 +3189,7 @@ function queryInfo37(offset) {
                 var detail = fields.QHQB_T_QHQB_YXDSKF_KFDZ || '';
                 typeList.push('<td title="'+ detail +'"><div style="width:300px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">',detail , '</div></td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_YXDSKF_DSKFZT, '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -3236,13 +3236,13 @@ function queryInfo38(offset) {
             typeList.push(['<th>', '注册地址', '</th>'].join(''));
             typeList.push(['<th>', '税务登记机关', '</th>'].join(''));
             typeList.push(['<th>', '税务登记日期', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_DSLSDJXX_NSRMC, '</td>');
@@ -3257,7 +3257,7 @@ function queryInfo38(offset) {
 
                 typeList.push('<td>', fields.QHQB_T_QHQB_DSLSDJXX_SWDJJG, '</td>');
                 typeList.push('<td>', formatDate2((fields.QHQB_T_QHQB_DSLSDJXX_SWDJRQ)), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -3300,13 +3300,13 @@ function queryInfo39(offset) {
             typeList.push(['<th>', '注销原因', '</th>'].join(''));
             typeList.push(['<th>', '注销日期', '</th>'].join(''));
             typeList.push(['<th>', '企业备注', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_DSZX_NSRMC, '</td>');
@@ -3319,7 +3319,7 @@ function queryInfo39(offset) {
                 typeList.push('<td title="'+ detail +'">,detail ,</td>');
                 typeList.push('<td>', formatDate2((fields.QHQB_T_QHQB_DSZX_ZXRQ)), '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_DSZX_QY_BZ, '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -3362,13 +3362,13 @@ function queryInfo40(offset) {
             typeList.push(['<th>', '纳税人名称', '</th>'].join(''));
             typeList.push(['<th>', '验换证日期', '</th>'].join(''));
             typeList.push(['<th>', '企业备注', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_DSYHZ_NSRSBH, '</td>');
@@ -3377,7 +3377,7 @@ function queryInfo40(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_DSYHZ_NSRMC, '</td>');
                 typeList.push('<td>', formatDate2((fields.QHQB_T_QHQB_DSYHZ_YHZRQ)), '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_DSYHZ_QY_BZ, '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -3421,13 +3421,13 @@ function queryInfo41(offset) {
             typeList.push(['<th>', '非正常户认定日期', '</th>'].join(''));
             typeList.push(['<th>', '非正常户检查日期', '</th>'].join(''));
             typeList.push(['<th>', '企业备注', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_DSFZCH_NSRSBH, '</td>');
@@ -3437,7 +3437,7 @@ function queryInfo41(offset) {
                 typeList.push('<td>', formatDate2((fields.QHQB_T_QHQB_DSFZCH_FZCHRDRQ)), '</td>');
                 typeList.push('<td>', formatDate2((fields.QHQB_T_QHQB_DSFZCH_FZCHJCRQ)), '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_DSFZCH_QY_BZ, '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -3480,13 +3480,13 @@ function queryInfo42(offset) {
             typeList.push(['<th>', '注销原因名称', '</th>'].join(''));
             typeList.push(['<th>', '税务机关名称', '</th>'].join(''));
             typeList.push(['<th>', '填报日期', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_GSZX_NSRSBH, '</td>');
@@ -3495,7 +3495,7 @@ function queryInfo42(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_GSZX_ZXYY_MC, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_GSZX_SWJG_MC, '</td>');
                 typeList.push('<td>', formatDate2((fields.QHQB_T_QHQB_GSZX_TBRQ)), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -3536,20 +3536,20 @@ function queryInfo43(offset) {
             typeList.push(['<th>', '组织机构代码', '</th>'].join(''));
             typeList.push(['<th>', '纳税人名称', '</th>'].join(''));
             typeList.push(['<th>', '办理验换证日期', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_GSYHZ_NSRSBH, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_GSYHZ_ZZJGDM, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_GSYHZ_NSRMC, '</td>');
                 typeList.push('<td>', formatDate2((fields.QHQB_T_QHQB_GSYHZ_BLYHZ_RQ)), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -3591,13 +3591,13 @@ function queryInfo44(offset) {
             typeList.push(['<th>', '纳税人名称', '</th>'].join(''));
             typeList.push(['<th>', '认定日期', '</th>'].join(''));
             typeList.push(['<th>', '有限期至', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_GSFZCHXX_NSRSBH, '</td>');
@@ -3605,7 +3605,7 @@ function queryInfo44(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_GSFZCHXX_NSRMC, '</td>');
                 typeList.push('<td>', formatDate2((fields.QHQB_T_QHQB_GSFZCHXX_RDRQ)), '</td>');
                 typeList.push('<td>', formatDate2((fields.QHQB_T_QHQB_GSFZCHXX_YXQ_Z)), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -3645,19 +3645,19 @@ function queryInfo45(offset) {
             typeList.push(['<th>', '注册编号', '</th>'].join(''));
             typeList.push(['<th>', '公司名称', '</th>'].join(''));
             typeList.push(['<th>', '审批时间', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_GSZXXX_REGISTERNO, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_GSZXXX_CORPNAME, '</td>');
                 typeList.push('<td>', formatDate2((fields.QHQB_T_QHQB_GSZXXX_APPROVEDATE)), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -3698,20 +3698,20 @@ function queryInfo46(offset) {
             typeList.push(['<th>', '公司名称', '</th>'].join(''));
             typeList.push(['<th>', '吊销原因', '</th>'].join(''));
             typeList.push(['<th>', '审批时间', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_GSDXXX_REGISTERNO, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_GSDXXX_CORPNAME, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_GSDXXX_CANCELOPINION, '</td>');
                 typeList.push('<td>', formatDate2((fields.QHQB_T_QHQB_GSDXXX_APPROVEDATE)), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -3754,13 +3754,13 @@ function queryInfo47(offset) {
             typeList.push(['<th>', '变更字段旧值', '</th>'].join(''));
             typeList.push(['<th>', '变更字段新值', '</th>'].join(''));
             typeList.push(['<th>', '审批时间', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_GSBGXX_REGISTERNO, '</td>');
@@ -3769,7 +3769,7 @@ function queryInfo47(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_GSBGXX_OLDVALUE, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_GSBGXX_NEWVALUE, '</td>');
                 typeList.push('<td>', formatDate2((fields.QHQB_T_QHQB_GSBGXX_APPROVEDATE)), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -3810,20 +3810,20 @@ function queryInfo48(offset) {
             typeList.push(['<th>', '公司名称', '</th>'].join(''));
             typeList.push(['<th>', '检查年份', '</th>'].join(''));
             typeList.push(['<th>', '审批时间', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_GSNJXX_REGISTERNO, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_GSNJXX_CORPNAME, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_GSNJXX_CHECKYEAR, '</td>');
                 typeList.push('<td>', formatDate2((fields.QHQB_T_QHQB_GSNJXX_APPROVEDATE)), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -3865,13 +3865,13 @@ function queryInfo49(offset) {
             typeList.push(['<th>', '地址', '</th>'].join(''));
             typeList.push(['<th>', '电话', '</th>'].join(''));
             typeList.push(['<th>', '经营范围', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.CORPNAME, '</td>');
@@ -3879,7 +3879,7 @@ function queryInfo49(offset) {
                 typeList.push('<td>', fields.ADDRESS, '</td>');
                 typeList.push('<td>', fields.TELEPHONE, '</td>');
                 typeList.push('<td>', fields.BUSINESSSCOPE, '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -3924,13 +3924,13 @@ function queryInfo50(offset) {
             typeList.push(['<th>', '发证机关', '</th>'].join(''));
             typeList.push(['<th>', '从业类别', '</th>'].join(''));
             typeList.push(['<th>', '从业地区', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_CYRY_XM, '</td>');
@@ -3941,7 +3941,7 @@ function queryInfo50(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_CYRY_FZJG, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_CYRY_CYLB, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_CYRY_CYDQ, '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -3986,13 +3986,13 @@ function queryInfo51(offset) {
             typeList.push(['<th>', '女婚姻状况', '</th>'].join(''));
             typeList.push(['<th>', '承办机构', '</th>'].join(''));
             typeList.push(['<th>', '结婚登记日期', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_HYDJXX_MNAME, '</td>');
@@ -4003,7 +4003,7 @@ function queryInfo51(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_HYDJXX_WHYZK, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_HYDJXX_CBJGMC, '</td>');
                 typeList.push('<td>', formatDate2((fields.QHQB_T_QHQB_HYDJXX_JHDJRQ)), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -4044,19 +4044,19 @@ function queryInfo52(offset) {
             typeList.push(['<th>', '身份类型', '</th>'].join(''));
             typeList.push(['<th>', '身份内容', '</th>'].join(''));
             typeList.push(['<th>', '采集时间', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_1001_IDENTIFICATION_TYPE, '</td>');
                 typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_1001_CERTIFICATE_CODE, '</td>');
                 typeList.push('<td>', formatDate2((fields.sis_V_WA_SOURCE_FJ_1001_CAPTURE_TIME)), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -4098,13 +4098,13 @@ function queryInfo53(offset) {
             typeList.push(['<th>', '采集设备经度', '</th>'].join(''));
             typeList.push(['<th>', '采集设备纬度', '</th>'].join(''));
             typeList.push(['<th>', '采集时间', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_1002_AP_MAC, '</td>');
@@ -4112,7 +4112,7 @@ function queryInfo53(offset) {
                 typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_1002_COLLECTION_EQUIPMENT_LONGITUDE, '</td>');
                 typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_1002_COLLECTION_EQUIPMENT_LATITUDE, '</td>');
                 typeList.push('<td>', formatDate2((fields.sis_V_WA_SOURCE_FJ_1002_CAPTURE_TIME)), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -4159,13 +4159,13 @@ function queryInfo54(offset) {
             typeList.push(['<th>', '终端型号', '</th>'].join(''));
             typeList.push(['<th>', '上线时间', '</th>'].join(''));
             typeList.push(['<th>', '下线时间', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_0001_NAME, '</td>');
@@ -4178,7 +4178,7 @@ function queryInfo54(offset) {
                 typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_0001_MODEL, '</td>');
                 typeList.push('<td>', formatDate2((fields.sis_V_WA_SOURCE_FJ_0001_START_TIME)), '</td>');
                 typeList.push('<td>', formatDate2((fields.sis_V_WA_SOURCE_FJ_0001_END_TIME)), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -4220,13 +4220,13 @@ function queryInfo55(offset) {
             typeList.push(['<th>', '源外网IPv4地址', '</th>'].join(''));
             typeList.push(['<th>', '终端MAC地址', '</th>'].join(''));
             typeList.push(['<th>', '日志记录时间', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_0002_NETSERVERPORT_WACODE, '</td>');
@@ -4234,7 +4234,7 @@ function queryInfo55(offset) {
                 typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_0002_SRC_IP, '</td>');
                 typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_0002_MAC, '</td>');
                 typeList.push('<td>', formatDate2((fields.sis_V_WA_SOURCE_FJ_0002_CAPTURE_TIME)), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -4275,20 +4275,20 @@ function queryInfo56(offset) {
             typeList.push(['<th>', '场所编号', '</th>'].join(''));
             typeList.push(['<th>', '采集设备经度', '</th>'].join(''));
             typeList.push(['<th>', '时间', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.sis_V_WA_BASIC_FJ_1001_COLLECTION_EQUIPMENT_ID, '</td>');
                 typeList.push('<td>', fields.sis_V_WA_BASIC_FJ_1001_NETBAR_WACODE, '</td>');
                 typeList.push('<td>', fields.sis_V_WA_BASIC_FJ_1001_COLLECTION_EQUIPMENT_LONGITUDE, '</td>');
                 typeList.push('<td>', formatDate2(fields.sis_V_WA_BASIC_FJ_1001_TIME), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -4333,13 +4333,13 @@ function queryInfo57(offset) {
             typeList.push(['<th>', '证件号码', '</th>'].join(''));
             typeList.push(['<th>', '售票时间', '</th>'].join(''));
             typeList.push(['<th>', '发车时间', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_HQJT_DZKPSJB_XM, '</td>');
@@ -4349,7 +4349,7 @@ function queryInfo57(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_HQJT_DZKPSJB_ZJHM, '</td>');
                 typeList.push('<td>', formatDate((fields.QHQB_T_QHQB_HQJT_DZKPSJB_SPSJ)), '</td>');
                 typeList.push('<td>', formatDate((fields.QHQB_T_QHQB_HQJT_DZKPSJB_FCSJ)), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -4395,13 +4395,13 @@ function queryInfo58(offset) {
             typeList.push(['<th>', '进出岛人员所属城市', '</th>'].join(''));
             typeList.push(['<th>', '扫描时间', '</th>'].join(''));
             typeList.push(['<th>', '进出港类型', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHSJ_VIEW_COMPARERECORD_TO_QHSJ_NAME, '</td>');
@@ -4412,7 +4412,7 @@ function queryInfo58(offset) {
                 typeList.push('<td>', fields.QHSJ_VIEW_COMPARERECORD_TO_QHSJ_CITY, '</td>');
                 typeList.push('<td>', formatDate(fields.QHSJ_VIEW_COMPARERECORD_TO_QHSJ_SCAN_TIME), '</td>');
                 typeList.push('<td>', fields.QHSJ_VIEW_COMPARERECORD_TO_QHSJ_FLIGHT_TYPE, '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });
@@ -4460,13 +4460,13 @@ function queryInfo59(offset) {
             typeList.push(['<th>', '终点站', '</th>'].join(''));
             typeList.push(['<th>', '发车日期', '</th>'].join(''));
             typeList.push(['<th>', '发车时间', '</th>'].join(''));
-            typeList.push(['<th>', '详情', '</th>'].join(''));
+            // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr>');
+                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_TLDP_ID_NAME, '</td>');
@@ -4479,7 +4479,7 @@ function queryInfo59(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_TLDP_TO_STATION_NAME, '</td>');
                 typeList.push('<td>', formateDate4(fields.QHQB_T_QHQB_TLDP_TRAIN_DATE), '</td>');
                 typeList.push('<td>', formateDate5(fields.QHQB_T_QHQB_TLDP_START_TIME), '</td>');
-                typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
             });

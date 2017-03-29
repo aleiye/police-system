@@ -132,11 +132,11 @@ var tableDict = ['A_db_sis_V_BD_HANDSET_CONTACTOR_INFO',//机主通讯录信息-
     'A_db_QHQB_T_QHQB_YXDSMNSJ',//有线电视模拟数据
     'A_db_QHQB_T_QHQB_HKDDC',//海口电动车信息
     'A_db_QHQB_T_QHQB_HQJT_DZKPSJB',//海汽集团电子客票信息
-    'A_db_sis_V_WA_SOURCE_FJ_0001',//终端上下线信息--6.网警总队网综系统
-    'A_db_sis_V_WA_SOURCE_FJ_0002',//上网日志
-    'A_db_sis_V_WA_SOURCE_FJ_1001',//终端特征信息
-    'A_db_sis_V_WA_SOURCE_FJ_1002',//热点信息采集
-    'A_db_sis_V_WA_BASIC_FJ_1001',//终端特征移动采集设备轨迹
+    'A_net_sis_V_WA_SOURCE_FJ_0001',//终端上下线信息--6.网警总队网综系统
+    'A_net_sis_V_WA_SOURCE_FJ_0002',//上网日志
+    'A_net_sis_V_WA_SOURCE_FJ_1001',//终端特征信息
+    'A_net_sis_V_WA_SOURCE_FJ_1002',//热点信息采集
+    'A_net_sis_V_WA_BASIC_FJ_1001',//终端特征移动采集设备轨迹
 	'A_db_QHSJ_VIEW_COMPARERECORD_TO_QHSJ',//琼海检查站比对信息
 	'A_db_QHQB_T_QHQB_TLDP'//铁路订票数据信息
 ];
@@ -559,7 +559,7 @@ function queryInfo() {
             break;
         }
         case '终端特征信息': {
-            queryString = 'A_source:"A_db_sis_V_WA_SOURCE_FJ_1001"';
+            queryString = 'A_source:"A_net_sis_V_WA_SOURCE_FJ_1001"';
             if (keyWord != '') {
                 queryString = queryString + ' AND ' + keyWord;
             }
@@ -567,7 +567,7 @@ function queryInfo() {
             break;
         }
         case '热点信息采集': {
-            queryString = 'A_source:"A_db_sis_V_WA_SOURCE_FJ_1002"';
+            queryString = 'A_source:"A_net_sis_V_WA_SOURCE_FJ_1002"';
             if (keyWord != '') {
                 queryString = queryString + ' AND ' + keyWord;
             }
@@ -575,7 +575,7 @@ function queryInfo() {
             break;
         }
         case '终端上下线信息': {
-            queryString = 'A_source:"A_db_sis_V_WA_SOURCE_FJ_0001"';
+            queryString = 'A_source:"A_net_sis_V_WA_SOURCE_FJ_0001"';
             if (keyWord != '') {
                 queryString = queryString + ' AND ' + keyWord;
             }
@@ -583,7 +583,7 @@ function queryInfo() {
             break;
         }
         case '上网日志': {
-            queryString = 'A_source:"A_db_sis_V_WA_SOURCE_FJ_0002"';
+            queryString = 'A_source:"A_net_sis_V_WA_SOURCE_FJ_0002"';
             if (keyWord != '') {
                 queryString = queryString + ' AND ' + keyWord;
             }
@@ -591,7 +591,7 @@ function queryInfo() {
             break;
         }
         case '终端特征移动采集设备轨迹': {
-            queryString = 'A_source:"A_db_sis_V_WA_BASIC_FJ_1001"';
+            queryString = 'A_source:"A_net_sis_V_WA_BASIC_FJ_1001"';
             if (keyWord != '') {
                 queryString = queryString + ' AND ' + keyWord;
             }
@@ -629,7 +629,7 @@ function queryInfo() {
 function searchCount() {
     var tableArray = tableDictTmp;
     // queryString = 'A_source:"A_db_duo_SEC_USER_INFO" OR A_source:"A_db_duo_SEC_USER_SYNCINFO" | report count(A_source) over A_source';
-    var tmpStr = ['A_source:A_db_*'];
+    var tmpStr = ['A_source:A_*'];
     // var tmpStr = [];
     // $(tableArray).each(function (index, value) {
     //     if (index == 0) {

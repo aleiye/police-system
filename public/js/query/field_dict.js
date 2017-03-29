@@ -3621,7 +3621,7 @@ var fieldDict = {
             "name": "籍贯"
         }
     },
-    "A_db_sis_V_WA_SOURCE_FJ_1001": {
+    "A_net_sis_V_WA_SOURCE_FJ_1001": {
         "sis_V_WA_SOURCE_FJ_1001_CERTIFICATE_CODE": {
             "name": "身份内容"
         },
@@ -3674,7 +3674,7 @@ var fieldDict = {
             "name": "采集设备经度"
         }
     },
-    "A_db_sis_V_WA_SOURCE_FJ_1002": {
+    "A_net_sis_V_WA_SOURCE_FJ_1002": {
         "sis_V_WA_SOURCE_FJ_1002_": {
             "name": ""
         },
@@ -3715,7 +3715,7 @@ var fieldDict = {
             "name": "采集设备经度"
         }
     },
-    "A_db_sis_V_WA_SOURCE_FJ_0001": {
+    "A_net_sis_V_WA_SOURCE_FJ_0001": {
         "sis_V_WA_SOURCE_FJ_0001_CERTIFICATE_CODE": {
             "name": "身份证件号码"
         },
@@ -3819,7 +3819,7 @@ var fieldDict = {
             "name": "身份证件类型"
         }
     },
-    "A_db_sis_V_WA_SOURCE_FJ_0002": {
+    "A_net_sis_V_WA_SOURCE_FJ_0002": {
         "sis_V_WA_SOURCE_FJ_0002_源外网IPv4结束端口号": {
             "name": "SRC_PORT_END"
         },
@@ -3884,7 +3884,7 @@ var fieldDict = {
             "name": "LATITUDE"
         }
     },
-    "A_db_sis_V_WA_BASIC_FJ_1001": {
+    "A_net_sis_V_WA_BASIC_FJ_1001": {
         "sis_V_WA_BASIC_FJ_1001_场所编号": {
             "name": "NETBAR_WACODE"
         },

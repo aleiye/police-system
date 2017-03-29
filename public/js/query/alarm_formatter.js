@@ -26,10 +26,10 @@ function trFormat(data){
             'A_db_QHQB_T_QHQB_HQJT_DZKPSJB': function(){
                 var newValues = copyArr(values);
                 // newValues[3] = selfFields['QHQB_T_QHQB_TLDP_FROM_STATION_NAME'];
-                // newValues[5] = formatDate(selfFields['QHQB_T_QHQB_TLDP_TRAIN_DATE'] + selfFields['QHQB_T_QHQB_TLDP_START_TIME']);
-                // newValues[6] = formatDate(data['inserttime']);
-                // newValues[7] = '铁路订票比对';
-                // newValues[8] = data['readStatus'];
+                newValues[5] = formatDate(selfFields['QHQB_T_QHQB_HQJT_DZKPSJB_FCSJ']);
+                newValues[6] = formatDate(data['inserttime']);
+                newValues[7] = '海汽电子客票';
+                newValues[8] = data['readStatus'];
                 return newValues;
             }
         }

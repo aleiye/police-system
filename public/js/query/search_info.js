@@ -680,6 +680,15 @@ function searchCount() {
 					$(this).attr("name", "hide");
 				}
             });
+            $('#type_menu h3').each(function(i,item){
+                var showlength = $(item).next('ul').find('li[name=show]').length;
+                if(showlength){
+                    $(item).find('span').text('[' + showlength +']');
+                } else {
+                    $(item).attr('name','hide').hide();
+                }
+            });
+            // $('#type_menu h3[name=show]:first').click();
         })
 }
 //统计每个大类下的表格数量

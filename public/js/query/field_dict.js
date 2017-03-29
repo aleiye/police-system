@@ -1,4 +1,4 @@
-var fieldDict = {
+{
     "A_db_QHQB_T_QHQB_ZXXZXSXX": {
         "QHQB_T_QHQB_ZXXZXSXX_HKSZD": {
             "name": "户口所在地"
@@ -267,6 +267,666 @@ var fieldDict = {
         },
         "QHQB_T_QHQB_DBRYXX_cac000": {
             "name": "成员id"
+        }
+    },
+    "A_db_sis_V_BD_HANDSET_CONTACTOR_INFO": {
+        "sis_V_BD_HANDSET_CONTACTOR_INFO_ISDELETE": {
+            "name": "是否删除"
+        },
+        "sis_V_BD_HANDSET_CONTACTOR_INFO_Group": {
+            "name": "群组"
+        },
+        "sis_V_BD_HANDSET_CONTACTOR_INFO_UPDATEDTIME": {
+            "name": "修改时间"
+        },
+        "sis_V_BD_HANDSET_CONTACTOR_INFO_IM": {
+            "name": "即时通信"
+        },
+        "sis_V_BD_HANDSET_CONTACTOR_INFO_PK_VALUE": {
+            "name": "主键"
+        },
+        "sis_V_BD_HANDSET_CONTACTOR_INFO_SRC_HANDSET_NUM": {
+            "name": "源手机号码"
+        },
+        "sis_V_BD_HANDSET_CONTACTOR_INFO_CONTACTOR_HANDSET_NUM": {
+            "name": "联系人手机号码，多个用;隔开"
+        },
+        "sis_V_BD_HANDSET_CONTACTOR_INFO_EMAIL": {
+            "name": "电子邮箱"
+        },
+        "sis_V_BD_HANDSET_CONTACTOR_INFO_MAINID": {
+            "name": "被采集人id"
+        },
+        "sis_V_BD_HANDSET_CONTACTOR_INFO_COLLECT_ID": {
+            "name": "采集日志ID"
+        },
+        "sis_V_BD_HANDSET_CONTACTOR_INFO_ANNIVERSARY": {
+            "name": "纪念日"
+        },
+        "sis_V_BD_HANDSET_CONTACTOR_INFO_CASE_ID": {
+            "name": "案件ID"
+        },
+        "sis_V_BD_HANDSET_CONTACTOR_INFO_PCSCODE": {
+            "name": "单位编码"
+        },
+        "sis_V_BD_HANDSET_CONTACTOR_INFO_CONTACTOR_NAME": {
+            "name": "联系人名称"
+        },
+        "sis_V_BD_HANDSET_CONTACTOR_INFO_ADDRESS": {
+            "name": "通讯地址"
+        },
+        "sis_V_BD_HANDSET_CONTACTOR_INFO_COLLECT_TIME": {
+            "name": "采集时间"
+        },
+        "sis_V_BD_HANDSET_CONTACTOR_INFO_UPLOAD_TIME": {
+            "name": "上传时间"
+        },
+        "sis_V_BD_HANDSET_CONTACTOR_INFO_CREATEDTIME": {
+            "name": "创建时间"
+        },
+        "sis_V_BD_HANDSET_CONTACTOR_INFO_ID": {
+            "name": "ID，自增长"
+        },
+        "sis_V_BD_HANDSET_CONTACTOR_INFO_CONTACTOR_ID": {
+            "name": "通讯录ID"
+        },
+        "sis_V_BD_HANDSET_CONTACTOR_INFO_REMARK": {
+            "name": "备注"
+        },
+        "sis_V_BD_HANDSET_CONTACTOR_INFO_WEBSITE": {
+            "name": "网站"
+        }
+    },
+    "A_db_sis_V_GJ_HANDSET_SMS_INFO": {
+        "sis_V_GJ_HANDSET_SMS_INFO_MESSAGE_TITLE": {
+            "name": "彩信主题(短信为空)"
+        },
+        "sis_V_GJ_HANDSET_SMS_INFO_ISDELETE": {
+            "name": "是否删除"
+        },
+        "sis_V_GJ_HANDSET_SMS_INFO_UPDATEDTIME": {
+            "name": "修改时间"
+        },
+        "sis_V_GJ_HANDSET_SMS_INFO_PK_VALUE": {
+            "name": "主键"
+        },
+        "sis_V_GJ_HANDSET_SMS_INFO_ACTIONTYPE": {
+            "name": "信息来源"
+        },
+        "sis_V_GJ_HANDSET_SMS_INFO_MESSAGE_DETAIL": {
+            "name": "短信内容（彩信明细）"
+        },
+        "sis_V_GJ_HANDSET_SMS_INFO_MAINID": {
+            "name": "被采集人id"
+        },
+        "sis_V_GJ_HANDSET_SMS_INFO_COLLECT_ID": {
+            "name": "采集日志ID"
+        },
+        "sis_V_GJ_HANDSET_SMS_INFO_STATUS": {
+            "name": "短信查看状态"
+        },
+        "sis_V_GJ_HANDSET_SMS_INFO_MSG_TYPE": {
+            "name": "信息类型"
+        },
+        "sis_V_GJ_HANDSET_SMS_INFO_CASE_ID": {
+            "name": "案件ID"
+        },
+        "sis_V_GJ_HANDSET_SMS_INFO_PCSCODE": {
+            "name": "单位编码"
+        },
+        "sis_V_GJ_HANDSET_SMS_INFO_SEND_TIME": {
+            "name": "发送（接收）时间"
+        },
+        "sis_V_GJ_HANDSET_SMS_INFO_FROM_NUM": {
+            "name": "主叫方"
+        },
+        "sis_V_GJ_HANDSET_SMS_INFO_COLLECT_TIME": {
+            "name": "采集时间"
+        },
+        "sis_V_GJ_HANDSET_SMS_INFO_UPLOAD_TIME": {
+            "name": "上传时间"
+        },
+        "sis_V_GJ_HANDSET_SMS_INFO_CREATEDTIME": {
+            "name": "创建时间"
+        },
+        "sis_V_GJ_HANDSET_SMS_INFO_ID": {
+            "name": "ID"
+        },
+        "sis_V_GJ_HANDSET_SMS_INFO_MAIN_FILE": {
+            "name": "彩信文件相对路径"
+        },
+        "sis_V_GJ_HANDSET_SMS_INFO_TO_NUM": {
+            "name": "被叫方"
+        }
+    },
+    "A_db_sis_V_PHONE_THQD": {
+        "sis_V_PHONE_THQD_thdd": {
+            "name": "通话地点"
+        },
+        "sis_V_PHONE_THQD_dfhm": {
+            "name": "对方电话"
+        },
+        "sis_V_PHONE_THQD_pid": {
+            "name": "id"
+        },
+        "sis_V_PHONE_THQD_zbjlx": {
+            "name": "主被叫类型"
+        },
+        "sis_V_PHONE_THQD_jzdm": {
+            "name": "完整基站代码"
+        },
+        "sis_V_PHONE_THQD_cjsj": {
+            "name": "采集时间"
+        },
+        "sis_V_PHONE_THQD_thsc": {
+            "name": "通话时长"
+        },
+        "sis_V_PHONE_THQD_thlx": {
+            "name": "通话类型"
+        },
+        "sis_V_PHONE_THQD_dfqh": {
+            "name": "对方区号"
+        },
+        "sis_V_PHONE_THQD_xqdm": {
+            "name": "基站小区代码"
+        },
+        "sis_V_PHONE_THQD_wzdm": {
+            "name": "基站位置代码"
+        },
+        "sis_V_PHONE_THQD_thsj": {
+            "name": "通话时间（包括日期和时间）"
+        },
+        "sis_V_PHONE_THQD_mydd": {
+            "name": "漫游地"
+        }
+    },
+    "A_db_sis_V_XYR_MAIN": {
+        "sis_V_XYR_MAIN_JTDZ": {
+            "name": "家庭地址"
+        },
+        "sis_V_XYR_MAIN_QTXX": {
+            "name": "其他信息"
+        },
+        "sis_V_XYR_MAIN_CJR": {
+            "name": "采集人"
+        },
+        "sis_V_XYR_MAIN_DHHM_YS": {
+            "name": "原始电话"
+        },
+        "sis_V_XYR_MAIN_DATASUM": {
+            "name": "数据量"
+        },
+        "sis_V_XYR_MAIN_XLH": {
+            "name": "序列号"
+        },
+        "sis_V_XYR_MAIN_SJCH": {
+            "name": "手机串号"
+        },
+        "sis_V_XYR_MAIN_ID": {
+            "name": "主键"
+        },
+        "sis_V_XYR_MAIN_RYLB": {
+            "name": "人员类别"
+        },
+        "sis_V_XYR_MAIN_OLDID": {
+            "name": "问题反馈"
+        },
+        "sis_V_XYR_MAIN_ZJHM": {
+            "name": "证件"
+        },
+        "sis_V_XYR_MAIN_SALB": {
+            "name": "涉案类别"
+        },
+        "sis_V_XYR_MAIN_CJDW": {
+            "name": "采集单位"
+        },
+        "sis_V_XYR_MAIN_GZDW": {
+            "name": "工作单位"
+        },
+        "sis_V_XYR_MAIN_IP": {
+            "name": "ip地址"
+        },
+        "sis_V_XYR_MAIN_ZWBH": {
+            "name": "指纹编号"
+        },
+        "sis_V_XYR_MAIN_DHHM": {
+            "name": "电话"
+        },
+        "sis_V_XYR_MAIN_RYBH": {
+            "name": "人员编号"
+        },
+        "sis_V_XYR_MAIN_BMCH": {
+            "name": "绰号"
+        },
+        "sis_V_XYR_MAIN_SJPP": {
+            "name": "手机品牌"
+        },
+        "sis_V_XYR_MAIN_XM": {
+            "name": "姓名"
+        },
+        "sis_V_XYR_MAIN_SSCS": {
+            "name": "所属城市"
+        },
+        "sis_V_XYR_MAIN_HJDZ": {
+            "name": "户籍"
+        },
+        "sis_V_XYR_MAIN_CREATEDTIME": {
+            "name": "采集时间"
+        },
+        "sis_V_XYR_MAIN_SBLX": {
+            "name": "设备类型"
+        }
+    },
+    "A_db_sis_V_PHONE_LIST": {
+        "sis_V_PHONE_LIST_zz": {
+            "name": "住址"
+        },
+        "sis_V_PHONE_LIST_deleteflag": {
+            "name": "是否删除"
+        },
+        "sis_V_PHONE_LIST_quanxian": {
+            "name": "权限分配"
+        },
+        "sis_V_PHONE_LIST_jzhm": {
+            "name": "机主电话"
+        },
+        "sis_V_PHONE_LIST_mintime": {
+            "name": "最小时间"
+        },
+        "sis_V_PHONE_LIST_sjch": {
+            "name": "手机串号"
+        },
+        "sis_V_PHONE_LIST_pid": {
+            "name": "id"
+        },
+        "sis_V_PHONE_LIST_cjr": {
+            "name": "采集人"
+        },
+        "sis_V_PHONE_LIST_imsi": {
+            "name": "sim卡串号"
+        },
+        "sis_V_PHONE_LIST_maxtime": {
+            "name": "最大时间"
+        },
+        "sis_V_PHONE_LIST_cjsj": {
+            "name": "采集时间"
+        },
+        "sis_V_PHONE_LIST_ajlb": {
+            "name": "案件类别"
+        },
+        "sis_V_PHONE_LIST_ajmc": {
+            "name": "案件名称"
+        },
+        "sis_V_PHONE_LIST_sjcjr": {
+            "name": "持机人"
+        },
+        "sis_V_PHONE_LIST_cjdw": {
+            "name": "采集单位"
+        },
+        "sis_V_PHONE_LIST_sfh": {
+            "name": "身份证"
+        },
+        "sis_V_PHONE_LIST_jzqh": {
+            "name": "机主区号"
+        },
+        "sis_V_PHONE_LIST_xxly": {
+            "name": "信息来源"
+        },
+        "sis_V_PHONE_LIST_jzxm": {
+            "name": "机主姓名"
+        },
+        "sis_V_PHONE_LIST_bz": {
+            "name": "备注"
+        },
+        "sis_V_PHONE_LIST_thqd_clbs": {
+            "name": "通话记录处理标识"
+        },
+        "sis_V_PHONE_LIST_hdrows": {
+            "name": "话单长度"
+        }
+    },
+    "A_db_hkvs_BMS_CROSSING_INFO": {
+        "hkvs_BMS_CROSSING_INFO_UPDATETIME": {
+            "name": "路口更新时间"
+        },
+        "hkvs_BMS_CROSSING_INFO_USAGE_TYPE": {
+            "name": "使用类型"
+        },
+        "hkvs_BMS_CROSSING_INFO_CASCADE_ID": {
+            "name": "级联ID(已无效)"
+        },
+        "hkvs_BMS_CROSSING_INFO_CROSSING_MODE": {
+            "name": "卡口模式"
+        },
+        "hkvs_BMS_CROSSING_INFO_LONGITUDE": {
+            "name": "经度"
+        },
+        "hkvs_BMS_CROSSING_INFO_JCCROSSINGINDEXCODE": {
+            "name": "稽查布控路口编号 "
+        },
+        "hkvs_BMS_CROSSING_INFO_ENABLE_RELATE": {
+            "name": "是否启用关联视频"
+        },
+        "hkvs_BMS_CROSSING_INFO_PHOTO": {
+            "name": "路口示意图url "
+        },
+        "hkvs_BMS_CROSSING_INFO_CROSSING_SERVER_ID": {
+            "name": "卡口服务器id"
+        },
+        "hkvs_BMS_CROSSING_INFO_CROSSING_TYPE": {
+            "name": "路口厂商(无实际用途)"
+        },
+        "hkvs_BMS_CROSSING_INFO_RELATED_CAMERA_NAME": {
+            "name": "监控点名称"
+        },
+        "hkvs_BMS_CROSSING_INFO_GATCODE": {
+            "name": "国标编码"
+        },
+        "hkvs_BMS_CROSSING_INFO_RELATED_CAMERA_PATH": {
+            "name": "监控点编号路径"
+        },
+        "hkvs_BMS_CROSSING_INFO_INTERCITY": {
+            "name": "卡口类型 "
+        },
+        "hkvs_BMS_CROSSING_INFO_ALTITUDE": {
+            "name": "海拔"
+        },
+        "hkvs_BMS_CROSSING_INFO_CONTROL_UNIT_ID": {
+            "name": "所属组织ID"
+        },
+        "hkvs_BMS_CROSSING_INFO_FRONT_TYPE": {
+            "name": "前端类型，相关字典在字典表"
+        },
+        "hkvs_BMS_CROSSING_INFO_CROSSING_NAME": {
+            "name": "路口名称"
+        },
+        "hkvs_BMS_CROSSING_INFO_CROSSING_INDEX_CODE": {
+            "name": "路口编号"
+        },
+        "hkvs_BMS_CROSSING_INFO_CLOUDANALYSIS": {
+            "name": "是否过云分析"
+        },
+        "hkvs_BMS_CROSSING_INFO_LANE_NUM": {
+            "name": "车道数"
+        },
+        "hkvs_BMS_CROSSING_INFO_CONTROLUNIT_INDEXCODE": {
+            "name": "所属组织编号"
+        },
+        "hkvs_BMS_CROSSING_INFO_INTERNAL_CODE": {
+            "name": "内部编号"
+        },
+        "hkvs_BMS_CROSSING_INFO_CROSSING_ID": {
+            "name": "路口ID"
+        },
+        "hkvs_BMS_CROSSING_INFO_LATITUDE": {
+            "name": "纬度"
+        }
+    },
+    "A_db_hkvs_BMS_PLATE_ALARM": {
+        "hkvs_BMS_PLATE_ALARM_PLATE_INFO": {
+            "name": "布控车牌号码"
+        },
+        "hkvs_BMS_PLATE_ALARM_CROSSING_NAMES": {
+            "name": "卡口名字集合"
+        },
+        "hkvs_BMS_PLATE_ALARM_": {
+            "name": ""
+        },
+        "hkvs_BMS_PLATE_ALARM_UNIT_ID": {
+            "name": "布控区域"
+        },
+        "hkvs_BMS_PLATE_ALARM_START_TIME": {
+            "name": "布控开始时间"
+        },
+        "hkvs_BMS_PLATE_ALARM_IDENTIFY": {
+            "name": "布控标识符"
+        },
+        "hkvs_BMS_PLATE_ALARM_PLATE_INFO_PRE": {
+            "name": "车牌号关键字"
+        },
+        "hkvs_BMS_PLATE_ALARM_CONTECT_INFO": {
+            "name": "布控联系人信息"
+        },
+        "hkvs_BMS_PLATE_ALARM_ISCASCADE": {
+            "name": "是否级联"
+        },
+        "hkvs_BMS_PLATE_ALARM_USER_ID": {
+            "name": "布控人员Id"
+        },
+        "hkvs_BMS_PLATE_ALARM_CROSSING_IDS": {
+            "name": "卡口流水号集合"
+        },
+        "hkvs_BMS_PLATE_ALARM_END_TIME": {
+            "name": "布控结束时间"
+        },
+        "hkvs_BMS_PLATE_ALARM_IMAGE_EXPLAIN": {
+            "name": "特征布控用"
+        },
+        "hkvs_BMS_PLATE_ALARM_SOURCE_TYPE": {
+            "name": "布控来源"
+        },
+        "hkvs_BMS_PLATE_ALARM_REASON_NAME": {
+            "name": "告警原因"
+        },
+        "hkvs_BMS_PLATE_ALARM_UNIT_NAME": {
+            "name": "布控区域名称"
+        },
+        "hkvs_BMS_PLATE_ALARM_QUERY_ALARM_TIME": {
+            "name": "最近一次查看报警的时间"
+        },
+        "hkvs_BMS_PLATE_ALARM_SUB_LOGO": {
+            "name": "子品牌"
+        },
+        "hkvs_BMS_PLATE_ALARM_REASON": {
+            "name": "布控原因"
+        },
+        "hkvs_BMS_PLATE_ALARM_REMARK": {
+            "name": "备注"
+        },
+        "hkvs_BMS_PLATE_ALARM_ALARM_NUM": {
+            "name": "从上次查看到现在上报的告警条数"
+        },
+        "hkvs_BMS_PLATE_ALARM_IMAGE_URL": {
+            "name": "车辆的图片"
+        },
+        "hkvs_BMS_PLATE_ALARM_ALARM_TYPE": {
+            "name": "布控类型"
+        },
+        "hkvs_BMS_PLATE_ALARM_AUTO_LOGO": {
+            "name": "主品牌"
+        },
+        "hkvs_BMS_PLATE_ALARM_USER_NAME": {
+            "name": "布控人员名字"
+        },
+        "hkvs_BMS_PLATE_ALARM_VEHICLE_TYPE": {
+            "name": "车辆类型"
+        },
+        "hkvs_BMS_PLATE_ALARM_CROSSINGID": {
+            "name": "卡口编号"
+        },
+        "hkvs_BMS_PLATE_ALARM_DATE_TYPE": {
+            "name": "布控的时间类型"
+        },
+        "hkvs_BMS_PLATE_ALARM_FEATURES": {
+            "name": "特征描述信息"
+        },
+        "hkvs_BMS_PLATE_ALARM_ALARM_START_PERIOD": {
+            "name": "告警第一次出现的时间"
+        },
+        "hkvs_BMS_PLATE_ALARM_CREATE_DATE": {
+            "name": "布控创建时间"
+        },
+        "hkvs_BMS_PLATE_ALARM_QUERY_ALARM": {
+            "name": "是否查看了报警"
+        },
+        "hkvs_BMS_PLATE_ALARM_PLATE_ALARM_ID": {
+            "name": "布控ID"
+        },
+        "hkvs_BMS_PLATE_ALARM_ALARM_STOP_PERIOD": {
+            "name": "告警最后一次出现的时间"
+        },
+        "hkvs_BMS_PLATE_ALARM_INDEX_CODE": {
+            "name": "布控编号"
+        },
+        "hkvs_BMS_PLATE_ALARM_ALARM_TOTAL_NUM": {
+            "name": "上报总的告警条数"
+        },
+        "hkvs_BMS_PLATE_ALARM_VEHICLE_COLOR": {
+            "name": "车身颜色"
+        },
+        "hkvs_BMS_PLATE_ALARM_PLATE_COLOR": {
+            "name": "车牌颜色"
+        }
+    },
+    "A_db_hkvs_BMS_VEHICLE_PASS": {
+        "hkvs_BMS_VEHICLE_PASS_PIC_PLATE": {
+            "name": "车牌小图片路径"
+        },
+        "hkvs_BMS_VEHICLE_PASS_PLATE_INFO": {
+            "name": "车牌号码"
+        },
+        "hkvs_BMS_VEHICLE_PASS_PASS_TIME": {
+            "name": "过车时间"
+        },
+        "hkvs_BMS_VEHICLE_PASS_PIC_VEHICLE": {
+            "name": "过车图片路径"
+        },
+        "hkvs_BMS_VEHICLE_PASS_VEHICLE_SUBLOGO": {
+            "name": "车辆子品牌"
+        },
+        "hkvs_BMS_VEHICLE_PASS_UPDATE_TIME": {
+            "name": "更新时间"
+        },
+        "hkvs_BMS_VEHICLE_PASS_VEHICLE_TYPE": {
+            "name": "车辆类型"
+        },
+        "hkvs_BMS_VEHICLE_PASS_VEHICLE_SUNVISOR": {
+            "name": "遮阳板"
+        },
+        "hkvs_BMS_VEHICLE_PASS_VEH_COLOR_DEPTH": {
+            "name": "车身颜色深浅"
+        },
+        "hkvs_BMS_VEHICLE_PASS_VEHICLE_MODEL": {
+            "name": "年代款"
+        },
+        "hkvs_BMS_VEHICLE_PASS_VEHICLE_STATE": {
+            "name": "车辆状态"
+        },
+        "hkvs_BMS_VEHICLE_PASS_VEHICLE_ID": {
+            "name": "过车ID"
+        },
+        "hkvs_BMS_VEHICLE_PASS_VEHICLE_AUDIT": {
+            "name": "是否审核"
+        },
+        "hkvs_BMS_VEHICLE_PASS_VEHICLE_SPEED": {
+            "name": "车辆速度"
+        },
+        "hkvs_BMS_VEHICLE_PASS_IMAGE_SERVER_ID": {
+            "name": "图片服务器ID"
+        },
+        "hkvs_BMS_VEHICLE_PASS_PIC_ABBREVIATE": {
+            "name": "缩略图路径"
+        },
+        "hkvs_BMS_VEHICLE_PASS_VEHICLE_COLOR": {
+            "name": "车身颜色"
+        },
+        "hkvs_BMS_VEHICLE_PASS_CROSSING_ID": {
+            "name": "卡口ID"
+        },
+        "hkvs_BMS_VEHICLE_PASS_VEHICLE_LOGO": {
+            "name": "车标"
+        },
+        "hkvs_BMS_VEHICLE_PASS_PLATE_COLOR": {
+            "name": "车牌颜色"
+        },
+        "hkvs_BMS_VEHICLE_PASS_LANE_ID": {
+            "name": "车道ID"
+        },
+        "hkvs_BMS_VEHICLE_PASS_PLATE_TYPE": {
+            "name": "车牌类型"
+        }
+    },
+    "A_db_hkvs_BMS_VEHICLE_VIOLATION": {
+        "hkvs_BMS_VEHICLE_VIOLATION_PLATE_INFO": {
+            "name": "车牌号码"
+        },
+        "hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_SUBLOGO": {
+            "name": "车辆子品牌"
+        },
+        "hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_VIOLATION_ID": {
+            "name": "过车id"
+        },
+        "hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_ID": {
+            "name": "正常过车id"
+        },
+        "hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_AUDIT": {
+            "name": "是否审核"
+        },
+        "hkvs_BMS_VEHICLE_VIOLATION_IMAGE_SERVER_ID": {
+            "name": "图片服务器id"
+        },
+        "hkvs_BMS_VEHICLE_VIOLATION_PIC_ABBREVIATE": {
+            "name": "缩略图"
+        },
+        "hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_LOGO": {
+            "name": "车标"
+        },
+        "hkvs_BMS_VEHICLE_VIOLATION_PIC_PLATE": {
+            "name": "车牌小图"
+        },
+        "hkvs_BMS_VEHICLE_VIOLATION_PIC_VEHICLE_2": {
+            "name": "过车图片2"
+        },
+        "hkvs_BMS_VEHICLE_VIOLATION_PIC_VEHICLE_3": {
+            "name": "过车图片3"
+        },
+        "hkvs_BMS_VEHICLE_VIOLATION_PIC_VEHICLE_1": {
+            "name": "过车图片1"
+        },
+        "hkvs_BMS_VEHICLE_VIOLATION_PIC_VEHICLE_4": {
+            "name": "过车图片4"
+        },
+        "hkvs_BMS_VEHICLE_VIOLATION_UPDATE_TIME": {
+            "name": "更新时间"
+        },
+        "hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_TYPE": {
+            "name": "车辆类型"
+        },
+        "hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_SUNVISOR": {
+            "name": "遮阳板"
+        },
+        "hkvs_BMS_VEHICLE_VIOLATION_VEH_COLOR_DEPTH": {
+            "name": "车身颜色深浅"
+        },
+        "hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_MODEL": {
+            "name": "年代款"
+        },
+        "hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_STATE": {
+            "name": "车辆状态（行驶状态）"
+        },
+        "hkvs_BMS_VEHICLE_VIOLATION_ALARM_TIME": {
+            "name": "违章时间"
+        },
+        "hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_SPEED": {
+            "name": "车速"
+        },
+        "hkvs_BMS_VEHICLE_VIOLATION_ALARM_ACTION": {
+            "name": "违章时间"
+        },
+        "hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_COLOR": {
+            "name": "车身颜色"
+        },
+        "hkvs_BMS_VEHICLE_VIOLATION_CROSSING_ID": {
+            "name": "卡口id"
+        },
+        "hkvs_BMS_VEHICLE_VIOLATION_PLATE_COLOR": {
+            "name": "车牌颜色"
+        },
+        "hkvs_BMS_VEHICLE_VIOLATION_LANE_ID": {
+            "name": "车道id"
+        },
+        "hkvs_BMS_VEHICLE_VIOLATION_PLATE_TYPE": {
+            "name": "车牌类型"
         }
     },
     "A_db_QHQB_T_QHQB_CBRYXX": {
@@ -2837,6 +3497,408 @@ var fieldDict = {
         },
         "QHQB_T_QHQB_HKDDC_XXDZ": {
             "name": "登记地址  "
+        }
+    },
+    "A_db_zdrXY_T_ZZRK_QGZDRYXX": {
+        "zdrXY_T_ZZRK_QGZDRYXX_HJDQH": {
+            "name": "户籍地区划"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_XZDPCS": {
+            "name": "现住地派出所"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_GXDWJGDM": {
+            "name": "管辖单位机构代码"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_CJDWDM": {
+            "name": "创建单位代码"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_JLXZSJ": {
+            "name": "业务记录新增时间"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_XZDXZ": {
+            "name": "现住地详址"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_LADWJGDM": {
+            "name": "立案单位机构代码"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_JLBGSJ": {
+            "name": "业务记录变更时间"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_NRBJZDRYKSJ": {
+            "name": "纳入部级重点人员库时间"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_CJRXM": {
+            "name": "创建人姓名"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_XMPY": {
+            "name": "姓名拼音"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_CJDWMC": {
+            "name": "创建单位名称"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_YXX": {
+            "name": "有效性 业务有效性"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_QTZJHM": {
+            "name": "其它证件类型"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_XZDQH": {
+            "name": "现住地区划"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_JLCXSJ": {
+            "name": "业务记录撤销时间"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_ZDRYXL": {
+            "name": "重点人员细类"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_HJDXZ": {
+            "name": "户籍地详址"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_CJSJ": {
+            "name": "创建时间"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_GJ": {
+            "name": "国籍"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_GXDW": {
+            "name": "管辖单位"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_SFZH": {
+            "name": "公民身份号码"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_ZDRYLBBJ": {
+            "name": "重点人员类别标记"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_GXRXM": {
+            "name": "修改人姓名"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_GXSJ": {
+            "name": "修改时间"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_XB": {
+            "name": "性别"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_LADW": {
+            "name": "立案单位"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_BJZDRYBH": {
+            "name": "部级重点人员编号"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_MZ": {
+            "name": "民族"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_GXDWDM": {
+            "name": "修改单位名称"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_XZDPCSDM": {
+            "name": "现住地派出所代码"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_CSRQ": {
+            "name": "出生日期"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_HJDPCS": {
+            "name": "户籍地派出所"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_XM": {
+            "name": "姓名"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_HJDPCSDM": {
+            "name": "户籍地派出所代码"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_ZJLASJ": {
+            "name": "最近立案时间"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_RKSJ": {
+            "name": "入库时间"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_GXDWMC": {
+            "name": "修改单位代码"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_WWXM": {
+            "name": "外文姓名"
+        },
+        "zdrXY_T_ZZRK_QGZDRYXX_JG": {
+            "name": "籍贯"
+        }
+    },
+    "A_db_sis_V_WA_SOURCE_FJ_1001": {
+        "sis_V_WA_SOURCE_FJ_1001_CERTIFICATE_CODE": {
+            "name": "身份内容"
+        },
+        "sis_V_WA_SOURCE_FJ_1001_NETBAR_WACODE": {
+            "name": "场所编号"
+        },
+        "sis_V_WA_SOURCE_FJ_1001_SSID_POSITION": {
+            "name": "接入热点SSID"
+        },
+        "sis_V_WA_SOURCE_FJ_1001_X_COORDINATE": {
+            "name": "X坐标"
+        },
+        "sis_V_WA_SOURCE_FJ_1001_ACCESS_AP_CHANNEL": {
+            "name": "接入热点频道"
+        },
+        "sis_V_WA_SOURCE_FJ_1001_MAC": {
+            "name": "终端MAC地址"
+        },
+        "sis_V_WA_SOURCE_FJ_1001_BRAND": {
+            "name": "终端品牌"
+        },
+        "sis_V_WA_SOURCE_FJ_1001_TERMINAL_FIELD STRENGTH": {
+            "name": "被采终端场强"
+        },
+        "sis_V_WA_SOURCE_FJ_1001_ACCESS_AP_ENCRYPTION_TYPE": {
+            "name": "接入热点加密类型"
+        },
+        "sis_V_WA_SOURCE_FJ_1001_CACHE_SSID": {
+            "name": "终端历史SSID列表"
+        },
+        "sis_V_WA_SOURCE_FJ_1001_COLLECTION_EQUIPMENT ID": {
+            "name": "采集设备编号"
+        },
+        "sis_V_WA_SOURCE_FJ_1001_ACCESS_AP_MAC": {
+            "name": "接入热点MAC"
+        },
+        "sis_V_WA_SOURCE_FJ_1001_IDENTIFICATION_TYPE": {
+            "name": "身份类型"
+        },
+        "sis_V_WA_SOURCE_FJ_1001_Y_COORDINATE": {
+            "name": "Y坐标"
+        },
+        "sis_V_WA_SOURCE_FJ_1001_COLLECTION_EQUIPMENT _LATITUDE": {
+            "name": "采集设备纬度"
+        },
+        "sis_V_WA_SOURCE_FJ_1001_CAPTURE_TIME": {
+            "name": "采集时间"
+        },
+        "sis_V_WA_SOURCE_FJ_1001_COLLECTION_EQUIPMENT_ LONGITUDE": {
+            "name": "采集设备经度"
+        }
+    },
+    "A_db_sis_V_WA_SOURCE_FJ_1002": {
+        "sis_V_WA_SOURCE_FJ_1002_": {
+            "name": ""
+        },
+        "sis_V_WA_SOURCE_FJ_1002_AP_MAC": {
+            "name": "热点MAC地址"
+        },
+        "sis_V_WA_SOURCE_FJ_1002_NETBAR_WACODE": {
+            "name": "场所编号"
+        },
+        "sis_V_WA_SOURCE_FJ_1002_X_COORDINATE": {
+            "name": "X坐标"
+        },
+        "sis_V_WA_SOURCE_FJ_1002_COLLECTION_EQUIPMENT ID": {
+            "name": "采集设备编号"
+        },
+        "sis_V_WA_SOURCE_FJ_1002_AP_SSID": {
+            "name": "热点SSID"
+        },
+        "sis_V_WA_SOURCE_FJ_1002_AP_FIELD STRENGTH": {
+            "name": "热点场强"
+        },
+        "sis_V_WA_SOURCE_FJ_1002_ENCRYPT _ALGORITHM_TYPE": {
+            "name": "热点加密类型"
+        },
+        "sis_V_WA_SOURCE_FJ_1002_Y_COORDINATE": {
+            "name": "Y坐标"
+        },
+        "sis_V_WA_SOURCE_FJ_1002_COLLECTION_EQUIPMENT _LATITUDE": {
+            "name": "采集设备纬度"
+        },
+        "sis_V_WA_SOURCE_FJ_1002_AP_CHANNEL": {
+            "name": "热点频道"
+        },
+        "sis_V_WA_SOURCE_FJ_1002_CAPTURE_TIME": {
+            "name": "采集时间"
+        },
+        "sis_V_WA_SOURCE_FJ_1002_COLLECTION_EQUIPMENT_ LONGITUDE": {
+            "name": "采集设备经度"
+        }
+    },
+    "A_db_sis_V_WA_SOURCE_FJ_0001": {
+        "sis_V_WA_SOURCE_FJ_0001_CERTIFICATE_CODE": {
+            "name": "身份证件号码"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_START_TIME": {
+            "name": "上线时间"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_SRC_PORT_END": {
+            "name": "源外网IPv4结束端口号"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_SESSIONID": {
+            "name": "会话ID"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_SRC_IP": {
+            "name": "源外网IPv4地址"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_LONGITUDE": {
+            "name": "移动AP经度"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_SRC_PORT_END_V6": {
+            "name": "源外网IPv6结束端口号"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_X_COORDINATE": {
+            "name": "X坐标"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_OS_NAME": {
+            "name": "终端系统"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_APP_VERSION": {
+            "name": "APP版本号"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_APP_COMPANY_NAME": {
+            "name": "APP厂商名称"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_TERMINAL_FIELD STRENGTH": {
+            "name": "场强"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_Name": {
+            "name": "上网人员姓名"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_SRC_IPV6": {
+            "name": "源外网IPv6地址"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_SRC_PORT_START": {
+            "name": "源外网IPv4起始端口号"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_END_TIME": {
+            "name": "下线时间"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_IMSI": {
+            "name": "终端IMSI码"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_IMEI_ESN_MEID": {
+            "name": "终端IMEI码"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_AUTH_TYPE": {
+            "name": "认证类型"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_NETBAR_WACODE": {
+            "name": "上网服务场所编码"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_AP_MAC": {
+            "name": "AP设备MAC地址"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_APPID": {
+            "name": "APP终端认证码"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_AUTH_ACCOUNT": {
+            "name": "认证帐号"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_NetSite_Type": {
+            "name": "场所类型"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_APP_SOFTWARE_NAME": {
+            "name": "APP应用软件名称"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_MODEL": {
+            "name": "终端型号"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_SRC_PORT_START_V6": {
+            "name": "源外网IPv6起始端口号"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_MAC": {
+            "name": "终端MAC地址"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_BRAND": {
+            "name": "终端品牌"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_Y_COORDINATE": {
+            "name": "Y坐标"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_IP_ADDRESS": {
+            "name": "场所内网IP地址"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_COLLECTION_EQUIPMENT_ID.": {
+            "name": "AP设备编号"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_LATITUDE": {
+            "name": "移动AP纬度"
+        },
+        "sis_V_WA_SOURCE_FJ_0001_CERTIFICATE_TYPE": {
+            "name": "身份证件类型"
+        }
+    },
+    "A_db_sis_V_WA_SOURCE_FJ_0002": {
+        "sis_V_WA_SOURCE_FJ_0002_源外网IPv4结束端口号": {
+            "name": "SRC_PORT_END"
+        },
+        "sis_V_WA_SOURCE_FJ_0002_场所内网IP地址": {
+            "name": "IP_ADDRESS"
+        },
+        "sis_V_WA_SOURCE_FJ_0002_日志记录时间": {
+            "name": "CAPTURE_TIME"
+        },
+        "sis_V_WA_SOURCE_FJ_0002_源外网IPv6结束端口号": {
+            "name": "SRC_PORT_END_V6"
+        },
+        "sis_V_WA_SOURCE_FJ_0002_网络应用服务类型": {
+            "name": "NETWORK_APP"
+        },
+        "sis_V_WA_SOURCE_FJ_0002_源外网IPv6起始端口号": {
+            "name": "SRC_PORT_START_V6"
+        },
+        "sis_V_WA_SOURCE_FJ_0002_AP设备编号": {
+            "name": "COLLECTION_EQUIPMENT_ID."
+        },
+        "sis_V_WA_SOURCE_FJ_0002_上网服务场所编码": {
+            "name": "NETSERVERPORT_WACODE"
+        },
+        "sis_V_WA_SOURCE_FJ_0002_AP设备MAC地址": {
+            "name": "AP_MAC"
+        },
+        "sis_V_WA_SOURCE_FJ_0002_源外网IPv4起始端口号": {
+            "name": "SRC_PORT_START"
+        },
+        "sis_V_WA_SOURCE_FJ_0002_场所内网端口号": {
+            "name": "PORT"
+        },
+        "sis_V_WA_SOURCE_FJ_0002_终端MAC地址": {
+            "name": "MAC"
+        },
+        "sis_V_WA_SOURCE_FJ_0002_目的公网IPv4地址": {
+            "name": "DST_IP"
+        },
+        "sis_V_WA_SOURCE_FJ_0002_目的公网IPv6地址": {
+            "name": "DST_IPV6"
+        },
+        "sis_V_WA_SOURCE_FJ_0002_移动AP经度": {
+            "name": "LONGITUDE"
+        },
+        "sis_V_WA_SOURCE_FJ_0002_会话ID": {
+            "name": "SESSIONID"
+        },
+        "sis_V_WA_SOURCE_FJ_0002_源外网IPv4地址": {
+            "name": "SRC_IP"
+        },
+        "sis_V_WA_SOURCE_FJ_0002_目的公网IPv4端口号": {
+            "name": "DST_PORT"
+        },
+        "sis_V_WA_SOURCE_FJ_0002_源外网IPv6地址": {
+            "name": "SRC_IPV6"
+        },
+        "sis_V_WA_SOURCE_FJ_0002_目的公网IPv6端口号": {
+            "name": "DST_PORT_V6"
+        },
+        "sis_V_WA_SOURCE_FJ_0002_移动AP纬度": {
+            "name": "LATITUDE"
+        }
+    },
+    "A_db_sis_V_WA_BASIC_FJ_1001": {
+        "sis_V_WA_BASIC_FJ_1001_场所编号": {
+            "name": "NETBAR_WACODE"
+        },
+        "sis_V_WA_BASIC_FJ_1001_时间": {
+            "name": "TIME"
+        },
+        "sis_V_WA_BASIC_FJ_1001_采集设备纬度": {
+            "name": "COLLECTION_EQUIPMENT _LATITUDE"
+        },
+        "sis_V_WA_BASIC_FJ_1001_采集设备经度": {
+            "name": "COLLECTION_EQUIPMENT_ LONGITUDE"
+        },
+        "sis_V_WA_BASIC_FJ_1001_采集设备编号": {
+            "name": "COLLECTION_EQUIPMENT ID"
         }
     }
 }

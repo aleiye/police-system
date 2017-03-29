@@ -25,7 +25,7 @@ function trFormat(data){
             },
             'A_db_QHQB_T_QHQB_HQJT_DZKPSJB': function(){
                 var newValues = copyArr(values);
-                // newValues[3] = selfFields['QHQB_T_QHQB_TLDP_FROM_STATION_NAME'];
+                newValues[3] = selfFields['QHQB_T_QHQB_HQJT_DZKPSJB_SSCZMC'];
                 newValues[5] = formatDate(selfFields['QHQB_T_QHQB_HQJT_DZKPSJB_FCSJ']);
                 newValues[6] = formatDate(data['inserttime']);
                 newValues[7] = '海汽电子客票';

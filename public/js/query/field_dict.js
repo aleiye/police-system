@@ -1,4 +1,4 @@
-{
+var fieldDict = {
     "A_db_QHQB_T_QHQB_ZXXZXSXX": {
         "QHQB_T_QHQB_ZXXZXSXX_HKSZD": {
             "name": "户口所在地"

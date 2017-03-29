@@ -731,7 +731,7 @@ function queryInfo1(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.sis_V_BD_HANDSET_CONTACTOR_INFO_CONTACTOR_NAME, '</td>');
@@ -786,14 +786,6 @@ function queryInfo2(offset) {
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
-
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
-
-                //每行的数据信息
-                typeList.push('<td>', fields.sis_V_GJ_HANDSET_SMS_INFO_FROM_NUM, '</td>');
-                typeList.push('<td>', fields.sis_V_GJ_HANDSET_SMS_INFO_TO_NUM, '</td>');
-                var detail = fields.sis_V_GJ_HANDSET_SMS_INFO_MESSAGE_DETAIL || '';
-                typeList.push('<td title="'+ detail +'"><div style="width:300px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">',detail , '</div></td>');
                 var type1 = parseInt(fields.sis_V_GJ_HANDSET_SMS_INFO_MSG_TYPE);
                 switch (type1){//，，，3，
                     case 0:{
@@ -809,7 +801,7 @@ function queryInfo2(offset) {
                         break;
                     }
                 }
-                typeList.push('<td>', type1, '</td>');
+                fields.sis_V_GJ_HANDSET_SMS_INFO_MSG_TYPE = type1;
                 var type2 = parseInt(fields.sis_V_GJ_HANDSET_SMS_INFO_ACTIONTYPE);
                 switch (type2){//，，，3，
                     case 0:{
@@ -837,6 +829,16 @@ function queryInfo2(offset) {
                         break;
                     }
                 }
+                fields.sis_V_GJ_HANDSET_SMS_INFO_ACTIONTYPE = type2;
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
+
+                //每行的数据信息
+                typeList.push('<td>', fields.sis_V_GJ_HANDSET_SMS_INFO_FROM_NUM, '</td>');
+                typeList.push('<td>', fields.sis_V_GJ_HANDSET_SMS_INFO_TO_NUM, '</td>');
+                var detail = fields.sis_V_GJ_HANDSET_SMS_INFO_MESSAGE_DETAIL || '';
+                typeList.push('<td title="'+ detail +'"><div style="width:300px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">',detail , '</div></td>');
+                
+                typeList.push('<td>', type1, '</td>');
 
                 typeList.push('<td>',type2 , '</td>');
                 typeList.push('<td>', formatDate2((fields.sis_V_GJ_HANDSET_SMS_INFO_SEND_TIME)), '</td>');
@@ -890,7 +892,7 @@ function queryInfo3(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.sis_V_XYR_MAIN_XM, '</td>');
@@ -947,7 +949,7 @@ function queryInfo4(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.sis_V_PHONE_LIST_JZXM, '</td>');
@@ -1002,9 +1004,6 @@ function queryInfo5(offset) {
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
-
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
-
                 //每行的数据信息
                 var type1 = parseInt(fields.sis_V_PHONE_THQD_THLX);
                 switch (type1){//
@@ -1025,10 +1024,7 @@ function queryInfo5(offset) {
                         break;
                     }
                 }
-                typeList.push('<td>',type1 , '</td>');
-                typeList.push('<td>', fields.sis_V_PHONE_THQD_DFQH, '</td>');
-                typeList.push('<td>', fields.sis_V_PHONE_THQD_DFHM, '</td>');
-                typeList.push('<td>', fields.sis_V_PHONE_THQD_THDD, '</td>');
+                fields.sis_V_PHONE_THQD_THLX = type1;
                 var type2 = parseInt(fields.sis_V_PHONE_THQD_ZBJLX);
                 switch (type2){//
                     case 50001:{
@@ -1044,6 +1040,14 @@ function queryInfo5(offset) {
                         break;
                     }
                 }
+                fields.sis_V_PHONE_THQD_ZBJLX = type2;
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
+
+                typeList.push('<td>',type1 , '</td>');
+                typeList.push('<td>', fields.sis_V_PHONE_THQD_DFQH, '</td>');
+                typeList.push('<td>', fields.sis_V_PHONE_THQD_DFHM, '</td>');
+                typeList.push('<td>', fields.sis_V_PHONE_THQD_THDD, '</td>');
+                
                 typeList.push('<td>',type2 , '</td>');
                 typeList.push('<td>', formatDate2((fields.sis_V_PHONE_THQD_CJSJ)), '</td>');
                 //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
@@ -1097,7 +1101,7 @@ function queryInfo6(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHSC_CARINFOTBL_CHNNAME, '</td>');
@@ -1157,7 +1161,7 @@ function queryInfo7(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHSC_EMSINFOTBL_SNAME, '</td>');
@@ -1220,7 +1224,7 @@ function queryInfo8(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHSC_WORKERBASEINFO_NAME, '</td>');
@@ -1288,7 +1292,7 @@ function queryInfo9(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHSC_RST_HOUSING_INFORMATIO_NAME, '</td>');
@@ -1350,12 +1354,6 @@ function queryInfo10(offset) {
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
-
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
-
-                //每行的数据信息
-                typeList.push('<td>', parseInt(fields.hkvs_BMS_CROSSING_INFO_INTERNAL_CODE), '</td>');
-                typeList.push('<td>', fields.hkvs_BMS_CROSSING_INFO_CROSSING_NAME, '</td>');
                 var type1 = parseInt(fields.hkvs_BMS_CROSSING_INFO_INTERCITY);
 				switch(type1){
 					case 1:{
@@ -1367,6 +1365,13 @@ function queryInfo10(offset) {
                         break;
                     }
 				}
+                fields.hkvs_BMS_CROSSING_INFO_INTERCITY = type1;
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
+
+                //每行的数据信息
+                typeList.push('<td>', parseInt(fields.hkvs_BMS_CROSSING_INFO_INTERNAL_CODE), '</td>');
+                typeList.push('<td>', fields.hkvs_BMS_CROSSING_INFO_CROSSING_NAME, '</td>');
+                
                 typeList.push('<td>',type1 , '</td>');
                 typeList.push('<td>', parseInt(fields.hkvs_BMS_CROSSING_INFO_LANE_NUM), '</td>');
                 typeList.push('<td>', fields.hkvs_BMS_CROSSING_INFO_LATITUDE, '</td>');
@@ -1423,7 +1428,7 @@ function queryInfo11(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', parseInt(fields.hkvs_BMS_MAINTENANCE_LANEINFO_LANE_NUMBER), '</td>');
@@ -1479,13 +1484,6 @@ function queryInfo12(offset) {
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
-
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
-
-                //每行的数据信息
-                typeList.push('<td>', fields.hkvs_BMS_PLATE_ALARM_ALARM_START_PERIOD, '</td>');
-                typeList.push('<td>', fields.hkvs_BMS_PLATE_ALARM_PLATE_INFO, '</td>');
-                typeList.push('<td>', fields.hkvs_BMS_PLATE_ALARM_CONTECT_INFO, '</td>');
                 var reason = parseInt(fields.hkvs_BMS_PLATE_ALARM_REASON);
                 switch(reason){
 					case 1:{
@@ -1509,6 +1507,14 @@ function queryInfo12(offset) {
                         break;
                     }
 				}
+                fields.hkvs_BMS_PLATE_ALARM_REASON = reason;
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
+
+                //每行的数据信息
+                typeList.push('<td>', fields.hkvs_BMS_PLATE_ALARM_ALARM_START_PERIOD, '</td>');
+                typeList.push('<td>', fields.hkvs_BMS_PLATE_ALARM_PLATE_INFO, '</td>');
+                typeList.push('<td>', fields.hkvs_BMS_PLATE_ALARM_CONTECT_INFO, '</td>');
+                
                 typeList.push('<td>',reason , '</td>');
                 typeList.push('<td>', formatDate2((fields.hkvs_BMS_PLATE_ALARM_ALARM_START_TIME)), '</td>');
                 typeList.push('<td>', formatDate2((fields.hkvs_BMS_PLATE_ALARM_ALARM_STOP_TIME)), '</td>');
@@ -1549,7 +1555,7 @@ function queryInfo13(offset) {
             typeList.push('<table class="table table-striped table-bordered click_none"><thead><tr>');
 
             //表头信息
-            typeList.push(['<th>', '卡口ID', '</th>'].join(''));
+            typeList.push(['<th>', '路口名称', '</th>'].join(''));
             typeList.push(['<th>', '车牌号码', '</th>'].join(''));
             typeList.push(['<th>', '车身颜色', '</th>'].join(''));
             typeList.push(['<th>', '车辆速度', '</th>'].join(''));
@@ -1561,13 +1567,7 @@ function queryInfo13(offset) {
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
-
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
-
-                //每行的数据信息
-                typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_PASS_CROSSING_ID), '</td>');
-                typeList.push('<td>', fields.hkvs_BMS_VEHICLE_PASS_PLATE_INFO, '</td>');
-				var color = parseInt(fields.hkvs_BMS_VEHICLE_PASS_VEHICLE_COLOR);
+                var color = parseInt(fields.hkvs_BMS_VEHICLE_PASS_VEHICLE_COLOR);
 				switch(color){
 					case 0:{
 						color='其它颜色';
@@ -1630,9 +1630,8 @@ function queryInfo13(offset) {
 						break;
 					}
 				}
-                typeList.push('<td>',color , '</td>');
-                typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_PASS_VEHICLE_SPEED), '</td>');
-				var type1 = parseInt(fields.hkvs_BMS_VEHICLE_PASS_VEHICLE_TYPE);
+                fields.hkvs_BMS_VEHICLE_PASS_VEHICLE_COLOR = color;
+                var type1 = parseInt(fields.hkvs_BMS_VEHICLE_PASS_VEHICLE_TYPE);
 				switch(type1){
 					case 0:{
 						type1 = '其它车型';
@@ -1679,6 +1678,17 @@ function queryInfo13(offset) {
 						break;
 					}
 				}
+                fields.hkvs_BMS_VEHICLE_PASS_VEHICLE_TYPE = type1;
+                fields.hkvs_BMS_VEHICLE_PASS_CROSSING_ID = crossingInfoDict[parseInt(fields.hkvs_BMS_VEHICLE_PASS_CROSSING_ID)];
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
+
+                //每行的数据信息
+                typeList.push('<td>', fields.hkvs_BMS_VEHICLE_PASS_CROSSING_ID, '</td>');
+                typeList.push('<td>', fields.hkvs_BMS_VEHICLE_PASS_PLATE_INFO, '</td>');
+				
+                typeList.push('<td>',color , '</td>');
+                typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_PASS_VEHICLE_SPEED), '</td>');
+				
                 typeList.push('<td>', type1, '</td>');
                 typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_PASS_VEHICLE_LOGO), '</td>');
                 typeList.push('<td>', formatDate2((fields.hkvs_BMS_VEHICLE_PASS_PASS_TIME)), '</td>');
@@ -1719,7 +1729,7 @@ function queryInfo15(offset) {
             typeList.push('<table class="table table-striped table-bordered click_none"><thead><tr>');
 
             //表头信息
-            typeList.push(['<th>', '卡口id', '</th>'].join(''));
+            typeList.push(['<th>', '路口名称', '</th>'].join(''));
             typeList.push(['<th>', '车道id', '</th>'].join(''));
             typeList.push(['<th>', '车牌号码', '</th>'].join(''));
             typeList.push(['<th>', '车速', '</th>'].join(''));
@@ -1731,15 +1741,7 @@ function queryInfo15(offset) {
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
-
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
-
-                //每行的数据信息
-                typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_VIOLATION_CROSSING_ID), '</td>');
-                typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_VIOLATION_LANE_ID), '</td>');
-                typeList.push('<td>', fields.hkvs_BMS_VEHICLE_VIOLATION_PLATE_INFO, '</td>');
-                typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_SPEED), '</td>');
-				var type1 = parseInt(fields.hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_TYPE);
+                var type1 = parseInt(fields.hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_TYPE);
 				switch(type1){
 					case 0:{
 						type1 = '其它车型';
@@ -1786,6 +1788,16 @@ function queryInfo15(offset) {
 						break;
 					}
 				}
+                fields.hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_TYPE = type1;
+                fields.hkvs_BMS_VEHICLE_PASS_CROSSING_ID = crossingInfoDict[parseInt(fields.hkvs_BMS_VEHICLE_PASS_CROSSING_ID)];
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
+
+                //每行的数据信息
+                typeList.push('<td>', fields.hkvs_BMS_VEHICLE_PASS_CROSSING_ID, '</td>');
+                typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_VIOLATION_LANE_ID), '</td>');
+                typeList.push('<td>', fields.hkvs_BMS_VEHICLE_VIOLATION_PLATE_INFO, '</td>');
+                typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_SPEED), '</td>');
+				
                 typeList.push('<td>',type1 , '</td>');
                 typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_LOGO), '</td>');
                 typeList.push('<td>', formatDate2((fields.hkvs_BMS_VEHICLE_VIOLATION_ALARM_TIME)), '</td>');
@@ -1840,7 +1852,7 @@ function queryInfo16(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.PLATE_INFO, '</td>');
@@ -1889,26 +1901,35 @@ function queryInfo17(offset) {
 
             //表头信息
             typeList.push(['<th>', '姓名', '</th>'].join(''));
-            typeList.push(['<th>', '部级重点人员编号', '</th>'].join(''));
-            typeList.push(['<th>', '重点人员类别标记', '</th>'].join(''));
             typeList.push(['<th>', '公民身份号码', '</th>'].join(''));
+            typeList.push(['<th>', '重点人员类别标记', '</th>'].join(''));
             typeList.push(['<th>', '籍贯', '</th>'].join(''));
             typeList.push(['<th>', '户籍地详址', '</th>'].join(''));
             typeList.push(['<th>', '现住地详址', '</th>'].join(''));
-            typeList.push(['<th>', '纳入部级重点人员库时间', '</th>'].join(''));
+            typeList.push(['<th>', '纳入部级库时间', '</th>'].join(''));
             // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
 
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
-
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                var typeNames = ['涉恐人员','涉稳人员','在逃人员','涉毒人员','前科人员','精神病人员','上访人员'];
+                var types = fields.zdrXY_T_ZZRK_QGZDRYXX_ZDRYLBBJ.substr(0,7).split('');
+                var type = '';
+                $(types).each(function(i,item){
+                    if(item == '1')
+                        type += typeNames[i] + '、';
+                });
+                if(type)
+                    type.substr(0,type.length-1);
+                fields.zdrXY_T_ZZRK_QGZDRYXX_ZDRYLBBJ = type;
+                fields.zdrXY_T_ZZRK_QGZDRYXX_JG = nativeplaceDict[parseInt(fields.zdrXY_T_ZZRK_QGZDRYXX_JG)];
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.zdrXY_T_ZZRK_QGZDRYXX_XM, '</td>');
-                typeList.push('<td>', fields.zdrXY_T_ZZRK_QGZDRYXX_BJZDRYBH, '</td>');
-                typeList.push('<td>', fields.zdrXY_T_ZZRK_QGZDRYXX_ZDRYLBBJ, '</td>');
                 typeList.push('<td>', fields.zdrXY_T_ZZRK_QGZDRYXX_SFZH, '</td>');
+                
+                typeList.push('<td>', type, '</td>');
                 typeList.push('<td>', fields.zdrXY_T_ZZRK_QGZDRYXX_JG, '</td>');
                 var content = fields.zdrXY_T_ZZRK_QGZDRYXX_HJDXZ || '';
                 typeList.push('<td title="'+ content +'"><div style="width:300px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">',content , '</div></td>');
@@ -1971,7 +1992,7 @@ function queryInfo18(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_ZXXZXSXX_XM, '</td>');
@@ -2054,7 +2075,7 @@ function queryInfo19(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_YJSXX_XM, '</td>');
@@ -2117,7 +2138,7 @@ function queryInfo20(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_DBRYXX_CAC002, '</td>');
@@ -2175,7 +2196,7 @@ function queryInfo21(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_CBRYXX_GRBH, '</td>');
@@ -2232,7 +2253,7 @@ function queryInfo22(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_CBRYBGXX_DWMC, '</td>');
@@ -2291,7 +2312,7 @@ function queryInfo23(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_PTZBKSXX_XM, '</td>');
@@ -2352,7 +2373,7 @@ function queryInfo24(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_RQYHSJ_XM, '</td>');
@@ -2414,7 +2435,7 @@ function queryInfo25(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_KJRXXK_CZ_KJRID, '</td>');
@@ -2470,7 +2491,7 @@ function queryInfo26(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_GYRYXX_XM, '</td>');
@@ -2532,7 +2553,7 @@ function queryInfo27(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_ZXSHMCSX_XM, '</td>');
@@ -2598,7 +2619,7 @@ function queryInfo28(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_JSW_LDRKXX_XM, '</td>');
@@ -2680,7 +2701,7 @@ function queryInfo29(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_CRJ_XSXX_SERIAL, '</td>');
@@ -2745,7 +2766,7 @@ function queryInfo30(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_GSDJNSRXX_FDDBRMC, '</td>');
@@ -2807,7 +2828,7 @@ function queryInfo31(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_CJZXSXX_XM, '</td>');
@@ -2867,7 +2888,7 @@ function queryInfo32(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_ZXSHMCZX_XM, '</td>');
@@ -2931,7 +2952,7 @@ function queryInfo33(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_HKDDC_SYR, '</td>');
@@ -2997,7 +3018,7 @@ function queryInfo34(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_YXDSMNSJ_KHXM, '</td>');
@@ -3059,7 +3080,7 @@ function queryInfo35(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_YXDSSZSJ_KHXM, '</td>');
@@ -3119,7 +3140,7 @@ function queryInfo36(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_YXDSTJJFWKT_FGS, '</td>');
@@ -3178,7 +3199,7 @@ function queryInfo37(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_YXDSKF_KFXM, '</td>');
@@ -3242,7 +3263,7 @@ function queryInfo38(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_DSLSDJXX_NSRMC, '</td>');
@@ -3306,7 +3327,7 @@ function queryInfo39(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_DSZX_NSRMC, '</td>');
@@ -3368,7 +3389,7 @@ function queryInfo40(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_DSYHZ_NSRSBH, '</td>');
@@ -3427,7 +3448,7 @@ function queryInfo41(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_DSFZCH_NSRSBH, '</td>');
@@ -3486,7 +3507,7 @@ function queryInfo42(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_GSZX_NSRSBH, '</td>');
@@ -3542,7 +3563,7 @@ function queryInfo43(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_GSYHZ_NSRSBH, '</td>');
@@ -3597,7 +3618,7 @@ function queryInfo44(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_GSFZCHXX_NSRSBH, '</td>');
@@ -3651,7 +3672,7 @@ function queryInfo45(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_GSZXXX_REGISTERNO, '</td>');
@@ -3704,7 +3725,7 @@ function queryInfo46(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_GSDXXX_REGISTERNO, '</td>');
@@ -3760,7 +3781,7 @@ function queryInfo47(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_GSBGXX_REGISTERNO, '</td>');
@@ -3816,7 +3837,7 @@ function queryInfo48(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_GSNJXX_REGISTERNO, '</td>');
@@ -3871,7 +3892,7 @@ function queryInfo49(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.CORPNAME, '</td>');
@@ -3930,7 +3951,7 @@ function queryInfo50(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_CYRY_XM, '</td>');
@@ -3992,7 +4013,7 @@ function queryInfo51(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_HYDJXX_MNAME, '</td>');
@@ -4050,7 +4071,7 @@ function queryInfo52(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_1001_IDENTIFICATION_TYPE, '</td>');
@@ -4104,7 +4125,7 @@ function queryInfo53(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_1002_AP_MAC, '</td>');
@@ -4165,7 +4186,7 @@ function queryInfo54(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_0001_NAME, '</td>');
@@ -4226,7 +4247,7 @@ function queryInfo55(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_0002_NETSERVERPORT_WACODE, '</td>');
@@ -4281,7 +4302,7 @@ function queryInfo56(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.sis_V_WA_BASIC_FJ_1001_COLLECTION_EQUIPMENT_ID, '</td>');
@@ -4339,7 +4360,7 @@ function queryInfo57(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_HQJT_DZKPSJB_XM, '</td>');
@@ -4401,7 +4422,7 @@ function queryInfo58(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHSJ_VIEW_COMPARERECORD_TO_QHSJ_NAME, '</td>');
@@ -4466,7 +4487,7 @@ function queryInfo59(offset) {
             jsonHits.map(function (bean) {
                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" fields=\''+ JSON.stringify(fields) +'\'>');
+                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_TLDP_ID_NAME, '</td>');
@@ -4599,24 +4620,37 @@ function formateDate5(nianyue) {
 }
 //查看详情按钮绑定事件
 $('.detail').live('click',function(){
+    var dataType = $(this).attr('dataType');
     var fields = JSON.parse($(this).attr('fields'));
-    $.webox({
-        width:600,
-        bgvisibel : false,
-        html : $("#box").html(),
-        open: function(){
-            var html = '';
-            for(var key in fields){
-                var value = fields[key], 
-                    dict = fieldDict[key];
-                if(dict && dict.name){
-                    key = dict.name;
-                    value = parseInt(value);
-                    var valueDict = dict.valueDict;
-                    value = valueDict ? valueDict[value] : value;
-                }
-                html += '<tr><td>' + key + '</td><td>' + value + '</td></tr>'; 
-            }
+    var arr=[];
+		for(var key in fields){
+			var oBj={};
+			oBj[key]=fields[key];
+			arr.push(oBj)
+		}
+		$.webox({
+			width:1000,
+			bgvisibel : false,
+			html : $("#box").html(),
+			open: function(){
+				var html = '<tr>'
+				for (var i = 0; i < arr.length; i++) {
+					for (var key in arr[i]) {
+						var value = arr[i][key],
+                            dataTypeDict = fieldDict[dataType] || {},
+						    dict = dataTypeDict[key];
+						if(dict && dict.name){
+							key = dict.name;
+							var valueDict = dict.valueDict;
+							value = valueDict ? valueDict[parseInt(value)] : value;
+						}
+						html += '<td>' + key + '</td><td>' + value ; 
+					}
+					if((i+1) % 3 === 0 && i !== 0 && i !== arr.length-1){
+						html += '</tr><tr>'
+					}
+				}
+				html += '</tr>'
             $('.webox').find('tbody').html(html);
         }
     });

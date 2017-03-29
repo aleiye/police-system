@@ -3900,5 +3900,541 @@ var fieldDict = {
         "sis_V_WA_BASIC_FJ_1001_采集设备编号": {
             "name": "COLLECTION_EQUIPMENT ID"
         }
+    },
+    "A_db_QHSC_CARINFOTBL": {
+        "QHSC_CARINFOTBL_CARHOUSE": {
+            "name": "楼牌号（停车场所）"
+        },
+        "QHSC_CARINFOTBL_": {
+            "name": "大写半角英文字母"
+        },
+        "QHSC_CARINFOTBL_APPLNAME": {
+            "name": "采集人"
+        },
+        "QHSC_CARINFOTBL_TBLNO": {
+            "name": "组织机构代码"
+        },
+        "QHSC_CARINFOTBL_TELEPHONE": {
+            "name": "电话号码"
+        },
+        "QHSC_CARINFOTBL_PASSTYPE": {
+            "name": "证件类型"
+        },
+        "QHSC_CARINFOTBL_APPLDATE": {
+            "name": "采集/入库日期"
+        },
+        "QHSC_CARINFOTBL_CARCOLOR": {
+            "name": "颜色"
+        },
+        "QHSC_CARINFOTBL_CARBRAND": {
+            "name": "品牌"
+        },
+        "QHSC_CARINFOTBL_PASSNO": {
+            "name": "证件号码"
+        },
+        "QHSC_CARINFOTBL_OPERTYPE": {
+            "name": "数据操作类型"
+        },
+        "QHSC_CARINFOTBL_ENSURNAME": {
+            "name": "英文姓"
+        },
+        "QHSC_CARINFOTBL_ENGIVENAME": {
+            "name": "英文名"
+        },
+        "QHSC_CARINFOTBL_PASSVALI": {
+            "name": "证件有效期至"
+        },
+        "QHSC_CARINFOTBL_CARTYPE": {
+            "name": "车型"
+        },
+        "QHSC_CARINFOTBL_CPASSTYPE": {
+            "name": "CPASSTYPE"
+        },
+        "QHSC_CARINFOTBL_SUBSTATION": {
+            "name": "所属分局"
+        },
+        "QHSC_CARINFOTBL_TRANTYPE": {
+            "name": "传输类型"
+        },
+        "QHSC_CARINFOTBL_CHNNAME": {
+            "name": "中文姓名"
+        },
+        "QHSC_CARINFOTBL_ID": {
+            "name": "主键"
+        },
+        "QHSC_CARINFOTBL_CARNUMBER": {
+            "name": "车牌号"
+        },
+        "QHSC_CARINFOTBL_REMARK": {
+            "name": "备注"
+        },
+        "QHSC_CARINFOTBL_CARHOUSETYPE": {
+            "name": "停车方式"
+        },
+        "QHSC_CARINFOTBL_CSUBSTATION": {
+            "name": "所属分局中文"
+        }
+    },
+    "A_db_QHSC_EMSINFOTBL": {
+        "QHSC_EMSINFOTBL_": {
+            "name": "系统自动采集且不可更改"
+        },
+        "QHSC_EMSINFOTBL_APPLNAME": {
+            "name": "采集人"
+        },
+        "QHSC_EMSINFOTBL_TADDRESS": {
+            "name": "寄件人详细地址"
+        },
+        "QHSC_EMSINFOTBL_SADDRESS": {
+            "name": "收件人详细地址"
+        },
+        "QHSC_EMSINFOTBL_EMSNUMBER": {
+            "name": "快递单号"
+        },
+        "QHSC_EMSINFOTBL_SENSURNAME": {
+            "name": "收件人英文姓"
+        },
+        "QHSC_EMSINFOTBL_SENGIVENAME": {
+            "name": "收件人英文名"
+        },
+        "QHSC_EMSINFOTBL_OPERTYPE": {
+            "name": "数据操作类型"
+        },
+        "QHSC_EMSINFOTBL_ENSURNAME": {
+            "name": "寄件人英文姓"
+        },
+        "QHSC_EMSINFOTBL_PASSVALI": {
+            "name": "证件有效期至"
+        },
+        "QHSC_EMSINFOTBL_JJDATE": {
+            "name": "寄件时间"
+        },
+        "QHSC_EMSINFOTBL_CPASSTYPE": {
+            "name": "CPASSTYPE"
+        },
+        "QHSC_EMSINFOTBL_TRANTYPE": {
+            "name": "传输类型"
+        },
+        "QHSC_EMSINFOTBL_ID": {
+            "name": "主键"
+        },
+        "QHSC_EMSINFOTBL_TNAME": {
+            "name": "寄件人姓名"
+        },
+        "QHSC_EMSINFOTBL_REMARK": {
+            "name": "备注"
+        },
+        "QHSC_EMSINFOTBL_CSUBSTATION": {
+            "name": "所属分局中文"
+        },
+        "QHSC_EMSINFOTBL_TBLNO": {
+            "name": "组织机构代码"
+        },
+        "QHSC_EMSINFOTBL_TELEPHONE": {
+            "name": "电话号码"
+        },
+        "QHSC_EMSINFOTBL_PASSTYPE": {
+            "name": "证件类型"
+        },
+        "QHSC_EMSINFOTBL_STELEPHONE": {
+            "name": "收件人电话号码"
+        },
+        "QHSC_EMSINFOTBL_SNAME": {
+            "name": "收件人姓名"
+        },
+        "QHSC_EMSINFOTBL_APPLDATE": {
+            "name": "采集/入库日期"
+        },
+        "QHSC_EMSINFOTBL_PASSNO": {
+            "name": "证件号码"
+        },
+        "QHSC_EMSINFOTBL_ENGIVENAME": {
+            "name": "寄件人英文名"
+        },
+        "QHSC_EMSINFOTBL_SUBSTATION": {
+            "name": "所属分局"
+        }
+    },
+    "A_db_QHSC_WORKERBASEINFO": {
+        "QHSC_WORKERBASEINFO_": {
+            "name": "工作时间"
+        },
+        "QHSC_WORKERBASEINFO_EDUCATIONDEGREE": {
+            "name": "文化程度"
+        },
+        "QHSC_WORKERBASEINFO_UPDATETIME": {
+            "name": "更新时间"
+        },
+        "QHSC_WORKERBASEINFO_UPDATEDEPT": {
+            "name": "更新单位"
+        },
+        "QHSC_WORKERBASEINFO_IDCARD": {
+            "name": "身份证号码"
+        },
+        "QHSC_WORKERBASEINFO_POST": {
+            "name": "职务"
+        },
+        "QHSC_WORKERBASEINFO_SEX": {
+            "name": "性别"
+        },
+        "QHSC_WORKERBASEINFO_PHONE": {
+            "name": "手机/电话号码"
+        },
+        "QHSC_WORKERBASEINFO_NATIVEADDRESS": {
+            "name": "户籍地址"
+        },
+        "QHSC_WORKERBASEINFO_PEOPLES": {
+            "name": "民族"
+        },
+        "QHSC_WORKERBASEINFO_HEIGHT": {
+            "name": "身高"
+        },
+        "QHSC_WORKERBASEINFO_CREATEDEPT": {
+            "name": "创建单位"
+        },
+        "QHSC_WORKERBASEINFO_CONTACTPERSON1": {
+            "name": "第一紧急"
+        },
+        "QHSC_WORKERBASEINFO_NAME": {
+            "name": "姓名"
+        },
+        "QHSC_WORKERBASEINFO_NATIVEPLACE": {
+            "name": "籍贯"
+        },
+        "QHSC_WORKERBASEINFO_SERVICEPLACE": {
+            "name": "服务处所"
+        },
+        "QHSC_WORKERBASEINFO_CREATEBY": {
+            "name": "创建人"
+        },
+        "QHSC_WORKERBASEINFO_ADDRESS": {
+            "name": "现住地址"
+        },
+        "QHSC_WORKERBASEINFO_ID": {
+            "name": "编号"
+        },
+        "QHSC_WORKERBASEINFO_BIRTH": {
+            "name": "出生日期"
+        },
+        "QHSC_WORKERBASEINFO_WORKTIMESTART": {
+            "name": "到单位"
+        },
+        "QHSC_WORKERBASEINFO_UPDATEBY": {
+            "name": "更新人"
+        },
+        "QHSC_WORKERBASEINFO_PHONE1": {
+            "name": "联系电话1"
+        },
+        "QHSC_WORKERBASEINFO_CREATETIME": {
+            "name": "创建时间"
+        }
+    },
+    "A_db_QHSC_RST_HOUSING_INFORMATIO": {
+        "QHSC_RST_HOUSING_INFORMATIO_CREATED_BY": {
+            "name": "创建人"
+        },
+        "QHSC_RST_HOUSING_INFORMATIO_SEX": {
+            "name": "性别"
+        },
+        "QHSC_RST_HOUSING_INFORMATIO_FIRST_CONTACT_PERSON_TEL": {
+            "name": "第一紧急联系人电话"
+        },
+        "QHSC_RST_HOUSING_INFORMATIO_SECOND_URGENT_CONTACT_PERSON": {
+            "name": "第二紧急情况联系人"
+        },
+        "QHSC_RST_HOUSING_INFORMATIO_NAME": {
+            "name": "姓名"
+        },
+        "QHSC_RST_HOUSING_INFORMATIO_CREATED_COMPANY": {
+            "name": "创建单位"
+        },
+        "QHSC_RST_HOUSING_INFORMATIO_NATIV_ADDRESS": {
+            "name": "户口所在地"
+        },
+        "QHSC_RST_HOUSING_INFORMATIO_CREATED": {
+            "name": "创建时间"
+        },
+        "QHSC_RST_HOUSING_INFORMATIO_DEPTNAME": {
+            "name": "小区名称"
+        },
+        "QHSC_RST_HOUSING_INFORMATIO_LAST_UPD_BY": {
+            "name": "修改人"
+        },
+        "QHSC_RST_HOUSING_INFORMATIO_LAST_UPD_COMPANY": {
+            "name": "修改单位"
+        },
+        "QHSC_RST_HOUSING_INFORMATIO_TEL": {
+            "name": "电话号码"
+        },
+        "QHSC_RST_HOUSING_INFORMATIO_RESIDENTIAL_UN": {
+            "name": "居住单元"
+        },
+        "QHSC_RST_HOUSING_INFORMATIO_ID": {
+            "name": "主键"
+        },
+        "QHSC_RST_HOUSING_INFORMATIO_FIRST_URGENT_CONTACT_PERSON": {
+            "name": "第一紧急情况联系人"
+        },
+        "QHSC_RST_HOUSING_INFORMATIO_LAST_UPD": {
+            "name": "修改时间"
+        },
+        "QHSC_RST_HOUSING_INFORMATIO_ID_CARD": {
+            "name": "身份证号"
+        },
+        "QHSC_RST_HOUSING_INFORMATIO_SECOND_CONTACT_PERSON_TEL": {
+            "name": "第二紧急联系人电话"
+        }
+    },
+    "A_db_hkvs_BMS_MAINTENANCE_LANEINFO": {
+        "hkvs_BMS_MAINTENANCE_LANEINFO_LANE_INDEX_CODE": {
+            "name": "车道编号"
+        },
+        "hkvs_BMS_MAINTENANCE_LANEINFO_LOCAL_TIME": {
+            "name": "数据库时间"
+        },
+        "hkvs_BMS_MAINTENANCE_LANEINFO_BAKSTR1": {
+            "name": "临时字段1"
+        },
+        "hkvs_BMS_MAINTENANCE_LANEINFO_YESTERDAY_VEHICLE_PASS": {
+            "name": "昨日过车数"
+        },
+        "hkvs_BMS_MAINTENANCE_LANEINFO_CONTROL_UNIT_INDEXCODE": {
+            "name": "组织机构编号"
+        },
+        "hkvs_BMS_MAINTENANCE_LANEINFO_UPDATE_TIME": {
+            "name": "更新时间"
+        },
+        "hkvs_BMS_MAINTENANCE_LANEINFO_DETAIL": {
+            "name": "路口状态信息"
+        },
+        "hkvs_BMS_MAINTENANCE_LANEINFO_LANE_NUMBER": {
+            "name": "车道序号"
+        },
+        "hkvs_BMS_MAINTENANCE_LANEINFO_CROSSING_NAME": {
+            "name": "路口名称"
+        },
+        "hkvs_BMS_MAINTENANCE_LANEINFO_CROSSING_INDEX_CODE": {
+            "name": "路口编号"
+        },
+        "hkvs_BMS_MAINTENANCE_LANEINFO_UPSIDEDOWN_VEHICLE_PASS": {
+            "name": "倒挂过车数（前一小时）"
+        },
+        "hkvs_BMS_MAINTENANCE_LANEINFO_RECEIVE_VEHICLE_PASS": {
+            "name": "接受数据量（前一小时）"
+        },
+        "hkvs_BMS_MAINTENANCE_LANEINFO_CROSSING_SERVER_INDEXCODE": {
+            "name": "卡警服务器编号"
+        },
+        "hkvs_BMS_MAINTENANCE_LANEINFO_STATUS": {
+            "name": "车道状态"
+        },
+        "hkvs_BMS_MAINTENANCE_LANEINFO_UNRECOGNIZED_VEHICLE_PASS": {
+            "name": "未识别过车数（前一小时）"
+        },
+        "hkvs_BMS_MAINTENANCE_LANEINFO_HOURS": {
+            "name": "统计过车小时"
+        },
+        "hkvs_BMS_MAINTENANCE_LANEINFO_DELAY_VIHICLE_PASS": {
+            "name": "延迟入库过车数（前一小时）"
+        },
+        "hkvs_BMS_MAINTENANCE_LANEINFO_ID": {
+            "name": "主键"
+        },
+        "hkvs_BMS_MAINTENANCE_LANEINFO_HOURSUMS": {
+            "name": "统计每小时过车数"
+        },
+        "hkvs_BMS_MAINTENANCE_LANEINFO_CROSSING_ID": {
+            "name": "路口id"
+        },
+        "hkvs_BMS_MAINTENANCE_LANEINFO_STORE_VEHICLE_PASS": {
+            "name": "入库数据量（前一小时）"
+        },
+        "hkvs_BMS_MAINTENANCE_LANEINFO_UPLOAD_VEHICLE_PASS": {
+            "name": "上传数据量（前一小时）"
+        },
+        "hkvs_BMS_MAINTENANCE_LANEINFO_TODAY_VEHICLE_PASS": {
+            "name": "今日过车"
+        }
+    },
+    "A_db_QHQB_T_QHQB_HQJT_DZKPSJB": {
+        "QHQB_T_QHQB_HQJT_DZKPSJB_O_XM": {
+            "name": "订票人姓名"
+        },
+        "QHQB_T_QHQB_HQJT_DZKPSJB_BJRKSJ": {
+            "name": "边界入库时间"
+        },
+        "QHQB_T_QHQB_HQJT_DZKPSJB_SPCZMC": {
+            "name": "售票车站名称"
+        },
+        "QHQB_T_QHQB_HQJT_DZKPSJB_O_ZS": {
+            "name": "订票张数"
+        },
+        "QHQB_T_QHQB_HQJT_DZKPSJB_SPLX": {
+            "name": "售票方式"
+        },
+        "QHQB_T_QHQB_HQJT_DZKPSJB_SPSJ": {
+            "name": "售票时间"
+        },
+        "QHQB_T_QHQB_HQJT_DZKPSJB_ZJLX": {
+            "name": "证件类型"
+        },
+        "QHQB_T_QHQB_HQJT_DZKPSJB_O_ZJHM": {
+            "name": "订票人证件号码"
+        },
+        "QHQB_T_QHQB_HQJT_DZKPSJB_XLXX": {
+            "name": "线路信息"
+        },
+        "QHQB_T_QHQB_HQJT_DZKPSJB_O_DDH": {
+            "name": "订票号"
+        },
+        "QHQB_T_QHQB_HQJT_DZKPSJB_ZJHM": {
+            "name": "证件号码"
+        },
+        "QHQB_T_QHQB_HQJT_DZKPSJB_O_ZJLX": {
+            "name": "订票人证件类型"
+        },
+        "QHQB_T_QHQB_HQJT_DZKPSJB_CLDW": {
+            "name": "承运车辆单位名称"
+        },
+        "QHQB_T_QHQB_HQJT_DZKPSJB_MDZMC": {
+            "name": "目的地名称"
+        },
+        "QHQB_T_QHQB_HQJT_DZKPSJB_O_DPQD": {
+            "name": "订票渠道"
+        },
+        "QHQB_T_QHQB_HQJT_DZKPSJB_ZWBH": {
+            "name": "座位号"
+        },
+        "QHQB_T_QHQB_HQJT_DZKPSJB_CLLX": {
+            "name": "车型等级"
+        },
+        "QHQB_T_QHQB_HQJT_DZKPSJB_SJXX": {
+            "name": "司机信息"
+        },
+        "QHQB_T_QHQB_HQJT_DZKPSJB_FCSJ": {
+            "name": "发车时间"
+        },
+        "QHQB_T_QHQB_HQJT_DZKPSJB_XM": {
+            "name": "乘车人姓名"
+        },
+        "QHQB_T_QHQB_HQJT_DZKPSJB_PH": {
+            "name": "票号"
+        },
+        "QHQB_T_QHQB_HQJT_DZKPSJB_ZHKRKSJ": {
+            "name": "综合库入库时间"
+        },
+        "QHQB_T_QHQB_HQJT_DZKPSJB_CCBH": {
+            "name": "班次号"
+        },
+        "QHQB_T_QHQB_HQJT_DZKPSJB_PJ": {
+            "name": "票价"
+        },
+        "QHQB_T_QHQB_HQJT_DZKPSJB_CPH": {
+            "name": "承运车辆牌照号"
+        },
+        "QHQB_T_QHQB_HQJT_DZKPSJB_SJHM": {
+            "name": "手机号码"
+        },
+        "QHQB_T_QHQB_HQJT_DZKPSJB_O_DPSJ": {
+            "name": "订票时间"
+        },
+        "QHQB_T_QHQB_HQJT_DZKPSJB_O_SJHM": {
+            "name": "订票人手机号码"
+        },
+        "QHQB_T_QHQB_HQJT_DZKPSJB_SSCZMC": {
+            "name": "始发站名称"
+        },
+        "QHQB_T_QHQB_HQJT_DZKPSJB_QDRKSJ": {
+            "name": "前端入库时间"
+        },
+        "QHQB_T_QHQB_HQJT_DZKPSJB_JPSJ": {
+            "name": "检票时间"
+        }
+    },
+    "A_db_QHSJ_VIEW_COMPARERECORD_TO_QHSJ": {
+        "QHSJ_VIEW_COMPARERECORD_TO_QHSJ_SCAN_TIME": {
+            "name": "扫描时间"
+        },
+        "QHSJ_VIEW_COMPARERECORD_TO_QHSJ_COMPARE_MONTH": {
+            "name": "月份"
+        },
+        "QHSJ_VIEW_COMPARERECORD_TO_QHSJ_IDCARD": {
+            "name": "身份证"
+        },
+        "QHSJ_VIEW_COMPARERECORD_TO_QHSJ_TRAVEL_MONTH": {
+            "name": "旅客行程日期"
+        },
+        "QHSJ_VIEW_COMPARERECORD_TO_QHSJ_PASSPORT_PHOTO": {
+            "name": "护照照"
+        },
+        "QHSJ_VIEW_COMPARERECORD_TO_QHSJ_COMPARE_TIME": {
+            "name": "比对时间"
+        },
+        "QHSJ_VIEW_COMPARERECORD_TO_QHSJ_NATION": {
+            "name": "国籍"
+        },
+        "QHSJ_VIEW_COMPARERECORD_TO_QHSJ_STATUS": {
+            "name": "比对状态"
+        },
+        "QHSJ_VIEW_COMPARERECORD_TO_QHSJ_QUALIFICATION": {
+            "name": "比对条件"
+        },
+        "QHSJ_VIEW_COMPARERECORD_TO_QHSJ_GENDER": {
+            "name": "性别"
+        },
+        "QHSJ_VIEW_COMPARERECORD_TO_QHSJ_ID": {
+            "name": "主键"
+        },
+        "QHSJ_VIEW_COMPARERECORD_TO_QHSJ_PHOTO": {
+            "name": "摄像头照"
+        },
+        "QHSJ_VIEW_COMPARERECORD_TO_QHSJ_CREATE_TIME": {
+            "name": "入库时间"
+        },
+        "QHSJ_VIEW_COMPARERECORD_TO_QHSJ_BIRTHDAY": {
+            "name": "出生日期"
+        },
+        "QHSJ_VIEW_COMPARERECORD_TO_QHSJ_HEAD_PHOTO": {
+            "name": "证件照"
+        },
+        "QHSJ_VIEW_COMPARERECORD_TO_QHSJ_SOURCE_NAME": {
+            "name": "数据采集来源"
+        },
+        "QHSJ_VIEW_COMPARERECORD_TO_QHSJ_CLIENT_PLACE": {
+            "name": "数据采集客户端地点名称"
+        },
+        "QHSJ_VIEW_COMPARERECORD_TO_QHSJ_IP": {
+            "name": "ip地址"
+        },
+        "QHSJ_VIEW_COMPARERECORD_TO_QHSJ_COMPARE_DATE": {
+            "name": "比对日期"
+        },
+        "QHSJ_VIEW_COMPARERECORD_TO_QHSJ_COMPARE_YEAR": {
+            "name": "年份"
+        },
+        "QHSJ_VIEW_COMPARERECORD_TO_QHSJ_NAME": {
+            "name": "姓名"
+        },
+        "QHSJ_VIEW_COMPARERECORD_TO_QHSJ_CITY": {
+            "name": "进出岛人员所属城市"
+        },
+        "QHSJ_VIEW_COMPARERECORD_TO_QHSJ_DESTINATION": {
+            "name": "目的地"
+        },
+        "QHSJ_VIEW_COMPARERECORD_TO_QHSJ_ADDRESS": {
+            "name": "比对程序部署地点"
+        },
+        "QHSJ_VIEW_COMPARERECORD_TO_QHSJ_FILGHT_TYPE": {
+            "name": "进出港类型"
+        },
+        "QHSJ_VIEW_COMPARERECORD_TO_QHSJ_TAKE_OFF_PLACE": {
+            "name": "出发地"
+        },
+        "QHSJ_VIEW_COMPARERECORD_TO_QHSJ_PROVINCE": {
+            "name": "进出岛人员所属省份"
+        },
+        "QHSJ_VIEW_COMPARERECORD_TO_QHSJ_PASSPORT": {
+            "name": "护照号"
+        }
     }
 }

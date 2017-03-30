@@ -27,7 +27,7 @@ var searcher = {
         var multiplexer = new thrift.Multiplexer();
         var client =  multiplexer.createClient("com.aleiye.client.service.search.SearchData",SearchDataService,connection);
         if(!qm.queryString) return null;
-        qm.isProcessTime = true;
+        // qm.isProcessTime = true;
         client.query(qm,function (err,res) {
             connection.end();
             if(err){

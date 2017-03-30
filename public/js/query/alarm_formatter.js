@@ -2,8 +2,17 @@ function trFormat(data){
     var A_source = data['A_source'];
     var commonFields = data['resultModel']['hits'][0]['fields'],
         selfFields = data['data'];
+    var typeNames = ['涉恐人员','涉稳人员','在逃人员','涉毒人员','前科人员','精神病人员','上访人员'];
+    var pepoleTypes = commonFields['zdrXY_T_ZZRK_QGZDRYXX_ZDRYLBBJ'].substr(0,7).split('');
+    var type = '';
+    $(pepoleTypes).each(function(i,item){
+        if(item == '1')
+            type += typeNames[i] + '、';
+    });
+    if(type)
+        type = type.substr(0,type.length-1);
     var values = [
-        commonFields['zdrXY_T_ZZRK_QGZDRYXX_ZDRYLBBJ'], //重点人员类标记
+        type,                                           //重点人员类标记
         commonFields['zdrXY_T_ZZRK_QGZDRYXX_XM'],       //姓名
         commonFields['zdrXY_T_ZZRK_QGZDRYXX_SFZH'],     //身份证号
         '',                                             //活动发送地点详地址

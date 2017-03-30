@@ -40,6 +40,13 @@ $(function () {
 
     //搜索 点击事件
     $('#search_btn').click(function () {
+        if($('#firstTime').val() || $('#lastTime').val() || $('#name_input').val() || $('#id_input').val()){
+            $('#pages').hide();
+            $('#result_message').hide();
+        } else {
+            $('#pages').show();
+            $('#result_message').show();
+        }
         var firstTime = new Date($('#firstTime').val()).getTime(),
             lastTime = new Date($('#lastTime').val()).getTime();
         var params = {

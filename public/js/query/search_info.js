@@ -1929,7 +1929,7 @@ function queryInfo17(offset) {
                         type += typeNames[i] + '、';
                 });
                 if(type)
-                    type.substr(0,type.length-1);
+                    type = type.substr(0,type.length-1);
                 fields.zdrXY_T_ZZRK_QGZDRYXX_ZDRYLBBJ = type;
                 fields.zdrXY_T_ZZRK_QGZDRYXX_JG = nativeplaceDict[parseInt(fields.zdrXY_T_ZZRK_QGZDRYXX_JG)];
                 typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');

@@ -95,7 +95,8 @@
 					}
 					var top, left;
 					left= winWidth	> weboxWidth  ? (winWidth-weboxWidth)  /2 : 0;
-					top = winHeight	> weboxHeight ? (winHeight-weboxHeight)/1 : 150; //  5 : 35
+					top = 150;
+					// top = winHeight	> weboxHeight ? (winHeight-weboxHeight)/1 : 150; //  5 : 35
 					if (allscreen) {
 						top = 0, left = 0;
 					}

@@ -24,6 +24,8 @@ function tips_info2(){
             console.log(data);
             // $(".messageCount").html('消息('+0+')');
             $(".tip1").html(data.count);
+            if(data.count <= 0 && $('.message_query').length == 0)
+                $(".bg_news1").hide();
             // $(".tip2").html(0);
         })
 }

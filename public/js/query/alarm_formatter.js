@@ -16,7 +16,7 @@ function trFormat(data){
         commonFields['zdrXY_T_ZZRK_QGZDRYXX_XM'],       //姓名
         commonFields['zdrXY_T_ZZRK_QGZDRYXX_SFZH'],     //身份证号
         '',                                             //活动发送地点详地址
-        '469002100000',                                 //预警接受单位
+        // '469002100000',                                 //预警接受单位
         '',                                             //活动发送时间
         '',                                             //比中时间
         '',                                             //比中方案名称
@@ -26,19 +26,19 @@ function trFormat(data){
             'A_db_QHQB_T_QHQB_TLDP': function(){
                 var newValues = copyArr(values);
                 newValues[3] = selfFields['QHQB_T_QHQB_TLDP_FROM_STATION_NAME'];
-                newValues[5] = formatDate(selfFields['QHQB_T_QHQB_TLDP_TRAIN_DATE'] + selfFields['QHQB_T_QHQB_TLDP_START_TIME']);
-                newValues[6] = formatDate(data['inserttime']);
-                newValues[7] = '铁路订票比对';
-                newValues[8] = data['readStatus'];
+                newValues[4] = formatDate(selfFields['QHQB_T_QHQB_TLDP_TRAIN_DATE'] + selfFields['QHQB_T_QHQB_TLDP_START_TIME']);
+                newValues[5] = formatDate(data['inserttime']);
+                newValues[6] = '铁路订票比对';
+                // newValues[7] = data['readStatus'];
                 return newValues;
             },
             'A_db_QHQB_T_QHQB_HQJT_DZKPSJB': function(){
                 var newValues = copyArr(values);
                 newValues[3] = selfFields['QHQB_T_QHQB_HQJT_DZKPSJB_SSCZMC'];
-                newValues[5] = formatDate(selfFields['QHQB_T_QHQB_HQJT_DZKPSJB_FCSJ']);
-                newValues[6] = formatDate(data['inserttime']);
-                newValues[7] = '海汽电子客票';
-                newValues[8] = data['readStatus'];
+                newValues[4] = formatDate(selfFields['QHQB_T_QHQB_HQJT_DZKPSJB_FCSJ']);
+                newValues[5] = formatDate(data['inserttime']);
+                newValues[6] = '海汽电子客票';
+                // newValues[7] = data['readStatus'];
                 return newValues;
             }
         }

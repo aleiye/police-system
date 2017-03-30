@@ -238,7 +238,11 @@ p.tips{
 	color:#e2e2e2;
 }
 /*表格样式*/
-
+.webox{
+    z-index: 3;
+    border: 1px solid #2a6496;
+    box-sizing: content-box;
+}
 #tab1 tbody tr td{
 	cursor: pointer;
 }

@@ -10,7 +10,7 @@ $(function () {
             $('#message_table').find('tbody').html('');
             $(data).each(function(i,item){
                 var tds = trFormat(item).map(function(d,i){
-                    if(i == 8)
+                    if(i == 7)
                         return d ? '<td class="green">已签收</td>' : '<td class="yellow">未签收</td>';
                     return '<td>'+ d +'</td>';
                 });

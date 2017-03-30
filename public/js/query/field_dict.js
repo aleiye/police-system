@@ -3621,284 +3621,281 @@ var fieldDict = {
             "name": "籍贯"
         }
     },
-    "A_net_sis_V_WA_SOURCE_FJ_1001": {
-        "sis_V_WA_SOURCE_FJ_1001_CERTIFICATE_CODE": {
+    "A_net_WA_SOURCE_FJ_1001": {
+        "CERTIFICATE_CODE": {
             "name": "身份内容"
         },
-        "sis_V_WA_SOURCE_FJ_1001_NETBAR_WACODE": {
+        "NETBAR_WACODE": {
             "name": "场所编号"
         },
-        "sis_V_WA_SOURCE_FJ_1001_SSID_POSITION": {
+        "SSID_POSITION": {
             "name": "接入热点SSID"
         },
-        "sis_V_WA_SOURCE_FJ_1001_X_COORDINATE": {
+        "X_COORDINATE": {
             "name": "X坐标"
         },
-        "sis_V_WA_SOURCE_FJ_1001_ACCESS_AP_CHANNEL": {
+        "ACCESS_AP_CHANNEL": {
             "name": "接入热点频道"
         },
-        "sis_V_WA_SOURCE_FJ_1001_MAC": {
+        "MAC": {
             "name": "终端MAC地址"
         },
-        "sis_V_WA_SOURCE_FJ_1001_BRAND": {
+        "BRAND": {
             "name": "终端品牌"
         },
-        "sis_V_WA_SOURCE_FJ_1001_TERMINAL_FIELD STRENGTH": {
+        "TERMINAL_FIELD STRENGTH": {
             "name": "被采终端场强"
         },
-        "sis_V_WA_SOURCE_FJ_1001_ACCESS_AP_ENCRYPTION_TYPE": {
+        "ACCESS_AP_ENCRYPTION_TYPE": {
             "name": "接入热点加密类型"
         },
-        "sis_V_WA_SOURCE_FJ_1001_CACHE_SSID": {
+        "CACHE_SSID": {
             "name": "终端历史SSID列表"
         },
-        "sis_V_WA_SOURCE_FJ_1001_COLLECTION_EQUIPMENT ID": {
+        "COLLECTION_EQUIPMENT ID": {
             "name": "采集设备编号"
         },
-        "sis_V_WA_SOURCE_FJ_1001_ACCESS_AP_MAC": {
+        "ACCESS_AP_MAC": {
             "name": "接入热点MAC"
         },
-        "sis_V_WA_SOURCE_FJ_1001_IDENTIFICATION_TYPE": {
+        "IDENTIFICATION_TYPE": {
             "name": "身份类型"
         },
-        "sis_V_WA_SOURCE_FJ_1001_Y_COORDINATE": {
+        "Y_COORDINATE": {
             "name": "Y坐标"
         },
-        "sis_V_WA_SOURCE_FJ_1001_COLLECTION_EQUIPMENT _LATITUDE": {
+        "COLLECTION_EQUIPMENT _LATITUDE": {
             "name": "采集设备纬度"
         },
-        "sis_V_WA_SOURCE_FJ_1001_CAPTURE_TIME": {
+        "CAPTURE_TIME": {
             "name": "采集时间"
         },
-        "sis_V_WA_SOURCE_FJ_1001_COLLECTION_EQUIPMENT_ LONGITUDE": {
+        "COLLECTION_EQUIPMENT_ LONGITUDE": {
             "name": "采集设备经度"
         }
     },
-    "A_net_sis_V_WA_SOURCE_FJ_1002": {
-        "sis_V_WA_SOURCE_FJ_1002_": {
-            "name": ""
-        },
-        "sis_V_WA_SOURCE_FJ_1002_AP_MAC": {
+    "A_net_WA_SOURCE_FJ_1002": {
+        "AP_MAC": {
             "name": "热点MAC地址"
         },
-        "sis_V_WA_SOURCE_FJ_1002_NETBAR_WACODE": {
+        "NETBAR_WACODE": {
             "name": "场所编号"
         },
-        "sis_V_WA_SOURCE_FJ_1002_X_COORDINATE": {
+        "X_COORDINATE": {
             "name": "X坐标"
         },
-        "sis_V_WA_SOURCE_FJ_1002_COLLECTION_EQUIPMENT ID": {
+        "COLLECTION_EQUIPMENT ID": {
             "name": "采集设备编号"
         },
-        "sis_V_WA_SOURCE_FJ_1002_AP_SSID": {
+        "AP_SSID": {
             "name": "热点SSID"
         },
-        "sis_V_WA_SOURCE_FJ_1002_AP_FIELD STRENGTH": {
+        "AP_FIELD STRENGTH": {
             "name": "热点场强"
         },
-        "sis_V_WA_SOURCE_FJ_1002_ENCRYPT _ALGORITHM_TYPE": {
+        "ENCRYPT _ALGORITHM_TYPE": {
             "name": "热点加密类型"
         },
-        "sis_V_WA_SOURCE_FJ_1002_Y_COORDINATE": {
+        "Y_COORDINATE": {
             "name": "Y坐标"
         },
-        "sis_V_WA_SOURCE_FJ_1002_COLLECTION_EQUIPMENT _LATITUDE": {
+        "COLLECTION_EQUIPMENT _LATITUDE": {
             "name": "采集设备纬度"
         },
-        "sis_V_WA_SOURCE_FJ_1002_AP_CHANNEL": {
+        "AP_CHANNEL": {
             "name": "热点频道"
         },
-        "sis_V_WA_SOURCE_FJ_1002_CAPTURE_TIME": {
+        "CAPTURE_TIME": {
             "name": "采集时间"
         },
-        "sis_V_WA_SOURCE_FJ_1002_COLLECTION_EQUIPMENT_ LONGITUDE": {
+        "COLLECTION_EQUIPMENT_ LONGITUDE": {
             "name": "采集设备经度"
         }
     },
-    "A_net_sis_V_WA_SOURCE_FJ_0001": {
-        "sis_V_WA_SOURCE_FJ_0001_CERTIFICATE_CODE": {
+    "A_net_WA_SOURCE_FJ_0001": {
+        "CERTIFICATE_CODE": {
             "name": "身份证件号码"
         },
-        "sis_V_WA_SOURCE_FJ_0001_START_TIME": {
+        "START_TIME": {
             "name": "上线时间"
         },
-        "sis_V_WA_SOURCE_FJ_0001_SRC_PORT_END": {
+        "SRC_PORT_END": {
             "name": "源外网IPv4结束端口号"
         },
-        "sis_V_WA_SOURCE_FJ_0001_SESSIONID": {
+        "SESSIONID": {
             "name": "会话ID"
         },
-        "sis_V_WA_SOURCE_FJ_0001_SRC_IP": {
+        "SRC_IP": {
             "name": "源外网IPv4地址"
         },
-        "sis_V_WA_SOURCE_FJ_0001_LONGITUDE": {
+        "LONGITUDE": {
             "name": "移动AP经度"
         },
-        "sis_V_WA_SOURCE_FJ_0001_SRC_PORT_END_V6": {
+        "SRC_PORT_END_V6": {
             "name": "源外网IPv6结束端口号"
         },
-        "sis_V_WA_SOURCE_FJ_0001_X_COORDINATE": {
+        "X_COORDINATE": {
             "name": "X坐标"
         },
-        "sis_V_WA_SOURCE_FJ_0001_OS_NAME": {
+        "OS_NAME": {
             "name": "终端系统"
         },
-        "sis_V_WA_SOURCE_FJ_0001_APP_VERSION": {
+        "APP_VERSION": {
             "name": "APP版本号"
         },
-        "sis_V_WA_SOURCE_FJ_0001_APP_COMPANY_NAME": {
+        "APP_COMPANY_NAME": {
             "name": "APP厂商名称"
         },
-        "sis_V_WA_SOURCE_FJ_0001_TERMINAL_FIELD STRENGTH": {
+        "TERMINAL_FIELD STRENGTH": {
             "name": "场强"
         },
-        "sis_V_WA_SOURCE_FJ_0001_Name": {
+        "Name": {
             "name": "上网人员姓名"
         },
-        "sis_V_WA_SOURCE_FJ_0001_SRC_IPV6": {
+        "SRC_IPV6": {
             "name": "源外网IPv6地址"
         },
-        "sis_V_WA_SOURCE_FJ_0001_SRC_PORT_START": {
+        "SRC_PORT_START": {
             "name": "源外网IPv4起始端口号"
         },
-        "sis_V_WA_SOURCE_FJ_0001_END_TIME": {
+        "END_TIME": {
             "name": "下线时间"
         },
-        "sis_V_WA_SOURCE_FJ_0001_IMSI": {
+        "IMSI": {
             "name": "终端IMSI码"
         },
-        "sis_V_WA_SOURCE_FJ_0001_IMEI_ESN_MEID": {
+        "IMEI_ESN_MEID": {
             "name": "终端IMEI码"
         },
-        "sis_V_WA_SOURCE_FJ_0001_AUTH_TYPE": {
+        "AUTH_TYPE": {
             "name": "认证类型"
         },
-        "sis_V_WA_SOURCE_FJ_0001_NETBAR_WACODE": {
+        "NETBAR_WACODE": {
             "name": "上网服务场所编码"
         },
-        "sis_V_WA_SOURCE_FJ_0001_AP_MAC": {
+        "AP_MAC": {
             "name": "AP设备MAC地址"
         },
-        "sis_V_WA_SOURCE_FJ_0001_APPID": {
+        "APPID": {
             "name": "APP终端认证码"
         },
-        "sis_V_WA_SOURCE_FJ_0001_AUTH_ACCOUNT": {
+        "AUTH_ACCOUNT": {
             "name": "认证帐号"
         },
-        "sis_V_WA_SOURCE_FJ_0001_NetSite_Type": {
+        "NetSite_Type": {
             "name": "场所类型"
         },
-        "sis_V_WA_SOURCE_FJ_0001_APP_SOFTWARE_NAME": {
+        "APP_SOFTWARE_NAME": {
             "name": "APP应用软件名称"
         },
-        "sis_V_WA_SOURCE_FJ_0001_MODEL": {
+        "MODEL": {
             "name": "终端型号"
         },
-        "sis_V_WA_SOURCE_FJ_0001_SRC_PORT_START_V6": {
+        "SRC_PORT_START_V6": {
             "name": "源外网IPv6起始端口号"
         },
-        "sis_V_WA_SOURCE_FJ_0001_MAC": {
+        "MAC": {
             "name": "终端MAC地址"
         },
-        "sis_V_WA_SOURCE_FJ_0001_BRAND": {
+        "BRAND": {
             "name": "终端品牌"
         },
-        "sis_V_WA_SOURCE_FJ_0001_Y_COORDINATE": {
+        "Y_COORDINATE": {
             "name": "Y坐标"
         },
-        "sis_V_WA_SOURCE_FJ_0001_IP_ADDRESS": {
+        "IP_ADDRESS": {
             "name": "场所内网IP地址"
         },
-        "sis_V_WA_SOURCE_FJ_0001_COLLECTION_EQUIPMENT_ID.": {
+        "COLLECTION_EQUIPMENT_ID.": {
             "name": "AP设备编号"
         },
-        "sis_V_WA_SOURCE_FJ_0001_LATITUDE": {
+        "LATITUDE": {
             "name": "移动AP纬度"
         },
-        "sis_V_WA_SOURCE_FJ_0001_CERTIFICATE_TYPE": {
+        "CERTIFICATE_TYPE": {
             "name": "身份证件类型"
         }
     },
-    "A_net_sis_V_WA_SOURCE_FJ_0002": {
-        "sis_V_WA_SOURCE_FJ_0002_源外网IPv4结束端口号": {
-            "name": "SRC_PORT_END"
+    "A_net_WA_SOURCE_FJ_0002": {
+        "SRC_PORT_END": {
+            "name": "源外网IPv4结束端口号"
         },
-        "sis_V_WA_SOURCE_FJ_0002_场所内网IP地址": {
-            "name": "IP_ADDRESS"
+        "IP_ADDRESS": {
+            "name": "场所内网IP地址"
         },
-        "sis_V_WA_SOURCE_FJ_0002_日志记录时间": {
-            "name": "CAPTURE_TIME"
+        "CAPTURE_TIME": {
+            "name": "日志记录时间"
         },
-        "sis_V_WA_SOURCE_FJ_0002_源外网IPv6结束端口号": {
-            "name": "SRC_PORT_END_V6"
+        "SRC_PORT_END_V6": {
+            "name": "源外网IPv6结束端口号"
         },
-        "sis_V_WA_SOURCE_FJ_0002_网络应用服务类型": {
-            "name": "NETWORK_APP"
+        "NETWORK_APP": {
+            "name": "网络应用服务类型"
         },
-        "sis_V_WA_SOURCE_FJ_0002_源外网IPv6起始端口号": {
-            "name": "SRC_PORT_START_V6"
+        "SRC_PORT_START_V6": {
+            "name": "源外网IPv6起始端口号"
         },
-        "sis_V_WA_SOURCE_FJ_0002_AP设备编号": {
-            "name": "COLLECTION_EQUIPMENT_ID."
+        "COLLECTION_EQUIPMENT_ID": {
+            "name": "AP设备编号"
         },
-        "sis_V_WA_SOURCE_FJ_0002_上网服务场所编码": {
-            "name": "NETSERVERPORT_WACODE"
+        "NETSERVERPORT_WACODE": {
+            "name": "上网服务场所编码"
         },
-        "sis_V_WA_SOURCE_FJ_0002_AP设备MAC地址": {
-            "name": "AP_MAC"
+        "AP_MAC": {
+            "name": "AP设备MAC地址"
         },
-        "sis_V_WA_SOURCE_FJ_0002_源外网IPv4起始端口号": {
-            "name": "SRC_PORT_START"
+        "SRC_PORT_START": {
+            "name": "源外网IPv4起始端口号"
         },
-        "sis_V_WA_SOURCE_FJ_0002_场所内网端口号": {
-            "name": "PORT"
+        "PORT": {
+            "name": "场所内网端口号"
         },
-        "sis_V_WA_SOURCE_FJ_0002_终端MAC地址": {
-            "name": "MAC"
+        "MAC": {
+            "name": "终端MAC地址"
         },
-        "sis_V_WA_SOURCE_FJ_0002_目的公网IPv4地址": {
-            "name": "DST_IP"
+        "DST_IP": {
+            "name": "目的公网IPv4地址"
         },
-        "sis_V_WA_SOURCE_FJ_0002_目的公网IPv6地址": {
-            "name": "DST_IPV6"
+        "DST_IPV6": {
+            "name": "目的公网IPv6地址"
         },
-        "sis_V_WA_SOURCE_FJ_0002_移动AP经度": {
-            "name": "LONGITUDE"
+        "LONGITUDE": {
+            "name": "移动AP经度"
         },
-        "sis_V_WA_SOURCE_FJ_0002_会话ID": {
-            "name": "SESSIONID"
+        "SESSIONID": {
+            "name": "会话ID"
         },
-        "sis_V_WA_SOURCE_FJ_0002_源外网IPv4地址": {
-            "name": "SRC_IP"
+        "SRC_IP": {
+            "name": "源外网IPv4地址"
         },
-        "sis_V_WA_SOURCE_FJ_0002_目的公网IPv4端口号": {
-            "name": "DST_PORT"
+        "DST_PORT": {
+            "name": "目的公网IPv4端口号"
         },
-        "sis_V_WA_SOURCE_FJ_0002_源外网IPv6地址": {
-            "name": "SRC_IPV6"
+        "SRC_IPV6": {
+            "name": "源外网IPv6地址"
         },
-        "sis_V_WA_SOURCE_FJ_0002_目的公网IPv6端口号": {
-            "name": "DST_PORT_V6"
+        "DST_PORT_V6": {
+            "name": "目的公网IPv6端口号"
         },
-        "sis_V_WA_SOURCE_FJ_0002_移动AP纬度": {
-            "name": "LATITUDE"
+        "LATITUDE": {
+            "name": "移动AP纬度"
         }
     },
-    "A_net_sis_V_WA_BASIC_FJ_1001": {
-        "sis_V_WA_BASIC_FJ_1001_场所编号": {
-            "name": "NETBAR_WACODE"
+    "A_net_WA_BASIC_FJ_1001": {
+        "NETBAR_WACODE": {
+            "name": "场所编号"
         },
-        "sis_V_WA_BASIC_FJ_1001_时间": {
-            "name": "TIME"
+        "TIME": {
+            "name": "时间"
         },
-        "sis_V_WA_BASIC_FJ_1001_采集设备纬度": {
-            "name": "COLLECTION_EQUIPMENT _LATITUDE"
+        "COLLECTION_EQUIPMENT _LATITUDE": {
+            "name": "采集设备纬度"
         },
-        "sis_V_WA_BASIC_FJ_1001_采集设备经度": {
-            "name": "COLLECTION_EQUIPMENT_ LONGITUDE"
+        "COLLECTION_EQUIPMENT_ LONGITUDE": {
+            "name": "采集设备经度"
         },
-        "sis_V_WA_BASIC_FJ_1001_采集设备编号": {
-            "name": "COLLECTION_EQUIPMENT ID"
+        "COLLECTION_EQUIPMENT ID": {
+            "name": "采集设备编号"
         }
     },
     "A_db_QHSC_CARINFOTBL": {

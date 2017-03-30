@@ -75,11 +75,11 @@ var tableDict = ['A_db_sis_V_BD_HANDSET_CONTACTOR_INFO',//机主通讯录信息-
     'A_db_QHQB_T_QHQB_YXDSMNSJ',//有线电视模拟数据
     'A_db_QHQB_T_QHQB_HKDDC',//海口电动车信息
     'A_db_QHQB_T_QHQB_HQJT_DZKPSJB',//海汽集团电子客票信息
-    'A_net_sis_V_WA_SOURCE_FJ_0001',//终端上下线信息--6.网警总队网综系统
-    'A_net_sis_V_WA_SOURCE_FJ_0002',//上网日志
-    'A_net_sis_V_WA_SOURCE_FJ_1001',//终端特征信息
-    'A_net_sis_V_WA_SOURCE_FJ_1002',//热点信息采集
-    'A_net_sis_V_WA_BASIC_FJ_1001',//终端特征移动采集设备轨迹
+    'A_net_WA_SOURCE_FJ_0001',//终端上下线信息--6.网警总队网综系统
+    'A_net_WA_SOURCE_FJ_0002',//上网日志
+    'A_net_WA_SOURCE_FJ_1001',//终端特征信息
+    'A_net_WA_SOURCE_FJ_1002',//热点信息采集
+    'A_net_WA_BASIC_FJ_1001',//终端特征移动采集设备轨迹
 	'A_db_QHSJ_VIEW_COMPARERECORD_TO_QHSJ',//琼海检查站比对信息
 	'A_db_QHQB_T_QHQB_TLDP'//铁路订票数据信息
 ];

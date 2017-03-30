@@ -86,21 +86,21 @@ var tableDict = ['A_db_sis_V_BD_HANDSET_CONTACTOR_INFO',//机主通讯录信息-
 
 function searchCount(){
     // var queryString = 'A_source:"A_db_duo_SEC_USER_INFO" OR A_source:"A_db_duo_SEC_USER_SYNCINFO" | report count(A_source) over A_source';
-    var tmpStr = [];
-    $(tableDict).each(function (index,value) {
-        if(index == 0)  {
-            tmpStr.push('A_source:"'+value+'"')
-        }else{
-            tmpStr.push(' OR A_source:"'+value+'"');
-        }
-    });
+    var tmpStr = ['A_source:A_*'];
+    // var tmpStr = [];
+    // $(tableArray).each(function (index, value) {
+    //     if (index == 0) {
+    //         tmpStr.push('A_source:"' + value + '"')
+    //     } else {
+    //         tmpStr.push(' OR A_source:"' + value + '"');
+    //     }
+    // });
+    var keyWord = $("#search_input").val();
+    if (keyWord != '') {
+        tmpStr.push(' AND ' + keyWord);
+    }
     tmpStr.push(' | report count(A_source) over A_source');
     var queryString = tmpStr.join('');
-
-    var keyWord = $("#search_input").val();
-    if(keyWord != ''){
-        queryString += ' AND ' + keyWord;
-    }
     console.log('queryString='+queryString);
 
     $.get('datas/query',

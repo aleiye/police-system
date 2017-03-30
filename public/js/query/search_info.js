@@ -4701,7 +4701,7 @@ $('.detail').live('click',function(){
 			arr.push(oBj)
 		}
 		$.webox({
-			width:1000,
+			width:1200,
 			bgvisibel : false,
 			html : $("#box").html(),
 			open: function(){
@@ -4716,7 +4716,7 @@ $('.detail').live('click',function(){
 							var valueDict = dict.valueDict;
 							value = valueDict ? valueDict[parseInt(value)] : value;
 						}
-						html += '<td>' + key + '</td><td>' + value ; 
+						html += '<td title="'+ key +'">' + key + '</td><td title="'+ value +'">' + value ; 
 					}
 					if((i+1) % 3 === 0 && i !== 0 && i !== arr.length-1){
 						html += '</tr><tr>'

@@ -77,6 +77,10 @@ $(function () {
         $('#result_message span').text(data.count);
         pageTotal = Math.ceil(data.count / 10);
         $('#pages').html(paging(1,Math.ceil(data.count / 10)));
+        if($('#pages li:first').next('li').hasClass('active'))
+            $('#pages li:first').hide();
+        if($('#pages li:last').prev().hasClass('active'))
+            $('#pages li:last').hide();
         // fenye2('#pages2','showTab',data.count,1,10);
     });
 
@@ -107,8 +111,28 @@ $(function () {
             }
         });
         $('#pages').html(paging(nowPage,pageTotal));
+        if($('#pages li:first').next('li').hasClass('active'))
+            $('#pages li:first').hide();
+        if($('#pages li:last').prev().hasClass('active'))
+            $('#pages li:last').hide();
     });
-
+    $('.go_btn').die().live('click',function jump(){
+        var nowPage = $('#goTo').val();
+        if(!nowPage || isNaN(nowPage)) return ;
+        skip = nowPage * 10 - 10;
+        showTab({
+            page: {
+                skip: skip,
+                limit: 10
+            }
+        });
+        $('#pages').html(paging(nowPage,pageTotal));
+        if($('#pages li:first').next('li').hasClass('active'))
+            $('#pages li:first').hide();
+        if($('#pages li:last').prev().hasClass('active'))
+            $('#pages li:last').hide();
+    });
+    
     function paging(page, total) {
 
         if (total == 0) return '<div></div>';
@@ -143,7 +167,7 @@ $(function () {
         } else {
             arr.push('<li class="jp-disabled page_num"><a aria-label="Next">»</a></li>');
         }
-
+        arr.push('<input id="goTo" type="number"><button class="go_btn">跳转</button>');
         return arr.join('');
     }
 });

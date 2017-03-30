@@ -29,10 +29,10 @@ var tableDict = ['A_db_sis_V_BD_HANDSET_CONTACTOR_INFO',//机主通讯录信息-
     'A_db_sis_V_XYR_MAIN',//机主表（SIM卡）
     'A_db_sis_V_PHONE_LIST',//话单机主信息表
     'A_db_sis_V_PHONE_THQD',//通话清单
-    'A_db_sis_V_CARINFOTBl',//车辆信息登记表--2.本地社会资源数据
-    'A_db_sis_V_EMSINFOTBl',//物流信息登记表
-    'A_db_sis_V_WORKERBASEINFO',//行业工作人员
-    'A_db_sis_V_RST_HOUSING_INFORMATIO',//小区住宅业主信息
+    'A_db_QHSC_CARINFOTBL',//车辆信息登记表--2.本地社会资源数据
+    'A_db_QHSC_EMSINFOTBL',//物流信息登记表
+    'A_db_QHSC_WORKERBASEINFO',//行业工作人员
+    'A_db_QHSC_RST_HOUSING_INFORMATIO',//小区住宅业主信息
     'A_db_hkvs_BMS_CROSSING_INFO',//路口信息表--3.卡口视频监控系统
     'A_db_hkvs_BMS_MAINTENANCE_LANEINFO',//运维车道过车数据统计
     'A_db_hkvs_BMS_PLATE_ALARM',//布控信息表
@@ -75,12 +75,13 @@ var tableDict = ['A_db_sis_V_BD_HANDSET_CONTACTOR_INFO',//机主通讯录信息-
     'A_db_QHQB_T_QHQB_YXDSMNSJ',//有线电视模拟数据
     'A_db_QHQB_T_QHQB_HKDDC',//海口电动车信息
     'A_db_QHQB_T_QHQB_HQJT_DZKPSJB',//海汽集团电子客票信息
-    'A_db_sis_V_WA_SOURCE_FJ_0001',//终端上下线信息--6.网警总队网综系统
-    'A_db_sis_V_WA_SOURCE_FJ_0002',//上网日志
-    'A_db_sis_V_WA_SOURCE_FJ_1001',//终端特征信息
-    'A_db_sis_V_WA_SOURCE_FJ_1002',//热点信息采集
-    'A_db_sis_V_WA_BASIC_FJ_1001',//终端特征移动采集设备轨迹
-    'A_db_QHSJ_VIEW_COMPARERECORD_TO_QHSJ'//琼海检查站比对信息
+    'A_net_sis_V_WA_SOURCE_FJ_0001',//终端上下线信息--6.网警总队网综系统
+    'A_net_sis_V_WA_SOURCE_FJ_0002',//上网日志
+    'A_net_sis_V_WA_SOURCE_FJ_1001',//终端特征信息
+    'A_net_sis_V_WA_SOURCE_FJ_1002',//热点信息采集
+    'A_net_sis_V_WA_BASIC_FJ_1001',//终端特征移动采集设备轨迹
+	'A_db_QHSJ_VIEW_COMPARERECORD_TO_QHSJ',//琼海检查站比对信息
+	'A_db_QHQB_T_QHQB_TLDP'//铁路订票数据信息
 ];
 
 function searchCount(){

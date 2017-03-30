@@ -238,6 +238,24 @@ p.tips{
 	color:#e2e2e2;
 }
 /*表格样式*/
+
+#tab1 tbody tr td{
+	cursor: pointer;
+}
+#inside tbody tr td{
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	display: block;
+	float: left;
+}
+#inside tbody tr td:nth-child(1), #inside tbody tr td:nth-child(3), #inside tbody tr td:nth-child(5) {
+	width: 105px;
+	background-color: #046;
+}
+#inside tbody tr td:nth-child(2), #inside tbody tr td:nth-child(4), #inside tbody tr td:nth-child(6){
+	width: 222px;
+}
 .table thead tr th{
 	color:#09baed;
 	/*background-color:#020e1e;*/

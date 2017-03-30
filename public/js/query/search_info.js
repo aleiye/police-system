@@ -91,7 +91,7 @@ var tableDict = ['A_db_sis_V_BD_HANDSET_CONTACTOR_INFO',//机主通讯录信息-
     'A_db_QHSC_WORKERBASEINFO',//行业工作人员
     'A_db_QHSC_RST_HOUSING_INFORMATIO',//小区住宅业主信息
     'A_db_hkvs_BMS_CROSSING_INFO',//路口信息表--3.卡口视频监控系统
-    'A_db_hkvs_BMS_MAINTENANCE_LANEINFO',//运维车道过车数据统计
+    // 'A_db_hkvs_BMS_MAINTENANCE_LANEINFO',//运维车道过车数据统计
     'A_db_hkvs_BMS_PLATE_ALARM',//布控信息表
     'A_db_hkvs_BMS_VEHICLE_PASS',//所有过车信息表
     'A_db_hkvs_BMS_VEHICLE_VIOLATION',//违章过车表
@@ -238,14 +238,14 @@ function queryInfo() {
             queryInfo10();
             break;
         }
-        case '运维车道过车数据统计': {
-            queryString = 'A_source:"A_db_hkvs_BMS_MAINTENANCE_LANEINFO"';
-            if (keyWord != '') {
-                queryString = queryString + ' AND ' + keyWord;
-            }
-            queryInfo11();
-            break;
-        }
+        // case '运维车道过车数据统计': {
+        //     queryString = 'A_source:"A_db_hkvs_BMS_MAINTENANCE_LANEINFO"';
+        //     if (keyWord != '') {
+        //         queryString = queryString + ' AND ' + keyWord;
+        //     }
+        //     queryInfo11();
+        //     break;
+        // }
         case '布控信息表': {
             queryString = 'A_source:"A_db_hkvs_BMS_PLATE_ALARM"';
             if (keyWord != '') {
@@ -750,9 +750,10 @@ function queryInfo1(offset) {
                 typeList.push('</tr>');
 
             });
-            typeList.push('</tbody></table>');
-            $("#tab1").empty().append(typeList.join(''));
-
+            typeList.push('</tbody></table>');             
+            $("#tab1").html(typeList.join(''));
+            // $("#tab1").empty().append(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total>pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo1', total, pageNum + 1, pageSize);
@@ -857,7 +858,7 @@ function queryInfo2(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
-
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo2', total, pageNum + 1, pageSize);
@@ -916,7 +917,7 @@ function queryInfo3(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
-
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo3', total-1, pageNum + 1, pageSize);
@@ -971,6 +972,7 @@ function queryInfo4(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo4', total, pageNum + 1, pageSize);
@@ -1065,6 +1067,7 @@ function queryInfo5(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo5', total, pageNum + 1, pageSize);
@@ -1127,6 +1130,7 @@ function queryInfo6(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo6', total, pageNum + 1, pageSize);
@@ -1186,7 +1190,7 @@ function queryInfo7(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
-
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo7', total, pageNum + 1, pageSize);
@@ -1207,6 +1211,7 @@ function queryInfo8(offset) {
             pageNum: pageNum
         },
         function (data) {
+            
 			if(!data || data.hits == null || data.count == 0){
                 $("#tab1").html('<h3 class="h3_null">暂无数据</h3>');
                 return false;
@@ -1239,13 +1244,13 @@ function queryInfo8(offset) {
                 typeList.push('<td>', fields.QHSC_WORKERBASEINFO_NAME, '</td>');
                 typeList.push('<td>', fields.QHSC_WORKERBASEINFO_IDCARD, '</td>');
                 var content = fields.QHSC_WORKERBASEINFO_NATIVEPLACE || '';
-                typeList.push('<td title="'+ content +'"><div style="width:300px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">',content , '</div></td>');
+                typeList.push('<td title="'+ content +'"><div >',content , '</div></td>');
 
                 var content2 = fields.QHSC_WORKERBASEINFO_NATIVEADDRESS || '';
-                typeList.push('<td title="'+ content2 +'"><div style="width:300px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">',content2 , '</div></td>');
+                typeList.push('<td title="'+ content2 +'"><div >',content2 , '</div></td>');
 
                 var content3 = fields.QHSC_WORKERBASEINFO_ADDRESS || '';
-                typeList.push('<td title="'+ content3 +'"><div style="width:300px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">',content3 , '</div></td>');
+                typeList.push('<td title="'+ content3 +'"><div >',content3 , '</div></td>');
 
                 typeList.push('<td>', fields.QHSC_WORKERBASEINFO_EDUCATIONDEGREE, '</td>');
                 typeList.push('<td>', fields.QHSC_WORKERBASEINFO_PHONE, '</td>');
@@ -1257,6 +1262,7 @@ function queryInfo8(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo8', total, pageNum + 1, pageSize);
@@ -1319,6 +1325,7 @@ function queryInfo9(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo9', total, pageNum + 1, pageSize);
@@ -1395,6 +1402,7 @@ function queryInfo10(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
 				$('#pages').show();
                 fenye('#pages', 'queryInfo10', total, pageNum + 1, pageSize);
@@ -1402,61 +1410,61 @@ function queryInfo10(offset) {
         })
 }
 //运维车道过车数据统计
-function queryInfo11(offset) {
-    console.log(queryString);
-    offset = offset || 0;
-    var pageNum = offset / pageSize;
-    $.get('datas/query',
-        {
-            queryString: queryString,
-            a_from: new Date('2005-01-01 00:00:00').getTime(),
-            a_to: new Date().getTime(),
-            pageSize: pageSize,
-            pageNum: pageNum
-        },
-        function (data) {
-			if(!data || data.hits == null || data.count == 0){
-                $("#tab1").html('<h3 class="h3_null">暂无数据</h3>');
-                return false;
-            }
-            var total = data.count;
-            var jsonHits = data.hits;
+// function queryInfo11(offset) {
+//     console.log(queryString);
+//     offset = offset || 0;
+//     var pageNum = offset / pageSize;
+//     $.get('datas/query',
+//         {
+//             queryString: queryString,
+//             a_from: new Date('2005-01-01 00:00:00').getTime(),
+//             a_to: new Date().getTime(),
+//             pageSize: pageSize,
+//             pageNum: pageNum
+//         },
+//         function (data) {
+// 			if(!data || data.hits == null || data.count == 0){
+//                 $("#tab1").html('<h3 class="h3_null">暂无数据</h3>');
+//                 return false;
+//             }
+//             var total = data.count;
+//             var jsonHits = data.hits;
 
-            var typeList = [];
-            typeList.push('<table class="table table-striped table-bordered click_none"><thead><tr>');
+//             var typeList = [];
+//             typeList.push('<table class="table table-striped table-bordered click_none"><thead><tr>');
 
-            //表头信息
-            typeList.push(['<th>', '车道序号', '</th>'].join(''));
-            typeList.push(['<th>', '路口名称', '</th>'].join(''));
-            typeList.push(['<th>', '昨日过车数', '</th>'].join(''));
-            typeList.push(['<th>', '未识别过车数（前一小时）', '</th>'].join(''));
-            typeList.push(['<th>', '今日过车', '</th>'].join(''));
-            // typeList.push(['<th>', '详情', '</th>'].join(''));
-            typeList.push('</tr> </thead> <tbody>');
+//             //表头信息
+//             typeList.push(['<th>', '车道序号', '</th>'].join(''));
+//             typeList.push(['<th>', '路口名称', '</th>'].join(''));
+//             typeList.push(['<th>', '昨日过车数', '</th>'].join(''));
+//             typeList.push(['<th>', '未识别过车数（前一小时）', '</th>'].join(''));
+//             typeList.push(['<th>', '今日过车', '</th>'].join(''));
+//             // typeList.push(['<th>', '详情', '</th>'].join(''));
+//             typeList.push('</tr> </thead> <tbody>');
 
-            jsonHits.map(function (bean) {
-                var fields = bean.fields;
+//             jsonHits.map(function (bean) {
+//                 var fields = bean.fields;
 
-                typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
+//                 typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
-                //每行的数据信息
-                typeList.push('<td>', parseInt(fields.hkvs_BMS_MAINTENANCE_LANEINFO_LANE_NUMBER), '</td>');
-                typeList.push('<td>', fields.hkvs_BMS_MAINTENANCE_LANEINFO_CROSSING_NAME, '</td>');
-                typeList.push('<td>', parseInt(fields.hkvs_BMS_MAINTENANCE_LANEINFO_YESTERDAY_VEHICLE_PASS), '</td>');
-                typeList.push('<td>', parseInt(fields.hkvs_BMS_MAINTENANCE_LANEINFO_UNRECOGNIZED_VEHICLE_PASS), '</td>');
-                typeList.push('<td>', parseInt(fields.hkvs_BMS_MAINTENANCE_LANEINFO_TODAY_VEHICLE_PASS), '</td>');
-                //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
-                typeList.push('</tr>');
+//                 //每行的数据信息
+//                 typeList.push('<td>', parseInt(fields.hkvs_BMS_MAINTENANCE_LANEINFO_LANE_NUMBER), '</td>');
+//                 typeList.push('<td>', fields.hkvs_BMS_MAINTENANCE_LANEINFO_CROSSING_NAME, '</td>');
+//                 typeList.push('<td>', parseInt(fields.hkvs_BMS_MAINTENANCE_LANEINFO_YESTERDAY_VEHICLE_PASS), '</td>');
+//                 typeList.push('<td>', parseInt(fields.hkvs_BMS_MAINTENANCE_LANEINFO_UNRECOGNIZED_VEHICLE_PASS), '</td>');
+//                 typeList.push('<td>', parseInt(fields.hkvs_BMS_MAINTENANCE_LANEINFO_TODAY_VEHICLE_PASS), '</td>');
+//                 //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
+//                 typeList.push('</tr>');
 
-            });
-            typeList.push('</tbody></table>');
-            $("#tab1").html(typeList.join(''));
-            if(total > pageSize){
-				$('#pages').show();
-                fenye('#pages', 'queryInfo11', total, pageNum + 1, pageSize);
-            }
-        })
-}
+//             });
+//             typeList.push('</tbody></table>');
+//             $("#tab1").html(typeList.join(''));
+//             if(total > pageSize){
+// 				$('#pages').show();
+//                 fenye('#pages', 'queryInfo11', total, pageNum + 1, pageSize);
+//             }
+//         })
+// }
 //布控信息表
 function queryInfo12(offset) {
     console.log(queryString);
@@ -1482,7 +1490,7 @@ function queryInfo12(offset) {
             typeList.push('<table class="table table-striped table-bordered click_none"><thead><tr>');
 
             //表头信息
-            typeList.push(['<th>', '告警第一次出现的时间', '</th>'].join(''));
+            // typeList.push(['<th>', '告警第一次出现的时间', '</th>'].join(''));
             typeList.push(['<th>', '布控车牌号码', '</th>'].join(''));
             typeList.push(['<th>', '布控联系人信息', '</th>'].join(''));
             typeList.push(['<th>', '布控原因', '</th>'].join(''));
@@ -1520,7 +1528,7 @@ function queryInfo12(offset) {
                 typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
-                typeList.push('<td>', fields.hkvs_BMS_PLATE_ALARM_ALARM_START_PERIOD, '</td>');
+                // typeList.push('<td>', fields.hkvs_BMS_PLATE_ALARM_ALARM_START_PERIOD, '</td>');
                 typeList.push('<td>', fields.hkvs_BMS_PLATE_ALARM_PLATE_INFO, '</td>');
                 typeList.push('<td>', fields.hkvs_BMS_PLATE_ALARM_CONTECT_INFO, '</td>');
                 
@@ -1533,6 +1541,7 @@ function queryInfo12(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
 				$('#pages').show();
                 fenye('#pages', 'queryInfo12', total, pageNum + 1, pageSize);
@@ -1707,6 +1716,7 @@ function queryInfo13(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
 				$('#pages').show();
                 fenye('#pages', 'queryInfo13', total, pageNum + 1, pageSize);
@@ -1727,6 +1737,7 @@ function queryInfo15(offset) {
             pageNum: pageNum
         },
         function (data) {
+            
 			if(!data || data.hits == null || data.count == 0){
                 $("#tab1").html('<h3 class="h3_null">暂无数据</h3>');
                 return false;
@@ -1798,11 +1809,11 @@ function queryInfo15(offset) {
 					}
 				}
                 fields.hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_TYPE = type1;
-                fields.hkvs_BMS_VEHICLE_PASS_CROSSING_ID = crossingInfoDict[parseInt(fields.hkvs_BMS_VEHICLE_PASS_CROSSING_ID)];
+                fields.hkvs_BMS_VEHICLE_VIOLATION_CROSSING_ID = crossingInfoDict[parseInt(fields.hkvs_BMS_VEHICLE_VIOLATION_CROSSING_ID)];
                 typeList.push('<tr class="detail" dataType="'+ queryString.replace('A_source:"','').replace('"','') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
-                typeList.push('<td>', fields.hkvs_BMS_VEHICLE_PASS_CROSSING_ID, '</td>');
+                typeList.push('<td>', fields.hkvs_BMS_VEHICLE_VIOLATION_CROSSING_ID, '</td>');
                 typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_VIOLATION_LANE_ID), '</td>');
                 typeList.push('<td>', fields.hkvs_BMS_VEHICLE_VIOLATION_PLATE_INFO, '</td>');
                 typeList.push('<td>', parseInt(fields.hkvs_BMS_VEHICLE_VIOLATION_VEHICLE_SPEED), '</td>');
@@ -1816,6 +1827,7 @@ function queryInfo15(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo15', total, pageNum + 1, pageSize);
@@ -1877,6 +1889,7 @@ function queryInfo16(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo16', total, pageNum + 1, pageSize);
@@ -1897,6 +1910,7 @@ function queryInfo17(offset) {
             pageNum: pageNum
         },
         function (data) {
+            
             if(!data || data.hits == null || data.count == 0){
                 $("#tab1").html('<h3 class="h3_null">暂无数据</h3>');
                 return false;
@@ -1914,7 +1928,7 @@ function queryInfo17(offset) {
             typeList.push(['<th>', '重点人员类别标记', '</th>'].join(''));
             typeList.push(['<th>', '籍贯', '</th>'].join(''));
             typeList.push(['<th>', '户籍地详址', '</th>'].join(''));
-            typeList.push(['<th>', '现住地详址', '</th>'].join(''));
+            // typeList.push(['<th>', '现住地详址', '</th>'].join(''));
             typeList.push(['<th>', '纳入部级库时间', '</th>'].join(''));
             // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
@@ -1943,8 +1957,8 @@ function queryInfo17(offset) {
                 var content = fields.zdrXY_T_ZZRK_QGZDRYXX_HJDXZ || '';
                 typeList.push('<td title="'+ content +'"><div style="width:300px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">',content , '</div></td>');
 
-                var content2 = fields.zdrXY_T_ZZRK_QGZDRYXX_XZDXZ || '';
-                typeList.push('<td title="'+ content2 +'"><div style="width:300px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">',content2 , '</div></td>');
+                // var content2 = fields.zdrXY_T_ZZRK_QGZDRYXX_XZDXZ || '';
+                // typeList.push('<td title="'+ content2 +'"><div style="width:300px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">',content2 , '</div></td>');
 
                 typeList.push('<td>', formatDate2(fields.zdrXY_T_ZZRK_QGZDRYXX_NRBJZDRYKSJ), '</td>');
                 //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
@@ -1953,6 +1967,7 @@ function queryInfo17(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo17', total, pageNum + 1, pageSize);
@@ -2036,6 +2051,7 @@ function queryInfo18(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo18', total, pageNum + 1, pageSize);
@@ -2104,6 +2120,7 @@ function queryInfo19(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo19', total, pageNum + 1, pageSize);
@@ -2162,6 +2179,7 @@ function queryInfo20(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo20', total, pageNum + 1, pageSize);
@@ -2220,6 +2238,7 @@ function queryInfo21(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo21', total, pageNum + 1, pageSize);
@@ -2276,6 +2295,7 @@ function queryInfo22(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo22', total, pageNum + 1, pageSize);
@@ -2338,6 +2358,7 @@ function queryInfo23(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo23', total, pageNum + 1, pageSize);
@@ -2386,7 +2407,7 @@ function queryInfo24(offset) {
 
                 //每行的数据信息
                 typeList.push('<td>', fields.QHQB_T_QHQB_RQYHSJ_XM, '</td>');
-                typeList.push('<td>', fields.QHQB_T_QHQB_RQYHSJ_LXHM, '</td>');
+                typeList.push('<td>', fields.QHQB_T_QHQB_RQYHSJ_LXDH, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_RQYHSJ_SFZ, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_RQYHSJ_ZT, '</td>');
 
@@ -2404,6 +2425,7 @@ function queryInfo24(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo24', total, pageNum + 1, pageSize);
@@ -2456,6 +2478,7 @@ function queryInfo25(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo25', total, pageNum + 1, pageSize);
@@ -2516,6 +2539,7 @@ function queryInfo26(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo26', total, pageNum + 1, pageSize);
@@ -2580,6 +2604,7 @@ function queryInfo27(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo27', total, pageNum + 1, pageSize);
@@ -2662,6 +2687,7 @@ function queryInfo28(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo28', total, pageNum + 1, pageSize);
@@ -2731,6 +2757,7 @@ function queryInfo29(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo29', total, pageNum + 1, pageSize);
@@ -2793,6 +2820,7 @@ function queryInfo30(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo30', total, pageNum + 1, pageSize);
@@ -2853,6 +2881,7 @@ function queryInfo31(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo31', total, pageNum + 1, pageSize);
@@ -2913,6 +2942,7 @@ function queryInfo32(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo32', total, pageNum + 1, pageSize);
@@ -2983,6 +3013,7 @@ function queryInfo33(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo33', total, pageNum + 1, pageSize);
@@ -3045,6 +3076,7 @@ function queryInfo34(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo34', total, pageNum + 1, pageSize);
@@ -3106,6 +3138,7 @@ function queryInfo35(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo35', total, pageNum + 1, pageSize);
@@ -3164,6 +3197,7 @@ function queryInfo36(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo36', total, pageNum + 1, pageSize);
@@ -3225,6 +3259,7 @@ function queryInfo37(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo37', total, pageNum + 1, pageSize);
@@ -3293,6 +3328,7 @@ function queryInfo38(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo38', total, pageNum + 1, pageSize);
@@ -3355,6 +3391,7 @@ function queryInfo39(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo39', total, pageNum + 1, pageSize);
@@ -3413,6 +3450,7 @@ function queryInfo40(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
 				$('#pages').show();
                 fenye('#pages', 'queryInfo40', total, pageNum + 1, pageSize);
@@ -3473,6 +3511,7 @@ function queryInfo41(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
 				$('#pages').show();
                 fenye('#pages', 'queryInfo41', total, pageNum + 1, pageSize);
@@ -3531,6 +3570,7 @@ function queryInfo42(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
 				$('#pages').show();
                 fenye('#pages', 'queryInfo42', total, pageNum + 1, pageSize);
@@ -3585,6 +3625,7 @@ function queryInfo43(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
 				$('#pages').show();
                 fenye('#pages', 'queryInfo43', total, pageNum + 1, pageSize);
@@ -3641,6 +3682,7 @@ function queryInfo44(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
 				$('#pages').show();
                 fenye('#pages', 'queryInfo44', total, pageNum + 1, pageSize);
@@ -3693,6 +3735,7 @@ function queryInfo45(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
 				$('#pages').show();
                 fenye('#pages', 'queryInfo45', total, pageNum + 1, pageSize);
@@ -3747,6 +3790,7 @@ function queryInfo46(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
 				$('#pages').show();
                 fenye('#pages', 'queryInfo46', total, pageNum + 1, pageSize);
@@ -3805,6 +3849,7 @@ function queryInfo47(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
 				$('#pages').show();
                 fenye('#pages', 'queryInfo47', total, pageNum + 1, pageSize);
@@ -3859,6 +3904,7 @@ function queryInfo48(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
 				$('#pages').show();
                 fenye('#pages', 'queryInfo48', total, pageNum + 1, pageSize);
@@ -3915,6 +3961,7 @@ function queryInfo49(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
 				$('#pages').show();
                 fenye('#pages', 'queryInfo49', total, pageNum + 1, pageSize);
@@ -3977,6 +4024,7 @@ function queryInfo50(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
 				$('#pages').show();
                 fenye('#pages', 'queryInfo50', total, pageNum + 1, pageSize);
@@ -4039,6 +4087,7 @@ function queryInfo51(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
 				$('#pages').show();
                 fenye('#pages', 'queryInfo51', total, pageNum + 1, pageSize);
@@ -4092,6 +4141,7 @@ function queryInfo52(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
 				$('#pages').show();
                 fenye('#pages', 'queryInfo52', total, pageNum + 1, pageSize);
@@ -4148,6 +4198,7 @@ function queryInfo53(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
 				$('#pages').show();
                 fenye('#pages', 'queryInfo53', total, pageNum + 1, pageSize);
@@ -4214,6 +4265,7 @@ function queryInfo54(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
 				$('#pages').show();
                 fenye('#pages', 'queryInfo54', total, pageNum + 1, pageSize);
@@ -4270,6 +4322,7 @@ function queryInfo55(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
 				$('#pages').show();
                 fenye('#pages', 'queryInfo55', total, pageNum + 1, pageSize);
@@ -4324,6 +4377,7 @@ function queryInfo56(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
 				$('#pages').show();
                 fenye('#pages', 'queryInfo56', total, pageNum + 1, pageSize);
@@ -4385,6 +4439,7 @@ function queryInfo57(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo57', total, pageNum + 1, pageSize);
@@ -4422,7 +4477,7 @@ function queryInfo58(offset) {
             typeList.push(['<th>', '性别', '</th>'].join(''));
             typeList.push(['<th>', '数据采集来源', '</th>'].join(''));
             typeList.push(['<th>', '数据采集客户端地点名称', '</th>'].join(''));
-            typeList.push(['<th>', '进出岛人员所属城市', '</th>'].join(''));
+            // typeList.push(['<th>', '进出岛人员所属城市', '</th>'].join(''));
             typeList.push(['<th>', '扫描时间', '</th>'].join(''));
             typeList.push(['<th>', '进出港类型', '</th>'].join(''));
             // typeList.push(['<th>', '详情', '</th>'].join(''));
@@ -4439,7 +4494,7 @@ function queryInfo58(offset) {
                 typeList.push('<td>', fields.QHSJ_VIEW_COMPARERECORD_TO_QHSJ_GENDER, '</td>');
                 typeList.push('<td>', fields.QHSJ_VIEW_COMPARERECORD_TO_QHSJ_SOURCE_NAME, '</td>');
                 typeList.push('<td>', fields.QHSJ_VIEW_COMPARERECORD_TO_QHSJ_CLIENT_PLACE, '</td>');
-                typeList.push('<td>', fields.QHSJ_VIEW_COMPARERECORD_TO_QHSJ_CITY, '</td>');
+                // typeList.push('<td>', fields.QHSJ_VIEW_COMPARERECORD_TO_QHSJ_CITY, '</td>');
                 typeList.push('<td>', formatDate(fields.QHSJ_VIEW_COMPARERECORD_TO_QHSJ_SCAN_TIME), '</td>');
                 typeList.push('<td>', fields.QHSJ_VIEW_COMPARERECORD_TO_QHSJ_FLIGHT_TYPE, '</td>');
                 //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
@@ -4448,6 +4503,7 @@ function queryInfo58(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo58', total, pageNum + 1, pageSize);
@@ -4515,6 +4571,7 @@ function queryInfo59(offset) {
             });
             typeList.push('</tbody></table>');
             $("#tab1").html(typeList.join(''));
+            if(total > 9999) total = 9999;
             if(total > pageSize){
                 $('#pages').show();
                 fenye('#pages', 'queryInfo59', total, pageNum + 1, pageSize);
@@ -4552,7 +4609,7 @@ function fenye(page, func, total, pageNum, pageSize) {
                     htm += '<li><a href="javascript:void(0);" onclick="' + func + '(' + (i - 1) * pageSize + ')">' + i + '</a></li>'
                 }
             }
-            htm+='<input id="goTo" type="text" /><button class="go_btn" onClick="' + func + '(' +  'getInputvalue()'  + ')">跳转</button>';
+            htm+='<input id="goTo" type="number" /><button class="go_btn" onClick="' + func + '(' +  'getInputvalue()'  + ')">跳转</button>';
             return htm;
         })()
         , '<li>'
@@ -4560,8 +4617,14 @@ function fenye(page, func, total, pageNum, pageSize) {
         , '    <span aria-hidden="true">&raquo;</span>'
         , '  </a>'
         , '</li>'].join(''))
+    if($('#pages li:first').next('li').hasClass('active'))
+        $('#pages li:first').hide();
+    if($('#pages li:last').prev().prev().prev().hasClass('active'))
+        $('#pages li:last').hide();
 }
 function getInputvalue() {
+    if($('#goTo').val() > 1000)
+        $('#goTo').val(1000);
     return ($('#goTo').val() - 1) * 10;
 }
 function add0(m) {

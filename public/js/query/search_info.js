@@ -574,7 +574,7 @@ function queryInfo() {
             queryInfo53();
             break;
         }
-        case '终端上下线信息': {
+        case '': {
             queryString = 'A_source:"A_net_WA_SOURCE_FJ_0001"';
             if (keyWord != '') {
                 queryString = queryString + ' AND ' + keyWord;
@@ -4132,9 +4132,9 @@ function queryInfo52(offset) {
                 typeList.push('<tr class="detail" dataType="'+ queryString.replace(/A_source:"/,'').replace(/".*/,'') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
-                typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_1001_IDENTIFICATION_TYPE, '</td>');
-                typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_1001_CERTIFICATE_CODE, '</td>');
-                typeList.push('<td>', formatDate2((fields.sis_V_WA_SOURCE_FJ_1001_CAPTURE_TIME)), '</td>');
+                typeList.push('<td>', fields.IDENTIFICATION_TYPE, '</td>');
+                typeList.push('<td>', fields.CERTIFICATE_CODE, '</td>');
+                typeList.push('<td>', formatDate2((fields.CAPTURE_TIME)), '</td>');
                 //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
@@ -4187,11 +4187,11 @@ function queryInfo53(offset) {
                 typeList.push('<tr class="detail" dataType="'+ queryString.replace(/A_source:"/,'').replace(/".*/,'') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
-                typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_1002_AP_MAC, '</td>');
-                typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_1002_AP_SSID, '</td>');
-                typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_1002_COLLECTION_EQUIPMENT_LONGITUDE, '</td>');
-                typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_1002_COLLECTION_EQUIPMENT_LATITUDE, '</td>');
-                typeList.push('<td>', formatDate2((fields.sis_V_WA_SOURCE_FJ_1002_CAPTURE_TIME)), '</td>');
+                typeList.push('<td>', fields.AP_MAC, '</td>');
+                typeList.push('<td>', fields.AP_SSID, '</td>');
+                typeList.push('<td>', fields.COLLECTION_EQUIPMENT_LONGITUDE, '</td>');
+                typeList.push('<td>', fields.COLLECTION_EQUIPMENT_LATITUDE, '</td>');
+                typeList.push('<td>', formatDate2((fields.CAPTURE_TIME)), '</td>');
                 //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
@@ -4249,16 +4249,16 @@ function queryInfo54(offset) {
                 typeList.push('<tr class="detail" dataType="'+ queryString.replace(/A_source:"/,'').replace(/".*/,'') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
-                typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_0001_NAME, '</td>');
-                typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_0001_CERTIFICATE_TYPE, '</td>');
-                typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_0001_CERTIFICATE_CODE, '</td>');
-                typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_0001_NETBAR_WACODE, '</td>');
-                typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_0001_NETSITE_TYPE, '</td>');
-                typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_0001_IMSI, '</td>');
-                typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_0001_BRAND, '</td>');
-                typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_0001_MODEL, '</td>');
-                typeList.push('<td>', formatDate2((fields.sis_V_WA_SOURCE_FJ_0001_START_TIME)), '</td>');
-                typeList.push('<td>', formatDate2((fields.sis_V_WA_SOURCE_FJ_0001_END_TIME)), '</td>');
+                typeList.push('<td>', fields.NAME, '</td>');
+                typeList.push('<td>', fields.CERTIFICATE_TYPE, '</td>');
+                typeList.push('<td>', fields.CERTIFICATE_CODE, '</td>');
+                typeList.push('<td>', fields.NETBAR_WACODE, '</td>');
+                typeList.push('<td>', fields.NETSITE_TYPE, '</td>');
+                typeList.push('<td>', fields.IMSI, '</td>');
+                typeList.push('<td>', fields.BRAND, '</td>');
+                typeList.push('<td>', fields.MODEL, '</td>');
+                typeList.push('<td>', formatDate2((fields.START_TIME)), '</td>');
+                typeList.push('<td>', formatDate2((fields.END_TIME)), '</td>');
                 //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
@@ -4311,11 +4311,11 @@ function queryInfo55(offset) {
                 typeList.push('<tr class="detail" dataType="'+ queryString.replace(/A_source:"/,'').replace(/".*/,'') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
-                typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_0002_NETSERVERPORT_WACODE, '</td>');
-                typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_0002_IP_ADDRESS, '</td>');
-                typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_0002_SRC_IP, '</td>');
-                typeList.push('<td>', fields.sis_V_WA_SOURCE_FJ_0002_MAC, '</td>');
-                typeList.push('<td>', formatDate2((fields.sis_V_WA_SOURCE_FJ_0002_CAPTURE_TIME)), '</td>');
+                typeList.push('<td>', fields.NETSERVERPORT_WACODE, '</td>');
+                typeList.push('<td>', fields.IP_ADDRESS, '</td>');
+                typeList.push('<td>', fields.SRC_IP, '</td>');
+                typeList.push('<td>', fields.MAC, '</td>');
+                typeList.push('<td>', formatDate2((fields.CAPTURE_TIME)), '</td>');
                 //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 
@@ -4367,10 +4367,10 @@ function queryInfo56(offset) {
                 typeList.push('<tr class="detail" dataType="'+ queryString.replace(/A_source:"/,'').replace(/".*/,'') +'" fields=\''+ JSON.stringify(fields) +'\'>');
 
                 //每行的数据信息
-                typeList.push('<td>', fields.sis_V_WA_BASIC_FJ_1001_COLLECTION_EQUIPMENT_ID, '</td>');
-                typeList.push('<td>', fields.sis_V_WA_BASIC_FJ_1001_NETBAR_WACODE, '</td>');
-                typeList.push('<td>', fields.sis_V_WA_BASIC_FJ_1001_COLLECTION_EQUIPMENT_LONGITUDE, '</td>');
-                typeList.push('<td>', formatDate2(fields.sis_V_WA_BASIC_FJ_1001_TIME), '</td>');
+                typeList.push('<td>', fields.COLLECTION_EQUIPMENT_ID, '</td>');
+                typeList.push('<td>', fields.NETBAR_WACODE, '</td>');
+                typeList.push('<td>', fields.COLLECTION_EQUIPMENT_LONGITUDE, '</td>');
+                typeList.push('<td>', formatDate2(fields.TIME), '</td>');
                 //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');
 

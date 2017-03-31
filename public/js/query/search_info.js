@@ -29,7 +29,7 @@ $(document).ready(function () {
     subInfoType = $("li[name='show']:eq(0)").children("a").html();
     liArray = $("li[name='show']");
 
-    // searchCount();
+    searchCount();
     tableCount();
 
     $("li[name='show']:eq(0)").attr("class", "selected");

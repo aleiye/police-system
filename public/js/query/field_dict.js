@@ -272,7 +272,7 @@ var fieldDict = {
     "A_db_sis_V_BD_HANDSET_CONTACTOR_INFO": {
         "sis_V_BD_HANDSET_CONTACTOR_INFO_ISDELETE": {
             "name": "是否删除",
-            "valueDict":{"1.0":"是","0.0":"否"}
+            "valueDict":{"1":"是","0":"否"}
         },
         "sis_V_BD_HANDSET_CONTACTOR_INFO_Group": {
             "name": "群组"
@@ -344,7 +344,7 @@ var fieldDict = {
         },
         "sis_V_GJ_HANDSET_SMS_INFO_ISDELETE": {
             "name": "是否删除",
-            "valueDict":{"1.0":"是","0.0":"否"}
+            "valueDict":{"1":"是","0":"否"}
         },
         "sis_V_GJ_HANDSET_SMS_INFO_UPDATEDTIME": {
             "name": "修改时间"
@@ -528,7 +528,7 @@ var fieldDict = {
         },
         "sis_V_PHONE_LIST_DELETEFLAG": {
             "name": "是否删除",
-            "valueDict":{"1.0":"是","0.0":"否"}
+            "valueDict":{"1":"是","0":"否"}
         },
         "sis_V_PHONE_LIST_QUANXIAN": {
             "name": "权限分配"

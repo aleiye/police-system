@@ -271,7 +271,8 @@ var fieldDict = {
     },
     "A_db_sis_V_BD_HANDSET_CONTACTOR_INFO": {
         "sis_V_BD_HANDSET_CONTACTOR_INFO_ISDELETE": {
-            "name": "是否删除"
+            "name": "是否删除",
+            "valueDict":{"1.0":"是","0.0":"否"}
         },
         "sis_V_BD_HANDSET_CONTACTOR_INFO_Group": {
             "name": "群组"
@@ -289,7 +290,7 @@ var fieldDict = {
             "name": "源手机号码"
         },
         "sis_V_BD_HANDSET_CONTACTOR_INFO_CONTACTOR_HANDSET_NUM": {
-            "name": "联系人手机号码，多个用;隔开"
+            "name": "联系人手机号码"
         },
         "sis_V_BD_HANDSET_CONTACTOR_INFO_EMAIL": {
             "name": "电子邮箱"
@@ -325,7 +326,7 @@ var fieldDict = {
             "name": "创建时间"
         },
         "sis_V_BD_HANDSET_CONTACTOR_INFO_ID": {
-            "name": "ID，自增长"
+            "name": "ID"
         },
         "sis_V_BD_HANDSET_CONTACTOR_INFO_CONTACTOR_ID": {
             "name": "通讯录ID"
@@ -342,7 +343,8 @@ var fieldDict = {
             "name": "彩信主题(短信为空)"
         },
         "sis_V_GJ_HANDSET_SMS_INFO_ISDELETE": {
-            "name": "是否删除"
+            "name": "是否删除",
+            "valueDict":{"1.0":"是","0.0":"否"}
         },
         "sis_V_GJ_HANDSET_SMS_INFO_UPDATEDTIME": {
             "name": "修改时间"
@@ -434,7 +436,7 @@ var fieldDict = {
             "name": "基站位置代码"
         },
         "sis_V_PHONE_THQD_THSJ": {
-            "name": "通话时间（包括日期和时间）"
+            "name": "通话时间"
         },
         "sis_V_PHONE_THQD_MYDD": {
             "name": "漫游地"
@@ -513,6 +515,9 @@ var fieldDict = {
         "sis_V_XYR_MAIN_CREATEDTIME": {
             "name": "采集时间"
         },
+        "sis_V_XYR_MAIN_UPDATEDTIME": {
+            "name": "更新时间"
+        },
         "sis_V_XYR_MAIN_SBLX": {
             "name": "设备类型"
         }
@@ -522,7 +527,8 @@ var fieldDict = {
             "name": "住址"
         },
         "sis_V_PHONE_LIST_DELETEFLAG": {
-            "name": "是否删除"
+            "name": "是否删除",
+            "valueDict":{"1.0":"是","0.0":"否"}
         },
         "sis_V_PHONE_LIST_QUANXIAN": {
             "name": "权限分配"
@@ -635,7 +641,7 @@ var fieldDict = {
             "name": "所属组织ID"
         },
         "hkvs_BMS_CROSSING_INFO_FRONT_TYPE": {
-            "name": "前端类型，相关字典在字典表"
+            "name": "前端类型"
         },
         "hkvs_BMS_CROSSING_INFO_CROSSING_NAME": {
             "name": "路口名称"
@@ -657,6 +663,9 @@ var fieldDict = {
         },
         "hkvs_BMS_CROSSING_INFO_CROSSING_ID": {
             "name": "路口ID"
+        },
+        "hkvs_BMS_CROSSING_INFO_LATITUDE": {
+            "name": "纬度"
         },
         "hkvs_BMS_CROSSING_INFO_LATITUDE": {
             "name": "纬度"
@@ -3976,6 +3985,9 @@ var fieldDict = {
         },
         "QHSC_CARINFOTBL_CSUBSTATION": {
             "name": "所属分局中文"
+        },
+        "QHSC_CARINFOTBL_INSERTTIME": {
+            "name": "插入时间"
         }
     },
     "A_db_QHSC_EMSINFOTBL": {
@@ -4078,7 +4090,8 @@ var fieldDict = {
             "name": "职务"
         },
         "QHSC_WORKERBASEINFO_SEX": {
-            "name": "性别"
+            "name": "性别",
+            "valueDict":{"1":"男","2":"女"}
         },
         "QHSC_WORKERBASEINFO_PHONE": {
             "name": "手机/电话号码"
@@ -4137,7 +4150,8 @@ var fieldDict = {
             "name": "创建人"
         },
         "QHSC_RST_HOUSING_INFORMATIO_SEX": {
-            "name": "性别"
+            "name": "性别",
+            "valueDict":{"1":"男","2":"女"}
         },
         "QHSC_RST_HOUSING_INFORMATIO_FIRST_CONTACT_PERSON_TEL": {
             "name": "第一紧急联系人电话"

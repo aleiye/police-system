@@ -38,7 +38,8 @@ function mongoConn(callBack) {
 mongoConn(function (db) {
         var reportCollection = db.collection('matchalarm');
         var reg = new RegExp(/李/);
-        reportCollection.find({'data.QHQB_T_QHQB_TLDP_ID_NAME':reg}).toArray(function (err,result) {
+        var regParam = {'data.QHQB_T_QHQB_TLDP_ID_NAME':reg};
+        reportCollection.find({},{sort:[['inserttime','desc'],['readStatus','asc']]}).toArray(function (err,result) {
             if(err){
                 console.info('Error:' + err);
                 return ;

@@ -39,7 +39,8 @@ module.exports = {
             page.limit = parseInt(page.limit);
         }
         // page.sort = 'inserttime';
-        page.sort = [['inserttime','desc']];
+        // page.sort = [['inserttime','desc']];
+        page.sort = [['readStatus','asc'],['inserttime','desc']];
         params = params || {};
         if(params.inserttime && params.inserttime['$gte'])
             params.inserttime['$gte'] = parseInt(params.inserttime['$gte']);

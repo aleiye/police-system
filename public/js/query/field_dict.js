@@ -205,67 +205,67 @@ var fieldDict = {
         }
     },
     "A_db_QHQB_T_QHQB_DBRYXX": {
-        "QHQB_T_QHQB_DBRYXX_czsj": {
+        "QHQB_T_QHQB_DBRYXX_CZSJ": {
             "name": "入库时间"
         },
-        "QHQB_T_QHQB_DBRYXX_gxdwdm": {
+        "QHQB_T_QHQB_DBRYXX_GXDWDM": {
             "name": "修改单位名称"
         },
-        "QHQB_T_QHQB_DBRYXX_cjdwmc": {
+        "QHQB_T_QHQB_DBRYXX_CJDWMC": {
             "name": "创建单位名称"
         },
-        "QHQB_T_QHQB_DBRYXX_rksj": {
+        "QHQB_T_QHQB_DBRYXX_RKSJ": {
             "name": "抽取入库时间"
         },
-        "QHQB_T_QHQB_DBRYXX_cjrxm": {
+        "QHQB_T_QHQB_DBRYXX_CJRXM": {
             "name": "创建人姓名"
         },
-        "QHQB_T_QHQB_DBRYXX_cac008": {
+        "QHQB_T_QHQB_DBRYXX_CAC008": {
             "name": "就业状况"
         },
-        "QHQB_T_QHQB_DBRYXX_cbe071": {
+        "QHQB_T_QHQB_DBRYXX_CBE071": {
             "name": "起始年月"
         },
-        "QHQB_T_QHQB_DBRYXX_caa007": {
+        "QHQB_T_QHQB_DBRYXX_CAA007": {
             "name": "操作日期"
         },
-        "QHQB_T_QHQB_DBRYXX_cbe077": {
+        "QHQB_T_QHQB_DBRYXX_CBE007": {
             "name": "保障金额"
         },
-        "QHQB_T_QHQB_DBRYXX_cjsj": {
+        "QHQB_T_QHQB_DBRYXX_CJSJ": {
             "name": "创建时间"
         },
-        "QHQB_T_QHQB_DBRYXX_synflag": {
+        "QHQB_T_QHQB_DBRYXX_SYNFLAG": {
             "name": "标志位"
         },
-        "QHQB_T_QHQB_DBRYXX_syndate": {
+        "QHQB_T_QHQB_DBRYXX_SYNDATE": {
             "name": "原入库时间"
         },
-        "QHQB_T_QHQB_DBRYXX_gxrxm": {
+        "QHQB_T_QHQB_DBRYXX_GXRXM": {
             "name": "修改人姓名"
         },
-        "QHQB_T_QHQB_DBRYXX_cjdwdm": {
+        "QHQB_T_QHQB_DBRYXX_CJDWDM": {
             "name": "创建单位代码"
         },
-        "QHQB_T_QHQB_DBRYXX_gxdwmc": {
+        "QHQB_T_QHQB_DBRYXX_GXDWMC": {
             "name": "修改单位代码"
         },
-        "QHQB_T_QHQB_DBRYXX_cab010": {
+        "QHQB_T_QHQB_DBRYXX_CAB010": {
             "name": "家庭id"
         },
-        "QHQB_T_QHQB_DBRYXX_gxsj": {
+        "QHQB_T_QHQB_DBRYXX_GXSJ": {
             "name": "修改时间"
         },
-        "QHQB_T_QHQB_DBRYXX_cac002": {
+        "QHQB_T_QHQB_DBRYXX_CAC002": {
             "name": "姓名"
         },
-        "QHQB_T_QHQB_DBRYXX_cac004": {
+        "QHQB_T_QHQB_DBRYXX_CAC004": {
             "name": "身份证"
         },
-        "QHQB_T_QHQB_DBRYXX_cac015": {
+        "QHQB_T_QHQB_DBRYXX_CAC015": {
             "name": "与户主的关系"
         },
-        "QHQB_T_QHQB_DBRYXX_cac000": {
+        "QHQB_T_QHQB_DBRYXX_CAC000": {
             "name": "成员id"
         }
     },
@@ -400,43 +400,43 @@ var fieldDict = {
         }
     },
     "A_db_sis_V_PHONE_THQD": {
-        "sis_V_PHONE_THQD_thdd": {
+        "sis_V_PHONE_THQD_THDD": {
             "name": "通话地点"
         },
-        "sis_V_PHONE_THQD_dfhm": {
+        "sis_V_PHONE_THQD_DFHM": {
             "name": "对方电话"
         },
-        "sis_V_PHONE_THQD_pid": {
+        "sis_V_PHONE_THQD_PID": {
             "name": "id"
         },
-        "sis_V_PHONE_THQD_zbjlx": {
+        "sis_V_PHONE_THQD_ZBJLX": {
             "name": "主被叫类型"
         },
-        "sis_V_PHONE_THQD_jzdm": {
+        "sis_V_PHONE_THQD_JZDM": {
             "name": "完整基站代码"
         },
-        "sis_V_PHONE_THQD_cjsj": {
+        "sis_V_PHONE_THQD_CJSJ": {
             "name": "采集时间"
         },
-        "sis_V_PHONE_THQD_thsc": {
+        "sis_V_PHONE_THQD_THSC": {
             "name": "通话时长"
         },
-        "sis_V_PHONE_THQD_thlx": {
+        "sis_V_PHONE_THQD_THLX": {
             "name": "通话类型"
         },
-        "sis_V_PHONE_THQD_dfqh": {
+        "sis_V_PHONE_THQD_DFQH": {
             "name": "对方区号"
         },
-        "sis_V_PHONE_THQD_xqdm": {
+        "sis_V_PHONE_THQD_XQDM": {
             "name": "基站小区代码"
         },
-        "sis_V_PHONE_THQD_wzdm": {
+        "sis_V_PHONE_THQD_WZDM": {
             "name": "基站位置代码"
         },
-        "sis_V_PHONE_THQD_thsj": {
+        "sis_V_PHONE_THQD_THSJ": {
             "name": "通话时间（包括日期和时间）"
         },
-        "sis_V_PHONE_THQD_mydd": {
+        "sis_V_PHONE_THQD_MYDD": {
             "name": "漫游地"
         }
     },
@@ -518,70 +518,70 @@ var fieldDict = {
         }
     },
     "A_db_sis_V_PHONE_LIST": {
-        "sis_V_PHONE_LIST_zz": {
+        "sis_V_PHONE_LIST_ZZ": {
             "name": "住址"
         },
-        "sis_V_PHONE_LIST_deleteflag": {
+        "sis_V_PHONE_LIST_DELETEFLAG": {
             "name": "是否删除"
         },
-        "sis_V_PHONE_LIST_quanxian": {
+        "sis_V_PHONE_LIST_QUANXIAN": {
             "name": "权限分配"
         },
-        "sis_V_PHONE_LIST_jzhm": {
+        "sis_V_PHONE_LIST_JZHM": {
             "name": "机主电话"
         },
-        "sis_V_PHONE_LIST_mintime": {
+        "sis_V_PHONE_LIST_MINTIME": {
             "name": "最小时间"
         },
-        "sis_V_PHONE_LIST_sjch": {
+        "sis_V_PHONE_LIST_SJCH": {
             "name": "手机串号"
         },
-        "sis_V_PHONE_LIST_pid": {
+        "sis_V_PHONE_LIST_PID": {
             "name": "id"
         },
-        "sis_V_PHONE_LIST_cjr": {
+        "sis_V_PHONE_LIST_CJR": {
             "name": "采集人"
         },
-        "sis_V_PHONE_LIST_imsi": {
+        "sis_V_PHONE_LIST_IMSI": {
             "name": "sim卡串号"
         },
-        "sis_V_PHONE_LIST_maxtime": {
+        "sis_V_PHONE_LIST_MAXTIME": {
             "name": "最大时间"
         },
-        "sis_V_PHONE_LIST_cjsj": {
+        "sis_V_PHONE_LIST_CJSJ": {
             "name": "采集时间"
         },
-        "sis_V_PHONE_LIST_ajlb": {
+        "sis_V_PHONE_LIST_AJLB": {
             "name": "案件类别"
         },
-        "sis_V_PHONE_LIST_ajmc": {
+        "sis_V_PHONE_LIST_AJMC": {
             "name": "案件名称"
         },
-        "sis_V_PHONE_LIST_sjcjr": {
+        "sis_V_PHONE_LIST_SJCJR": {
             "name": "持机人"
         },
-        "sis_V_PHONE_LIST_cjdw": {
+        "sis_V_PHONE_LIST_CJDW": {
             "name": "采集单位"
         },
-        "sis_V_PHONE_LIST_sfh": {
+        "sis_V_PHONE_LIST_SFH": {
             "name": "身份证"
         },
-        "sis_V_PHONE_LIST_jzqh": {
+        "sis_V_PHONE_LIST_JZQH": {
             "name": "机主区号"
         },
-        "sis_V_PHONE_LIST_xxly": {
+        "sis_V_PHONE_LIST_XXLY": {
             "name": "信息来源"
         },
-        "sis_V_PHONE_LIST_jzxm": {
+        "sis_V_PHONE_LIST_JZXM": {
             "name": "机主姓名"
         },
-        "sis_V_PHONE_LIST_bz": {
+        "sis_V_PHONE_LIST_BZ": {
             "name": "备注"
         },
-        "sis_V_PHONE_LIST_thqd_clbs": {
+        "sis_V_PHONE_LIST_THQD_CLBS": {
             "name": "通话记录处理标识"
         },
-        "sis_V_PHONE_LIST_hdrows": {
+        "sis_V_PHONE_LIST_HDROWS": {
             "name": "话单长度"
         }
     },
@@ -4433,5 +4433,56 @@ var fieldDict = {
         "QHSJ_VIEW_COMPARERECORD_TO_QHSJ_PASSPORT": {
             "name": "护照号"
         }
+    },
+    "A_db_QHQB_T_QHQB_TLDP": {
+        "QHQB_T_QHQB_TLDP_ID_NO": {
+            "name": "身份证"
+        },
+        "QHQB_T_QHQB_TLDP_ID_NAME": {
+            "name": "姓名"
+        },
+        "QHQB_T_QHQB_TLDP_START_TIME": {
+            "name": "发车时间"
+        },
+        "QHQB_T_QHQB_TLDP_OFFICE_NO": {
+            "name": "列车号"
+        },
+        "QHQB_T_QHQB_TLDP_SEAT_NO": {
+            "name": "座位号"
+        },
+        "QHQB_T_QHQB_TLDP_FROM_STATION_NAME": {
+            "name": "起始站"
+        },
+        "QHQB_T_QHQB_TLDP_TRAIN_DATE": {
+            "name": "发车日期"
+        },
+        "QHQB_T_QHQB_TLDP_BOARD_TRAIN_CODE": {
+            "name": "流水号"
+        },
+        "QHQB_T_QHQB_TLDP_TICKET_NO": {
+            "name": "票号"
+        },
+        "QHQB_T_QHQB_TLDP_TO_STATION_NAME": {
+            "name": "终点站"
+        },
+        "QHQB_T_QHQB_TLDP_SALE_TIME": {
+            "name": "售票时间"
+        },
+        "QHQB_T_QHQB_TLDP_ID_KIND": {
+            "name": "证件种类"
+        },
+        "QHQB_T_QHQB_TLDP_RKSJ": {
+            "name": "入库时间"
+        },
+        "QHQB_T_QHQB_TLDP_WINDOW_NO": {
+            "name": "窗口号"
+        },
+        "QHQB_T_QHQB_TLDP_ID": {
+            "name": "编号"
+        },
+        "QHQB_T_QHQB_TLDP_COACH_NO": {
+            "name": "车厢号"
+        }
     }
+        
 }

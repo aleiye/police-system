@@ -29,7 +29,7 @@ $(document).ready(function () {
     subInfoType = $("li[name='show']:eq(0)").children("a").html();
     liArray = $("li[name='show']");
 
-    searchCount();
+    // searchCount();
     tableCount();
 
     $("li[name='show']:eq(0)").attr("class", "selected");
@@ -2977,13 +2977,13 @@ function queryInfo33(offset) {
             typeList.push(['<th>', '所有人', '</th>'].join(''));
             typeList.push(['<th>', '证件号码', '</th>'].join(''));
             typeList.push(['<th>', '登记地点', '</th>'].join(''));
-            typeList.push(['<th>', '电机号', '</th>'].join(''));
-            typeList.push(['<th>', '车架号', '</th>'].join(''));
-            typeList.push(['<th>', '联系电话', '</th>'].join(''));
+            // typeList.push(['<th>', '电机号', '</th>'].join(''));
+            // typeList.push(['<th>', '车架号', '</th>'].join(''));
+            // typeList.push(['<th>', '联系电话', '</th>'].join(''));
             typeList.push(['<th>', '手机号码', '</th>'].join(''));
             typeList.push(['<th>', '登记地址', '</th>'].join(''));
             typeList.push(['<th>', '经办人', '</th>'].join(''));
-            typeList.push(['<th>', '品牌型号', '</th>'].join(''));
+            // typeList.push(['<th>', '品牌型号', '</th>'].join(''));
             typeList.push(['<th>', '状态', '</th>'].join(''));
             // typeList.push(['<th>', '详情', '</th>'].join(''));
             typeList.push('</tr> </thead> <tbody>');
@@ -2997,15 +2997,15 @@ function queryInfo33(offset) {
                 typeList.push('<td>', fields.QHQB_T_QHQB_HKDDC_SYR, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_HKDDC_ZHHM, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_HKDDC_DW, '</td>');
-                typeList.push('<td>', fields.QHQB_T_QHQB_HKDDC_DJH, '</td>');
-                typeList.push('<td>', fields.QHQB_T_QHQB_HKDDC_CJH, '</td>');
-                typeList.push('<td>', fields.QHQB_T_QHQB_HKDDC_LXDH, '</td>');
+                // typeList.push('<td>', fields.QHQB_T_QHQB_HKDDC_DJH, '</td>');
+                // typeList.push('<td>', fields.QHQB_T_QHQB_HKDDC_CJH, '</td>');
+                // typeList.push('<td>', fields.QHQB_T_QHQB_HKDDC_LXDH, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_HKDDC_SJHM, '</td>');
                 var detail = fields.QHQB_T_QHQB_HKDDC_XXDZ || '';
                 typeList.push('<td title="'+ detail +'"><div style="width:300px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">',detail , '</div></td>');
 
                 typeList.push('<td>', fields.QHQB_T_QHQB_HKDDC_BZY, '</td>');
-                typeList.push('<td>', fields.QHQB_T_QHQB_HKDDC_CPPXH, '</td>');
+                // typeList.push('<td>', fields.QHQB_T_QHQB_HKDDC_CPPXH, '</td>');
                 typeList.push('<td>', fields.QHQB_T_QHQB_HKDDC_CLZT, '</td>');
                 //typeList.push('<td>', '<a href="javascript:void(0)" class="detail" fields=\''+ JSON.stringify(fields) +'\'>查看详情</a>', '</td>');
                 typeList.push('</tr>');

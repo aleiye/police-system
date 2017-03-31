@@ -574,7 +574,7 @@ function queryInfo() {
             queryInfo53();
             break;
         }
-        case '': {
+        case '终端上下线信息': {
             queryString = 'A_source:"A_net_WA_SOURCE_FJ_0001"';
             if (keyWord != '') {
                 queryString = queryString + ' AND ' + keyWord;

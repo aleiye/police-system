@@ -45,6 +45,10 @@ module.exports = {
             params.inserttime['$gte'] = parseInt(params.inserttime['$gte']);
         if(params.inserttime && params.inserttime['$lte'])
             params.inserttime['$lte'] = parseInt(params.inserttime['$lte']);
+        if(params['data.QHQB_T_QHQB_TLDP_ID_NAME'])
+            params['data.QHQB_T_QHQB_TLDP_ID_NAME'] = new RegExp(params['data.QHQB_T_QHQB_TLDP_ID_NAME']);
+        if(params['data.QHQB_T_QHQB_TLDP_ID_NO'])
+            params['data.QHQB_T_QHQB_TLDP_ID_NO'] = new RegExp(params['data.QHQB_T_QHQB_TLDP_ID_NO']);  
         mongoConn(function (db) {
             var reportCollection = db.collection('matchalarm');
             reportCollection.find(params,page).toArray(function (err,result) {

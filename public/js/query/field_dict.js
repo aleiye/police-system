@@ -669,14 +669,14 @@ var fieldDict = {
         "hkvs_BMS_PLATE_ALARM_CROSSING_NAMES": {
             "name": "卡口名字集合"
         },
-        "hkvs_BMS_PLATE_ALARM_": {
-            "name": ""
-        },
         "hkvs_BMS_PLATE_ALARM_UNIT_ID": {
             "name": "布控区域"
         },
         "hkvs_BMS_PLATE_ALARM_START_TIME": {
             "name": "布控开始时间"
+        },
+        "hkvs_BMS_PLATE_ALARM_STOP_TIME": {
+            "name": "布控结束时间"
         },
         "hkvs_BMS_PLATE_ALARM_IDENTIFY": {
             "name": "布控标识符"
@@ -702,7 +702,7 @@ var fieldDict = {
         "hkvs_BMS_PLATE_ALARM_IMAGE_EXPLAIN": {
             "name": "特征布控用"
         },
-        "hkvs_BMS_PLATE_ALARM_SOURCE_TYPE": {
+        "hkvs_BMS_PLATE_ALARM_SOURCETYPE": {
             "name": "布控来源"
         },
         "hkvs_BMS_PLATE_ALARM_REASON_NAME": {
@@ -741,7 +741,7 @@ var fieldDict = {
         "hkvs_BMS_PLATE_ALARM_VEHICLE_TYPE": {
             "name": "车辆类型"
         },
-        "hkvs_BMS_PLATE_ALARM_CROSSINGID": {
+        "hkvs_BMS_PLATE_ALARM_CROSSING_ID": {
             "name": "卡口编号"
         },
         "hkvs_BMS_PLATE_ALARM_DATE_TYPE": {
@@ -776,6 +776,12 @@ var fieldDict = {
         },
         "hkvs_BMS_PLATE_ALARM_PLATE_COLOR": {
             "name": "车牌颜色"
+        },
+        "hkvs_BMS_PLATE_ALARM_REASON_NAME": {
+            "name": "告警原因"
+        },
+        "hkvs_BMS_PLATE_ALARM_REMARK": {
+            "name": "备注"
         }
     },
     "A_db_hkvs_BMS_VEHICLE_PASS": {
@@ -3087,7 +3093,7 @@ var fieldDict = {
             "name": "注册地址"
         },
         "QHQB_T_QHQB_DSLSDJXX_RKSJ": {
-            "name": ""
+            "name": "入库时间"
         },
         "QHQB_T_QHQB_DSLSDJXX_SYNDATE": {
             "name": ""
